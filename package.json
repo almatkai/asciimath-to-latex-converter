@@ -1,0 +1,86 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "asciimath-to-latex-converter",
+  "title": "AsciiMath to LaTeX Converter",
+  "description": "Convert AsciiMath expressions to LaTeX with live preview.",
+  "icon": "icon.png",
+  "author": "almatkai",
+  "categories": [
+    "Productivity"
+  ],
+  "license": "MIT",
+  "commands": [
+    {
+      "name": "convert-asciimath-to-latex",
+      "title": "Convert AsciiMath to LaTeX",
+      "description": "Convert AsciiMath input to LaTeX and preview the result.",
+      "mode": "view",
+      "src": "convert-asciimath-to-latex",
+      "preferences": [
+        {
+          "name": "defaultWrapLatex",
+          "title": "Default LaTeX Wrapping",
+          "description": "Select the default wrapping style for LaTeX output",
+          "type": "dropdown",
+          "required": false,
+          "default": "single",
+          "data": [
+            {
+              "title": "None",
+              "value": "none"
+            },
+            {
+              "title": "Single ($...$)",
+              "value": "single"
+            },
+            {
+              "title": "Double ($$...$$)",
+              "value": "double"
+            }
+          ]
+        }
+      ],
+      "platforms": [
+        "macOS",
+        "Windows"
+      ]
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^1.104.1",
+    "@raycast/utils": "^2.2.2",
+    "asciimath-to-latex": "^0.5.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "tsx": "^4.22.4",
+    "typescript": "^5.9.3"
+  },
+  "scripts": {
+    "build": "ray build -e dist",
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx --test test/*.test.ts"
+  },
+  "id": "com.tezbar.asciimath-to-latex-converter",
+  "platforms": [
+    "macOS",
+    "Windows"
+  ],
+  "version": "0.1.0",
+  "tezbar": {
+    "schemaVersion": 1,
+    "platforms": [
+      "macos",
+      "windows"
+    ],
+    "linuxStatus": "coming-soon",
+    "repository": "https://github.com/almatkai/asciimath-to-latex-converter",
+    "upstream": {
+      "repository": "https://github.com/raycast/extensions",
+      "path": "extensions/asciimath-to-latex-converter",
+      "commit": "6734d85992290066fd31a7f5bee3cca3d3545a1a"
+    }
+  }
+}
