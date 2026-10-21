@@ -3,7 +3,7 @@
   "name": "asciimath-to-latex-converter",
   "title": "AsciiMath to LaTeX Converter",
   "description": "Convert AsciiMath expressions to LaTeX with live preview.",
-  "icon": "icon.png",
+  "icon": "assets/icon.png",
   "author": "almatkai",
   "categories": [
     "Productivity"
