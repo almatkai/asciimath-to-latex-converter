@@ -1,0 +1,132 @@
+--- a/src-tauri/src/native_core/extensions/mod.rs
++++ b/src-tauri/src/native_core/extensions/mod.rs
+@@ -183,3 +183,6 @@
+         self.worker.is_running().await
+     }
+ }
++
++#[path = "../../../native-extensions/asciimath-to-latex-converter/adapter/v2_asciimath.rs"]
++mod v2_asciimath;
+--- a/src-tauri/src/native_core/extensions/v2_runtime.rs
++++ b/src-tauri/src/native_core/extensions/v2_runtime.rs
+@@ -8,6 +8,7 @@
+         .or_else(|| id.strip_prefix("raycast."))
+         .unwrap_or(id);
+     match value {
++        "asciimath-to-latex-converter" => Some(value),
+         "amphetamine" | "audio-device" | "cleanshotx" | "color-picker" | "gif-search"
+         | "google-calendar" | "google-search" | "port-manager" | "speedtest" | "timers"
+         | "perplexity" => Some(value),
+@@ -19,6 +20,7 @@
+ }
+ pub(super) fn commands(slug: &str) -> &'static [&'static str] {
+     match slug {
++        "asciimath-to-latex-converter" => super::v2_asciimath::commands(),
+         "amphetamine" => super::v2_amphetamine::commands(),
+         "audio-device" => super::v2_audio_device::commands(),
+         "cleanshotx" => super::v2_cleanshotx::commands(),
+@@ -45,6 +47,9 @@
+     state: &mut Value,
+ ) -> CoreResult {
+     match slug {
++        "asciimath-to-latex-converter" => {
++            super::v2_asciimath::handle(ctx, command, operation, payload, state).await
++        }
+         "amphetamine" => {
+             super::v2_amphetamine::handle(ctx, command, operation, payload, state).await
+         }
+--- a/src-tauri/src/native_core/extensions/v2_catalog.json
++++ b/src-tauri/src/native_core/extensions/v2_catalog.json
+@@ -2589,5 +2589,71 @@
+         "state": "not-run"
+       }
+     ]
++  },
++  {
++    "schemaVersion": 2,
++    "id": "com.tezbar.native.asciimath-to-latex-converter",
++    "slug": "asciimath-to-latex-converter",
++    "name": "AsciiMath to LaTeX Converter",
++    "version": "0.1.0",
++    "description": "Convert AsciiMath expressions to LaTeX with live preview. Original Raycast extension by SimpleOptional.",
++    "icon": "/extensions/icons/asciimath-to-latex-converter.png",
++    "runtime": "rust",
++    "replaces": [
++      "raycast.asciimath-to-latex-converter"
++    ],
++    "platforms": [
++      "macOS",
++      "Windows"
++    ],
++    "commands": [
++      {
++        "name": "convert-asciimath-to-latex",
++        "title": "Convert AsciiMath to LaTeX",
++        "description": "Convert AsciiMath input to LaTeX and preview the result.",
++        "mode": "view",
++        "preferences": [
++          {
++            "name": "defaultWrapLatex",
++            "title": "Default LaTeX Wrapping",
++            "description": "Select the default wrapping style for LaTeX output",
++            "type": "dropdown",
++            "required": false,
++            "default": "single",
++            "data": [
++              {
++                "title": "None",
++                "value": "none"
++              },
++              {
++                "title": "Single ($...$)",
++                "value": "single"
++              },
++              {
++                "title": "Double ($$...$$)",
++                "value": "double"
++              }
++            ]
++          }
++        ],
++        "platforms": [
++          "macOS",
++          "Windows"
++        ],
++        "runtime": "rust"
++      }
++    ],
++    "verification": [
++      {
++        "platform": "macOS",
++        "state": "not-run",
++        "note": "Host registration/rebuild/install and real desktop QA remain not-run."
++      },
++      {
++        "platform": "Windows",
++        "state": "not-run",
++        "note": "Host registration/rebuild/install and real desktop QA remain not-run."
++      }
++    ]
+   }
+ ]
+--- a/src-tauri/src/native_core/extensions/v2_catalog.rs
++++ b/src-tauri/src/native_core/extensions/v2_catalog.rs
+@@ -169,7 +169,7 @@
+     #[test]
+     fn bundled_ids_and_coverage_are_consistent() {
+         let items = manifests();
+-        assert_eq!(items.len(), 11);
++        assert_eq!(items.len(), 12);
+         for item in items {
+             let slug = item["slug"].as_str().unwrap();
+             assert_eq!(item["id"], v2_runtime::canonical_id(slug));
+--- a/src-tauri/Cargo.toml
++++ b/src-tauri/Cargo.toml
+@@ -21,6 +21,7 @@
+ semver = "1.0"
+ 
+ [dependencies]
++tezbar-asciimath-to-latex-converter = { path = "native-extensions/asciimath-to-latex-converter" }
+ serde_json = "1.0"
+ serde = { version = "1.0", features = ["derive"] }
+ semver = "1.0"

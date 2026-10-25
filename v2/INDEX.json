@@ -1,0 +1,2201 @@
+{
+  "algorithm": "SHA256",
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 152,
+      "sha256": "34ed463de0d780366903632bdd8db70f58d8d2944cfefa8298f3ed4cf1ff729e",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "Cargo.lock",
+      "bytes": 2692,
+      "sha256": "ed0f3452a7cfb691a2ee9f0b869100ea48e34122c0d61bd2b971d8a0ade5b5a8",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "Cargo.toml",
+      "bytes": 1615,
+      "sha256": "9c95010a4b376a6a3f388e5a98265a5a5a25a64ba4eda16f2e831ab79ac4c03b",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "EVIDENCE.json",
+      "bytes": 2678,
+      "sha256": "def47bf7311455b163e2ee220662edfbeeff79bf9b67031bc32d03279ec01ed8",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "LICENSE-APACHE-2.0-BETA",
+      "bytes": 10750,
+      "sha256": "0ed6b1b2760294d4aaaa45be38e166fcc0168e1dd5190423c096fcbe1c94afbf",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "LICENSE-MIT-ORIGINAL",
+      "bytes": 1064,
+      "sha256": "7f727f8b20cdd0e65f84e70b9cac2fce337dcecee4dc88955eb012ea27f02755",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "LICENSE-MIT-OWN",
+      "bytes": 1087,
+      "sha256": "1d7dbdbcd4fe14dfa08334fab20bffad23c1290f195792a3a4420dadf9912f81",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "NOTICE",
+      "bytes": 1422,
+      "sha256": "653de5aca6c4f736c2b88ac8665f6f2ec01c5cb08956849e471a1c7cbdc2fac2",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "PROVENANCE.json",
+      "bytes": 2754,
+      "sha256": "e76976a00a6df59cd9f62a689f39aa958e8576a3ed35c2c68c1a2a4bdf3170d7",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "README.md",
+      "bytes": 12979,
+      "sha256": "c2037722b3fd9f64e06a4c544343892131342bfddbf640bc1a39f2652726b066",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "adapter/v2_asciimath.rs",
+      "bytes": 13028,
+      "sha256": "f7f65b87785bc1ec21bb229d07b1da5d49dbd0b230283088206d18f25d93ed7e",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "assets/icon.png",
+      "bytes": 16920,
+      "sha256": "85d2d2a64b001b214cd2b88d01260f81b9c393863013abf3f7422d08612a1b88",
+      "source": "https://raw.githubusercontent.com/raycast/extensions/6734d85992290066fd31a7f5bee3cca3d3545a1a/extensions/asciimath-to-latex-converter/assets/icon.png"
+    },
+    {
+      "path": "fixtures/beta/LICENSE",
+      "bytes": 10750,
+      "sha256": "0ed6b1b2760294d4aaaa45be38e166fcc0168e1dd5190423c096fcbe1c94afbf",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:LICENSE"
+    },
+    {
+      "path": "fixtures/beta/docs/NATIVE_V2_FORMAT.md",
+      "bytes": 2593,
+      "sha256": "8bf9315ad047326dd6737587ca5491fc35faf5e3f92a2d9c63f596be0c8f7b7a",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:docs/NATIVE_V2_FORMAT.md"
+    },
+    {
+      "path": "fixtures/beta/examples/tezbar-color-picker-extension/src/pick-color.ts",
+      "bytes": 418,
+      "sha256": "20a1164662caebe436d024df6f90cd458ea2f7d040fa08f4e89bf667ce07f07d",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:examples/tezbar-color-picker-extension/src/pick-color.ts"
+    },
+    {
+      "path": "fixtures/beta/package.json",
+      "bytes": 2909,
+      "sha256": "a9e41304960cd456d9f0b223110cd3abfd012c8899fa703acacee6b0d719faf7",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:package.json"
+    },
+    {
+      "path": "fixtures/beta/pnpm-lock.yaml",
+      "bytes": 158612,
+      "sha256": "9ea96c8e56c802695899d7014a573fadff8a37fd665fa71225526bd41b659bfc",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:pnpm-lock.yaml"
+    },
+    {
+      "path": "fixtures/beta/schemas/extension-v2.schema.json",
+      "bytes": 2420,
+      "sha256": "6d5afda1b652605982104bdf16d1547547b98dfd707a7b2969316406c49f32af",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:schemas/extension-v2.schema.json"
+    },
+    {
+      "path": "fixtures/beta/scripts/audit-extension-sources.ts",
+      "bytes": 3173,
+      "sha256": "a6a3ed9267ec5f11d406718e5b3fc713eedb16158c52ae7ddeb21d77ad1071c2",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:scripts/audit-extension-sources.ts"
+    },
+    {
+      "path": "fixtures/beta/scripts/extension-runtime-harness.ts",
+      "bytes": 4975,
+      "sha256": "6e1e019e1145893708b2981e21fadc8909489c0483f979cb2cc66c4df4d9012d",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:scripts/extension-runtime-harness.ts"
+    },
+    {
+      "path": "fixtures/beta/scripts/test-extension-worker.ts",
+      "bytes": 9833,
+      "sha256": "d374d132d4e29c7fe6432b99546c19ddf865ca1cfa679bcab77b73e261813ad8",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:scripts/test-extension-worker.ts"
+    },
+    {
+      "path": "fixtures/beta/src-tauri/Cargo.toml.fixture",
+      "bytes": 2141,
+      "sha256": "98b2ca2dd131ec4ca8a9dc9d5c41a7fd2c25a3079f58813e051a1b9761849b0c",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src-tauri/Cargo.toml"
+    },
+    {
+      "path": "fixtures/beta/src-tauri/src/native_core/common.rs",
+      "bytes": 7627,
+      "sha256": "280a0a2f0dd04a8570b320aafc0c3ece0f5de8ddb21c363645567d6a35d84da7",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src-tauri/src/native_core/common.rs"
+    },
+    {
+      "path": "fixtures/beta/src-tauri/src/native_core/extensions/catalog.rs",
+      "bytes": 16322,
+      "sha256": "6f1a3f6e65a581a01c08208aae46e77bf60ee97c87bdec98cc0edc7ddbfb6b60",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src-tauri/src/native_core/extensions/catalog.rs"
+    },
+    {
+      "path": "fixtures/beta/src-tauri/src/native_core/extensions/loved_extensions.json",
+      "bytes": 93772,
+      "sha256": "f30e521b2c1b196301d81502478732d506a50ed975a54f179ed077a687ca5537",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src-tauri/src/native_core/extensions/loved_extensions.json"
+    },
+    {
+      "path": "fixtures/beta/src-tauri/src/native_core/extensions/mod.rs",
+      "bytes": 6248,
+      "sha256": "73c3625fdaadb944431191294dbfaa4f38a878faa03f15a917863be9c311e04f",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src-tauri/src/native_core/extensions/mod.rs"
+    },
+    {
+      "path": "fixtures/beta/src-tauri/src/native_core/extensions/native.rs",
+      "bytes": 14551,
+      "sha256": "3192be6beccc110cd6daa22db412e0f90685957ec51b3c71103b78e239978691",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src-tauri/src/native_core/extensions/native.rs"
+    },
+    {
+      "path": "fixtures/beta/src-tauri/src/native_core/extensions/native_tests.rs",
+      "bytes": 23475,
+      "sha256": "75c4bf5ec47d0d64d3d8e51db0989e708d1474b1bb41a667098bd645394145fc",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src-tauri/src/native_core/extensions/native_tests.rs"
+    },
+    {
+      "path": "fixtures/beta/src-tauri/src/native_core/extensions/perplexity.rs",
+      "bytes": 2266,
+      "sha256": "5e3b2ad655bbd78f32a23c9d45291e01d1607266ed532d86d9ef3dcb7f182d59",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src-tauri/src/native_core/extensions/perplexity.rs"
+    },
+    {
+      "path": "fixtures/beta/src-tauri/src/native_core/extensions/registry.rs",
+      "bytes": 32782,
+      "sha256": "0919201dce5658506aa59d03d14b2a7db7891ebb1070d4ad106937c5453c17e9",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src-tauri/src/native_core/extensions/registry.rs"
+    },
+    {
+      "path": "fixtures/beta/src-tauri/src/native_core/extensions/v2_amphetamine.rs",
+      "bytes": 24493,
+      "sha256": "c54ead77b5691cd0f4ead4826e45d8b5de5d486c6ba382b765ca4ea040c2a0c7",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src-tauri/src/native_core/extensions/v2_amphetamine.rs"
+    },
+    {
+      "path": "fixtures/beta/src-tauri/src/native_core/extensions/v2_audio_device.rs",
+      "bytes": 53451,
+      "sha256": "ce22d402985fbfe61c6191ad5ce34c6b924c8b6794d4c7c4eea130f020d3fed9",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src-tauri/src/native_core/extensions/v2_audio_device.rs"
+    },
+    {
+      "path": "fixtures/beta/src-tauri/src/native_core/extensions/v2_catalog.json",
+      "bytes": 71862,
+      "sha256": "6cba59a7a6ec10dbe985c8fa4f4be82e4b2495b3718fd9a9a8dd7b3169e977e7",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src-tauri/src/native_core/extensions/v2_catalog.json"
+    },
+    {
+      "path": "fixtures/beta/src-tauri/src/native_core/extensions/v2_catalog.rs",
+      "bytes": 6839,
+      "sha256": "651a16df484f42a827ac69e209e80d09cad868232d1953d241652a4a39481e16",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src-tauri/src/native_core/extensions/v2_catalog.rs"
+    },
+    {
+      "path": "fixtures/beta/src-tauri/src/native_core/extensions/v2_cleanshotx.rs",
+      "bytes": 60002,
+      "sha256": "d1b6a6c2660ca155351e454f5d92f4bddb113d0fb692b8e62566acb73823e547",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src-tauri/src/native_core/extensions/v2_cleanshotx.rs"
+    },
+    {
+      "path": "fixtures/beta/src-tauri/src/native_core/extensions/v2_color_picker.rs",
+      "bytes": 107596,
+      "sha256": "84c91a77afabce2d7f83eeb3516ae4e769397ad0612fc69d0bb8805fc5eeb27b",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src-tauri/src/native_core/extensions/v2_color_picker.rs"
+    },
+    {
+      "path": "fixtures/beta/src-tauri/src/native_core/extensions/v2_color_picker_LICENSE.txt",
+      "bytes": 1082,
+      "sha256": "18a369920eb663815f25ea3d8f32f1c0ac5ee131c41d66f90898dc00bb244ba3",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src-tauri/src/native_core/extensions/v2_color_picker_LICENSE.txt"
+    },
+    {
+      "path": "fixtures/beta/src-tauri/src/native_core/extensions/v2_color_picker_names.json",
+      "bytes": 74196,
+      "sha256": "932bbf453227a9bac21d563f64f5613214cb21899cdfc751dd687dd3dd66af55",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src-tauri/src/native_core/extensions/v2_color_picker_names.json"
+    },
+    {
+      "path": "fixtures/beta/src-tauri/src/native_core/extensions/v2_gif_search.rs",
+      "bytes": 82236,
+      "sha256": "6c883ab32ee0071eb5b3f8fdbbbdaba39f81ad225298223cefdcdafbfe2536da",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src-tauri/src/native_core/extensions/v2_gif_search.rs"
+    },
+    {
+      "path": "fixtures/beta/src-tauri/src/native_core/extensions/v2_google_calendar.rs",
+      "bytes": 59849,
+      "sha256": "918668345d84d39712fbb47d64d6c1680a535eb35820c2b709766da4638c71e4",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src-tauri/src/native_core/extensions/v2_google_calendar.rs"
+    },
+    {
+      "path": "fixtures/beta/src-tauri/src/native_core/extensions/v2_google_search.rs",
+      "bytes": 23153,
+      "sha256": "a55393295893e049b522e0255ae95374e40e40a1a24a2c3c1e7f58cd517de259",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src-tauri/src/native_core/extensions/v2_google_search.rs"
+    },
+    {
+      "path": "fixtures/beta/src-tauri/src/native_core/extensions/v2_perplexity.rs",
+      "bytes": 2348,
+      "sha256": "b0b77197d3029ee69aea2d39a27882e5df41dcdc45056e16b09c839bc8b3b2c8",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src-tauri/src/native_core/extensions/v2_perplexity.rs"
+    },
+    {
+      "path": "fixtures/beta/src-tauri/src/native_core/extensions/v2_port_manager.rs",
+      "bytes": 41352,
+      "sha256": "6ff4c7b759ec4a3db8c069396afc8cd3335db1e17ea1bf9dd99eb20ee5387d7c",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src-tauri/src/native_core/extensions/v2_port_manager.rs"
+    },
+    {
+      "path": "fixtures/beta/src-tauri/src/native_core/extensions/v2_runtime.rs",
+      "bytes": 3110,
+      "sha256": "df96675ba916a3d70b8e0e5da76f7a9422d238cc3fbe3a5a6178fef21662a6a0",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src-tauri/src/native_core/extensions/v2_runtime.rs"
+    },
+    {
+      "path": "fixtures/beta/src-tauri/src/native_core/extensions/v2_sdk.rs",
+      "bytes": 6755,
+      "sha256": "4f987346f863db9a7bd6aa1d5a99e149925dc69a44d629727ccc80a567cd27c2",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src-tauri/src/native_core/extensions/v2_sdk.rs"
+    },
+    {
+      "path": "fixtures/beta/src-tauri/src/native_core/extensions/v2_speedtest.rs",
+      "bytes": 19882,
+      "sha256": "87feae9abbe037fda774c5ad8ba0849800bdc255e4b23fd0eb16112a143545dc",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src-tauri/src/native_core/extensions/v2_speedtest.rs"
+    },
+    {
+      "path": "fixtures/beta/src-tauri/src/native_core/extensions/v2_timers.rs",
+      "bytes": 72472,
+      "sha256": "be54fa165023603e81d90d53a27d25ba697548d7edf88504d820b0d2fa2ee61a",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src-tauri/src/native_core/extensions/v2_timers.rs"
+    },
+    {
+      "path": "fixtures/beta/src-tauri/src/native_core/platform.rs",
+      "bytes": 28906,
+      "sha256": "75fa7ce4204edbbdb0f4a5410895b32239939b707256c484dc3c4f9de390b5a1",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src-tauri/src/native_core/platform.rs"
+    },
+    {
+      "path": "fixtures/beta/src/main/agent/piExtensions.test.ts",
+      "bytes": 1639,
+      "sha256": "a34815ff64f6c81501cf7a1ca47092b88b99eb99051bb0a3956dc0a622f44d22",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/main/agent/piExtensions.test.ts"
+    },
+    {
+      "path": "fixtures/beta/src/main/agent/piExtensions.ts",
+      "bytes": 4292,
+      "sha256": "7312b7ebf292160b127253a5fc303612ae2284f711cc78a9fd6383d89e373507",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/main/agent/piExtensions.ts"
+    },
+    {
+      "path": "fixtures/beta/src/main/extension-api.ts",
+      "bytes": 8490,
+      "sha256": "ae4efa46b600bf12f396c56d3916a43e561bc6101fc78481868afff931a26a1c",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/main/extension-api.ts"
+    },
+    {
+      "path": "fixtures/beta/src/main/extension-builder.test.ts",
+      "bytes": 1478,
+      "sha256": "3a516ed42439b560b9c9f713dc7378c0d35f23d2fefcfbb834999cf608634960",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/main/extension-builder.test.ts"
+    },
+    {
+      "path": "fixtures/beta/src/main/extension-builder.ts",
+      "bytes": 42072,
+      "sha256": "2d74cf45eb49f20a2fe189947fff4255ec47f9597a6f9291a3f7f6f582327478",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/main/extension-builder.ts"
+    },
+    {
+      "path": "fixtures/beta/src/main/extension-confirm-alert.ts",
+      "bytes": 1133,
+      "sha256": "fb3dc3eeaaddc759b83a6e8e74878f03982d7e1c3c12767bf21a803426f6be11",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/main/extension-confirm-alert.ts"
+    },
+    {
+      "path": "fixtures/beta/src/main/extension-contracts.test.ts",
+      "bytes": 11493,
+      "sha256": "fd15cc9b9fffdc802647fb89aac25a09b012722c6b1aef614330b1d6aaf45955",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/main/extension-contracts.test.ts"
+    },
+    {
+      "path": "fixtures/beta/src/main/extension-platform.test.ts",
+      "bytes": 1758,
+      "sha256": "44b67ccdbcd5bff22b51d73e861d0772eee91d1e532155d2b9fcf3d2400a2f1b",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/main/extension-platform.test.ts"
+    },
+    {
+      "path": "fixtures/beta/src/main/extension-platform.ts",
+      "bytes": 1814,
+      "sha256": "45da9ecd8fbabc99527cf3955c22ab371ba0aa0fcd839a6930c35cffde231db7",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/main/extension-platform.ts"
+    },
+    {
+      "path": "fixtures/beta/src/main/extension-registry-search.test.ts",
+      "bytes": 2685,
+      "sha256": "9ee594769a0c6749ebcadafda0f104ee60541f4722d36e47e892c1cb1109925e",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/main/extension-registry-search.test.ts"
+    },
+    {
+      "path": "fixtures/beta/src/main/extension-registry.ts",
+      "bytes": 65476,
+      "sha256": "202e38a618d27849f761fb6207734b4bc0cfd6be68927c41fa06fe9a4ef8885c",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/main/extension-registry.ts"
+    },
+    {
+      "path": "fixtures/beta/src/main/extension-runner.test.ts",
+      "bytes": 65596,
+      "sha256": "47624399fadcb517a640bf3dbed6875663ca30034ae0282b8e71ca19f668303f",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/main/extension-runner.test.ts"
+    },
+    {
+      "path": "fixtures/beta/src/main/extension-runner.ts",
+      "bytes": 161086,
+      "sha256": "16bfc8a0393bd6378b4c06a19082daa46eb4b26cfe2ae78492ad3dd074e24744",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/main/extension-runner.ts"
+    },
+    {
+      "path": "fixtures/beta/src/main/extension-sql.ts",
+      "bytes": 417,
+      "sha256": "57d05d54c3e6ae526a4c12d0e7253ddcb79f7b3574767fbdd87ec7432eb36ec7",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/main/extension-sql.ts"
+    },
+    {
+      "path": "fixtures/beta/src/main/extensionWorker/clipboard.test.ts",
+      "bytes": 2811,
+      "sha256": "ac0f0c96738e39fd228a94c3855d6a5e80d3f356ac706aff2b24340ac7b6d14b",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/main/extensionWorker/clipboard.test.ts"
+    },
+    {
+      "path": "fixtures/beta/src/main/extensionWorker/clipboard.ts",
+      "bytes": 1496,
+      "sha256": "b8ff17943545b6f56e7e8fdbdd419ffd53354de0b8ec9634766063264e0e9c6b",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/main/extensionWorker/clipboard.ts"
+    },
+    {
+      "path": "fixtures/beta/src/main/extensionWorker/desktop.test.ts",
+      "bytes": 1834,
+      "sha256": "45a9ea3c5815531ef81c4df715893a4baceb395f947d78e19903302a101dd293",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/main/extensionWorker/desktop.test.ts"
+    },
+    {
+      "path": "fixtures/beta/src/main/extensionWorker/desktop.ts",
+      "bytes": 4116,
+      "sha256": "a6a2d8087e9b07ed3fa760a98fab26650b5a8e390e5826f58b229a439e5c5625",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/main/extensionWorker/desktop.ts"
+    },
+    {
+      "path": "fixtures/beta/src/main/extensionWorker/framing.test.ts",
+      "bytes": 1333,
+      "sha256": "4fbd9a27557d1d7edc922dbdb7afd0c2202b448d1d72ee01c1291d91935f8f8f",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/main/extensionWorker/framing.test.ts"
+    },
+    {
+      "path": "fixtures/beta/src/main/extensionWorker/framing.ts",
+      "bytes": 1102,
+      "sha256": "5cb589a0d2d5c5e63d1e22c6b47f4b60a21482bca943b140cfec64752423b05c",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/main/extensionWorker/framing.ts"
+    },
+    {
+      "path": "fixtures/beta/src/main/extensionWorker/host.ts",
+      "bytes": 1795,
+      "sha256": "1006d76af9c6eee74aff897c92fae1861d0d011e142b9cdc42442356aef5567e",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/main/extensionWorker/host.ts"
+    },
+    {
+      "path": "fixtures/beta/src/main/extensionWorker/main.ts",
+      "bytes": 5970,
+      "sha256": "e77f30b0150ca01d393eedfb9064799453ee126ad50b37ae1d1b84f63f6135d0",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/main/extensionWorker/main.ts"
+    },
+    {
+      "path": "fixtures/beta/src/main/extensionWorker/services.ts",
+      "bytes": 829,
+      "sha256": "a1bbe6c1807800ecab7b9d8e91e8930a726afa9302355520c16d1429017ef000",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/main/extensionWorker/services.ts"
+    },
+    {
+      "path": "fixtures/beta/src/main/extensionWorker/windowState.ts",
+      "bytes": 142,
+      "sha256": "ad1b617749efea3c5f9d6d457cb0a74106ca644c6ca5d1dda88197a00b181a07",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/main/extensionWorker/windowState.ts"
+    },
+    {
+      "path": "fixtures/beta/src/main/extensions/raycastShim.test.ts",
+      "bytes": 6026,
+      "sha256": "51da5167ec17fed7426795e1ab25905d0dc9cb12246570588afc10cd74338038",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/main/extensions/raycastShim.test.ts"
+    },
+    {
+      "path": "fixtures/beta/src/main/extensions/raycastShim.ts",
+      "bytes": 15067,
+      "sha256": "e9b731ab1b48228d91c1cd58b78282b998c5bba6a94ceab746734d1d2bfe5bbb",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/main/extensions/raycastShim.ts"
+    },
+    {
+      "path": "fixtures/beta/src/main/extensions/service.ts",
+      "bytes": 27801,
+      "sha256": "cbecfd493153490b6f29f95725e3723307050117cb82afabfe32717d8089440a",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/main/extensions/service.ts"
+    },
+    {
+      "path": "fixtures/beta/src/main/llm/extensionAI.ts",
+      "bytes": 1350,
+      "sha256": "2f3b1492f5ba8eee4842fd8fbc6207462199542bde557a07578e657064bf773a",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/main/llm/extensionAI.ts"
+    },
+    {
+      "path": "fixtures/beta/src/main/search/providers/extensionsProvider.ts",
+      "bytes": 1513,
+      "sha256": "5a9128d6998c7b89b08a21b5cc1aaa1310e7334bf756c4113461f663d1cf8cb2",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/main/search/providers/extensionsProvider.ts"
+    },
+    {
+      "path": "fixtures/beta/src/renderer/ExtensionPreferencesEditor.test.ts",
+      "bytes": 1775,
+      "sha256": "60603c53b74fd5a536f431d28ed3c2a6f8abfc25716947f72ae83b8e4b062eb6",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/renderer/ExtensionPreferencesEditor.test.ts"
+    },
+    {
+      "path": "fixtures/beta/src/renderer/ExtensionPreferencesEditor.tsx",
+      "bytes": 7259,
+      "sha256": "c33028362ecf32bb712e277221809ce87ed0b3b9926b7534da4b59301e8f4c86",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/renderer/ExtensionPreferencesEditor.tsx"
+    },
+    {
+      "path": "fixtures/beta/src/renderer/ExtensionRuntimeView.tsx",
+      "bytes": 23694,
+      "sha256": "cfe15d50c89b0e57666604fea06327c3bd564ee2644404676a233149a025395d",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/renderer/ExtensionRuntimeView.tsx"
+    },
+    {
+      "path": "fixtures/beta/src/renderer/ExtensionsSettingsTab.tsx",
+      "bytes": 39539,
+      "sha256": "c4001cd3cf8929c2cd13e32b8b74f517972737b6d3a67bc60fe6fbee773457cf",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/renderer/ExtensionsSettingsTab.tsx"
+    },
+    {
+      "path": "fixtures/beta/src/renderer/ExtensionsView.tsx",
+      "bytes": 36962,
+      "sha256": "0e7762217f8406f5ca68acc9078213433034eeabf5cdbb7c810b33d6c78f47e4",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/renderer/ExtensionsView.tsx"
+    },
+    {
+      "path": "fixtures/beta/src/renderer/colorConverter.ts",
+      "bytes": 8654,
+      "sha256": "3ed3ae957716fe53918b20ed7c723088d7b95b4533beb1fd18fd9d7ad421202e",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/renderer/colorConverter.ts"
+    },
+    {
+      "path": "fixtures/beta/src/renderer/extensionCatalogState.test.ts",
+      "bytes": 6287,
+      "sha256": "50954967b9330e6119d66482a900e25148254db61bc51b7374556e7a5185c396",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/renderer/extensionCatalogState.test.ts"
+    },
+    {
+      "path": "fixtures/beta/src/renderer/extensionCatalogState.ts",
+      "bytes": 5314,
+      "sha256": "e304162b5ce12312a53b90556b769c8641bdfc4be6a9ba93fb2a5712e4186042",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/renderer/extensionCatalogState.ts"
+    },
+    {
+      "path": "fixtures/beta/src/renderer/extensionImages.test.ts",
+      "bytes": 2484,
+      "sha256": "31e812d88fe5b1706180dfa1464d97164c71eb17198a253ae17b6dcbc667c8a9",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/renderer/extensionImages.test.ts"
+    },
+    {
+      "path": "fixtures/beta/src/renderer/extensionImages.ts",
+      "bytes": 3115,
+      "sha256": "082518ac775dc1452b15d69f1fe2da705a440a42145971f628b539ccf4281ee9",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/renderer/extensionImages.ts"
+    },
+    {
+      "path": "fixtures/beta/src/renderer/extensionPreferences.ts",
+      "bytes": 1758,
+      "sha256": "73d8534e8e296d7d1bf3ccd7022e9977a3377d73441e34fe489af7efbfe22a77",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/renderer/extensionPreferences.ts"
+    },
+    {
+      "path": "fixtures/beta/src/renderer/extensionRuntimeStatus.test.ts",
+      "bytes": 8836,
+      "sha256": "1726020f088ca3a4533c29d3647bca7e6b653793192d0041402670a9ebf0d717",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/renderer/extensionRuntimeStatus.test.ts"
+    },
+    {
+      "path": "fixtures/beta/src/renderer/extensionRuntimeStatus.ts",
+      "bytes": 8473,
+      "sha256": "b85af9b2b8256a141d1876b896bfc3c8ab30d3e930137370ea27af7f25169b4d",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/renderer/extensionRuntimeStatus.ts"
+    },
+    {
+      "path": "fixtures/beta/src/renderer/src/raycast-api/action-runtime-overlay.tsx",
+      "bytes": 2915,
+      "sha256": "3eb4a59db0de59460ea8a2c7f4a1f6ec5b514a512f49352bf373db64ed58d604",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/renderer/src/raycast-api/action-runtime-overlay.tsx"
+    },
+    {
+      "path": "fixtures/beta/src/renderer/src/raycast-api/action-runtime-registry.tsx",
+      "bytes": 692,
+      "sha256": "ffbad6f70410c6d2dcf4af217abe4ab297d69c0cae2c993263c008a423175e16",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/renderer/src/raycast-api/action-runtime-registry.tsx"
+    },
+    {
+      "path": "fixtures/beta/src/renderer/src/raycast-api/action-runtime.tsx",
+      "bytes": 391,
+      "sha256": "6e7a41e3d1a7ee2028103683f08fb8ed20e4b2e5751e182afe9f8e189522a28b",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/renderer/src/raycast-api/action-runtime.tsx"
+    },
+    {
+      "path": "fixtures/beta/src/renderer/src/raycast-api/detail-runtime.test.ts",
+      "bytes": 1028,
+      "sha256": "94acca3393a3636f7188a2ceac4a5e0429c2a0bc3433b02163602bdbe38beef4",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/renderer/src/raycast-api/detail-runtime.test.ts"
+    },
+    {
+      "path": "fixtures/beta/src/renderer/src/raycast-api/detail-runtime.tsx",
+      "bytes": 23478,
+      "sha256": "32eecb50891e0f282bd3d78d8a38193ec24540bf70c3fdc8e43a1d368c97d54c",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/renderer/src/raycast-api/detail-runtime.tsx"
+    },
+    {
+      "path": "fixtures/beta/src/renderer/src/raycast-api/form-runtime.test.ts",
+      "bytes": 3876,
+      "sha256": "3c449509be65d1ffc8949a11835fadeb6300b7d647898309b5abc5b2e94af112",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/renderer/src/raycast-api/form-runtime.test.ts"
+    },
+    {
+      "path": "fixtures/beta/src/renderer/src/raycast-api/form-runtime.tsx",
+      "bytes": 21087,
+      "sha256": "8568d0ac5be03eea97d0def38067dbbbdce5ae97c36a51024857ef20dce299a6",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/renderer/src/raycast-api/form-runtime.tsx"
+    },
+    {
+      "path": "fixtures/beta/src/renderer/src/raycast-api/grid-content.ts",
+      "bytes": 761,
+      "sha256": "71cf7151e1986389b550cf5a069383af79b88de2726176859496ac40fd8d9d41",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/renderer/src/raycast-api/grid-content.ts"
+    },
+    {
+      "path": "fixtures/beta/src/renderer/src/raycast-api/grid-runtime.test.ts",
+      "bytes": 587,
+      "sha256": "633fcbbd5048f46d69388016481dfd54f800a8ff404810a556eb7ccfa3b626a0",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/renderer/src/raycast-api/grid-runtime.test.ts"
+    },
+    {
+      "path": "fixtures/beta/src/renderer/src/raycast-api/grid-runtime.tsx",
+      "bytes": 15804,
+      "sha256": "9c19dffaf9596814315f61d8a66eaa3b914a138d8f10c860e01efd245d3e2e5b",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/renderer/src/raycast-api/grid-runtime.tsx"
+    },
+    {
+      "path": "fixtures/beta/src/renderer/src/raycast-api/hooks.ts",
+      "bytes": 4050,
+      "sha256": "50bb0c3ad3721f600abe3091f3adba1c6515c2d639356b20c94c7f5cc96a492b",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/renderer/src/raycast-api/hooks.ts"
+    },
+    {
+      "path": "fixtures/beta/src/renderer/src/raycast-api/index.tsx",
+      "bytes": 7419,
+      "sha256": "7fc8413a72b92e8f88b0939cd93f91624018fe0765baa1e71b38b86f8cc77a64",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/renderer/src/raycast-api/index.tsx"
+    },
+    {
+      "path": "fixtures/beta/src/renderer/src/raycast-api/ipc-bridge.ts",
+      "bytes": 1110,
+      "sha256": "17784548760d476efebeae36d5b03e9c50a69c2da2b92ce0163cabbfe9566d97",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/renderer/src/raycast-api/ipc-bridge.ts"
+    },
+    {
+      "path": "fixtures/beta/src/renderer/src/raycast-api/list-runtime.tsx",
+      "bytes": 32174,
+      "sha256": "c7e253c34ce6e0a5132cab96bf1f0388393faca79ff57c3fdc7956f377a0ab0f",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/renderer/src/raycast-api/list-runtime.tsx"
+    },
+    {
+      "path": "fixtures/beta/src/renderer/src/raycast-api/native-v2-visuals.test.ts",
+      "bytes": 3347,
+      "sha256": "afa00333ff5293015fc1d6c87dc429ef9fdb6322a89887c6ad7b6b5b49fcb182",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/renderer/src/raycast-api/native-v2-visuals.test.ts"
+    },
+    {
+      "path": "fixtures/beta/src/renderer/ui/Markdown.tsx",
+      "bytes": 7492,
+      "sha256": "d205312b35293a433d5398e4edf1dcc96662cacd34036e8ee3ec503f65eee2de",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/renderer/ui/Markdown.tsx"
+    },
+    {
+      "path": "fixtures/beta/src/renderer/ui/primitives.tsx",
+      "bytes": 10545,
+      "sha256": "0bcedb2a1158a00ae7d4237f6ee875a58d9496e8576fb72ac78b79af82365044",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/renderer/ui/primitives.tsx"
+    },
+    {
+      "path": "fixtures/beta/src/shared/agent.ts",
+      "bytes": 2669,
+      "sha256": "8cb479092bc9ca9c6e05ace9fee89266198b7420f77b8d663417523008018880",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/shared/agent.ts"
+    },
+    {
+      "path": "fixtures/beta/src/shared/aiChatSurface.ts",
+      "bytes": 709,
+      "sha256": "274cc1dc7e9277257b88a3503d328354746ec0cf0ff29ea99cbd79b1c20b77ee",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/shared/aiChatSurface.ts"
+    },
+    {
+      "path": "fixtures/beta/src/shared/aiProviders.test.ts",
+      "bytes": 3293,
+      "sha256": "b3f06a8ddf36f6b4325968b7216ec25d6c0f1f422e2960702fb7ac0370e38a22",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/shared/aiProviders.test.ts"
+    },
+    {
+      "path": "fixtures/beta/src/shared/aiProviders.ts",
+      "bytes": 12542,
+      "sha256": "444c29ccdf50630bc4c7886013eaf86ad0a001888c766cfd9effd4506f86bd44",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/shared/aiProviders.ts"
+    },
+    {
+      "path": "fixtures/beta/src/shared/applicationSearch.test.ts",
+      "bytes": 1551,
+      "sha256": "6924ed4a26fcd571c5d41562479ee48979017f8d44e9a31d87beb1b5b58004f8",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/shared/applicationSearch.test.ts"
+    },
+    {
+      "path": "fixtures/beta/src/shared/applicationSearch.ts",
+      "bytes": 2110,
+      "sha256": "8a5df50e4893dfe7bb6685c0826bc38c8938c5a423c160beaae6a6cf0ad3e198",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/shared/applicationSearch.ts"
+    },
+    {
+      "path": "fixtures/beta/src/shared/backgroundTasks.ts",
+      "bytes": 287,
+      "sha256": "39f0ce096f0172c8fcdfedbe4b90df34045d12f29fdfe109906c3e56ddd3cf6b",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/shared/backgroundTasks.ts"
+    },
+    {
+      "path": "fixtures/beta/src/shared/chat.ts",
+      "bytes": 2901,
+      "sha256": "370e3e23fbf889a8adc94be968ec4972947322bcfad25adbb84b942d55d613d0",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/shared/chat.ts"
+    },
+    {
+      "path": "fixtures/beta/src/shared/clipboard.ts",
+      "bytes": 1407,
+      "sha256": "ca85f1068790867458bec4c482a2a460766538f4674afad6544a77577a6d7c95",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/shared/clipboard.ts"
+    },
+    {
+      "path": "fixtures/beta/src/shared/desktop-api.ts",
+      "bytes": 21717,
+      "sha256": "c52ae8efe9ad572961c71636ede3c06ecd7a765fc805c0441c760b417f89d4bd",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/shared/desktop-api.ts"
+    },
+    {
+      "path": "fixtures/beta/src/shared/extensionRepository.test.ts",
+      "bytes": 964,
+      "sha256": "a45188378e71e7be0cbcf6b6f82d78d12623d101da1c505fa0410e57533418a6",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/shared/extensionRepository.test.ts"
+    },
+    {
+      "path": "fixtures/beta/src/shared/extensionRepository.ts",
+      "bytes": 1206,
+      "sha256": "eca9e562f40ebf95692001e02fb49acb1fd0363b7ec10682a3f9eecd4eb35b90",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/shared/extensionRepository.ts"
+    },
+    {
+      "path": "fixtures/beta/src/shared/extensionRuntime.ts",
+      "bytes": 3838,
+      "sha256": "837b804856baa6b16ebda080920af456268fefcffa7a1c3e2964b95d697ee387",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/shared/extensionRuntime.ts"
+    },
+    {
+      "path": "fixtures/beta/src/shared/extensions.ts",
+      "bytes": 1727,
+      "sha256": "98f097532195d4566d5be1b237bb08cf78a1ba309196be20c39c8c090b1d3e65",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/shared/extensions.ts"
+    },
+    {
+      "path": "fixtures/beta/src/shared/intent.ts",
+      "bytes": 588,
+      "sha256": "63af4fc89c12de43a8081ba6f0b4cae3522e3991ea1d20feadb4640af20f0110",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/shared/intent.ts"
+    },
+    {
+      "path": "fixtures/beta/src/shared/ipc.ts",
+      "bytes": 4018,
+      "sha256": "8d8146713026ce745e1cbc68cad64c4c679509de08fd0c5fa94e6fad1a056e4e",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/shared/ipc.ts"
+    },
+    {
+      "path": "fixtures/beta/src/shared/knowledge.ts",
+      "bytes": 4860,
+      "sha256": "ae7af04cfd9f052689b1cc8671b2a24cf67024706927c41a732caf938852d252",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/shared/knowledge.ts"
+    },
+    {
+      "path": "fixtures/beta/src/shared/llmConfig.ts",
+      "bytes": 3000,
+      "sha256": "57e71207f992648912087c03e28f352c3df2395288064391a8a3dcc2335e1718",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/shared/llmConfig.ts"
+    },
+    {
+      "path": "fixtures/beta/src/shared/llmErrors.test.ts",
+      "bytes": 2020,
+      "sha256": "d65504d8a310ecd4ba3b8e23d77e1ab7d8a3b8968683f511fbf4932a95a17791",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/shared/llmErrors.test.ts"
+    },
+    {
+      "path": "fixtures/beta/src/shared/llmErrors.ts",
+      "bytes": 1676,
+      "sha256": "1b2874faa942dc1f511a142fa52315e556fa36dfd307b46aa3e154514a9b636d",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/shared/llmErrors.ts"
+    },
+    {
+      "path": "fixtures/beta/src/shared/lovedExtensions.test.ts",
+      "bytes": 885,
+      "sha256": "15f82fb47ac1bbe9a36038024b178abd7e5f2fe7e4a993f814e112f6cda254b3",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/shared/lovedExtensions.test.ts"
+    },
+    {
+      "path": "fixtures/beta/src/shared/lovedExtensions.ts",
+      "bytes": 73432,
+      "sha256": "93abc8a2e814dc56b964b205f1ab9d05d77435568c765f59656ee14b6533fb11",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/shared/lovedExtensions.ts"
+    },
+    {
+      "path": "fixtures/beta/src/shared/nativeCommands.ts",
+      "bytes": 2895,
+      "sha256": "2f1e1f0fa9d762dc825d29a5aa15f9a2eb89fa826cb526462cf136c6a71f6dea",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/shared/nativeCommands.ts"
+    },
+    {
+      "path": "fixtures/beta/src/shared/permissions.ts",
+      "bytes": 1185,
+      "sha256": "6a20e4fc853790a7094d0a7682d9dbcf2c873ea419a4f7f4435899950eb821cb",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/shared/permissions.ts"
+    },
+    {
+      "path": "fixtures/beta/src/shared/portManager.ts",
+      "bytes": 76,
+      "sha256": "685272952e4364b2ccb216346f300ea54c8f196ef247d6e6c57547626f3d7b94",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/shared/portManager.ts"
+    },
+    {
+      "path": "fixtures/beta/src/shared/quickLook.ts",
+      "bytes": 826,
+      "sha256": "bb958308df127f6314e6532e235520e3ed707d7bcbfe7c6b95470ab013dc2186",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/shared/quickLook.ts"
+    },
+    {
+      "path": "fixtures/beta/src/shared/quickNotes.ts",
+      "bytes": 355,
+      "sha256": "16be15d393e42ce6d07bb5fb4cc1940336fd2b7d9d8315bd5d8209589f5a69c1",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/shared/quickNotes.ts"
+    },
+    {
+      "path": "fixtures/beta/src/shared/safety.ts",
+      "bytes": 1508,
+      "sha256": "ad35aaa0bd2347a545a7269df4edd95b2f855335ef7443f988cfb339fb67af52",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/shared/safety.ts"
+    },
+    {
+      "path": "fixtures/beta/src/shared/search.ts",
+      "bytes": 2517,
+      "sha256": "95651c19d8a67772cdf14ab5bb73277b9849280a1ecd033b53ecc5aa299edc07",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/shared/search.ts"
+    },
+    {
+      "path": "fixtures/beta/src/shared/searchMode.test.ts",
+      "bytes": 4958,
+      "sha256": "4c9809e704447006f16e5faedbdee1f7b06aa474b81e5e281c094c0c93e52a9d",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/shared/searchMode.test.ts"
+    },
+    {
+      "path": "fixtures/beta/src/shared/searchMode.ts",
+      "bytes": 4590,
+      "sha256": "96ae693d2769ba0add3e0855a994219a1f3cea584662caeeec6e0891deaca03f",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/shared/searchMode.ts"
+    },
+    {
+      "path": "fixtures/beta/src/shared/searchQueryVariants.test.ts",
+      "bytes": 1706,
+      "sha256": "852502f23dcc4a3fe60f1a3bc604f7b9cf6de73e2513d31108c0827528aff44f",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/shared/searchQueryVariants.test.ts"
+    },
+    {
+      "path": "fixtures/beta/src/shared/searchQueryVariants.ts",
+      "bytes": 930,
+      "sha256": "6eac176fea0eb04f846065aa0269041f1765680674ec2d86c85d222596aa6b4c",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/shared/searchQueryVariants.ts"
+    },
+    {
+      "path": "fixtures/beta/src/shared/snippetEvents.ts",
+      "bytes": 188,
+      "sha256": "77b1893bd7a11ebea61acd66eeef55fdeb0560184fcb96f0afe7b685bbff5875",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/shared/snippetEvents.ts"
+    },
+    {
+      "path": "fixtures/beta/src/shared/snippets.ts",
+      "bytes": 544,
+      "sha256": "6bd132a7048b5f0652cbc96ae233ea20849d3a93475b60886c8be6d507ad754e",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/shared/snippets.ts"
+    },
+    {
+      "path": "fixtures/beta/src/shared/stringCache.test.ts",
+      "bytes": 944,
+      "sha256": "e054741dc12f268133ab2047584f230ff8d2883b50295ad248e1d04e14bd10b1",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/shared/stringCache.test.ts"
+    },
+    {
+      "path": "fixtures/beta/src/shared/stringCache.ts",
+      "bytes": 1139,
+      "sha256": "a8ed99b45c63e06f28cbe493733bd89febee1db94a993629b8f647a1caf0c0a2",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/shared/stringCache.ts"
+    },
+    {
+      "path": "fixtures/beta/src/shared/systemStats.ts",
+      "bytes": 1474,
+      "sha256": "1bdb06ca4a2337e553cd6dfe7c4b4cbcbbaea42aea9304189d276286f4073e79",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/shared/systemStats.ts"
+    },
+    {
+      "path": "fixtures/beta/src/shared/terminal.test.ts",
+      "bytes": 1533,
+      "sha256": "4df2c7ac4c52550ead42bf3f06823ca81176da3495a0a27a53fc2efc0fcee54e",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/shared/terminal.test.ts"
+    },
+    {
+      "path": "fixtures/beta/src/shared/terminal.ts",
+      "bytes": 3812,
+      "sha256": "121f3941c58bf10570b67af4cd788fc1130585889e1c64f506a4ee86606f7081",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/shared/terminal.ts"
+    },
+    {
+      "path": "fixtures/beta/src/shared/textTransform.test.ts",
+      "bytes": 2232,
+      "sha256": "47ce60a7b24ee52761ff7e886873e73d5e5f717ff53ae6956e2d1c42ef05305b",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/shared/textTransform.test.ts"
+    },
+    {
+      "path": "fixtures/beta/src/shared/textTransform.ts",
+      "bytes": 5199,
+      "sha256": "0f25ae970b173a1a5554fea37f32b601837fdd0003e3c0bae03baf9a8f0f9a86",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/shared/textTransform.ts"
+    },
+    {
+      "path": "fixtures/beta/src/shared/textTransformers.test.ts",
+      "bytes": 17106,
+      "sha256": "85da95d1049a92903a3cacfce1f9ca4bdec4b241c730ab98b14f003ebe6ac467",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/shared/textTransformers.test.ts"
+    },
+    {
+      "path": "fixtures/beta/src/shared/textTransformers.ts",
+      "bytes": 29566,
+      "sha256": "6c6d38528fdca5f1fcc14240b2b2620e7c8aca8c4a8c6f1da5ce11c8f6aa8d43",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/shared/textTransformers.ts"
+    },
+    {
+      "path": "fixtures/beta/src/shared/updater.test.ts",
+      "bytes": 9747,
+      "sha256": "10d3f07c0b93356c13fcf45031daca5b11722fa2275f0738c5ee717e487e681a",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/shared/updater.test.ts"
+    },
+    {
+      "path": "fixtures/beta/src/shared/updater.ts",
+      "bytes": 5006,
+      "sha256": "e67e190279dd22e845f26e523565c7dff0380307ea1817495f3772d16d072c76",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/shared/updater.ts"
+    },
+    {
+      "path": "fixtures/beta/src/shared/voice.ts",
+      "bytes": 1812,
+      "sha256": "aed939fa56a96739be2f25cb01a810cd5eed7fc7e2dc52a971c15600be976f93",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/shared/voice.ts"
+    },
+    {
+      "path": "fixtures/beta/src/shared/windowLayout.test.ts",
+      "bytes": 882,
+      "sha256": "838f164da2768d259f03303cd3053f39aa1814d445257e1bff59c9ad62a07793",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/shared/windowLayout.test.ts"
+    },
+    {
+      "path": "fixtures/beta/src/shared/windowLayout.ts",
+      "bytes": 953,
+      "sha256": "fe3500b80e5dad52fb13c53194e41b9402d9cb673fea1cd654afa2d728492ee6",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:src/shared/windowLayout.ts"
+    },
+    {
+      "path": "fixtures/beta/tests/manual/catalog-extensions.probe.test.ts",
+      "bytes": 3018,
+      "sha256": "1275bd5ce7b00ce6556a68b5d479d929d9b71100511cb6b998dab23c6bdb6f14",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:tests/manual/catalog-extensions.probe.test.ts"
+    },
+    {
+      "path": "fixtures/beta/tests/manual/catalog-extensions.vitest.config.ts",
+      "bytes": 480,
+      "sha256": "e081bedc21c2132dc4e825532d9454be30658f6fa98358b1d017bb496b8609c0",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:tests/manual/catalog-extensions.vitest.config.ts"
+    },
+    {
+      "path": "fixtures/beta/tests/manual/extension-portability.probe.test.ts",
+      "bytes": 15653,
+      "sha256": "6a8eebca34ee2182e62d52aa6ad2920c277334627971f75aa41a44b6e2685b0d",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:tests/manual/extension-portability.probe.test.ts"
+    },
+    {
+      "path": "fixtures/beta/tests/manual/extension-portability.vitest.config.ts",
+      "bytes": 498,
+      "sha256": "4a651aa040ecd7a0302b4cebbc5819199bd9773978208644c5a438dea4d24cad",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:tests/manual/extension-portability.vitest.config.ts"
+    },
+    {
+      "path": "fixtures/beta/tests/manual/installed-extensions.probe.test.ts",
+      "bytes": 7830,
+      "sha256": "39296bcef07fe2166be24487a862fd83325b4adf83e110657052407f4ce3270d",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:tests/manual/installed-extensions.probe.test.ts"
+    },
+    {
+      "path": "fixtures/beta/tests/manual/installed-extensions.vitest.config.ts",
+      "bytes": 261,
+      "sha256": "c8a8a5b7158f737751ac4e9e42fcaef7600a673a99afe43e93f64f3bb563f1b8",
+      "source": "Tezbar git object fd300e276356587726566026f072563eb9c34cb1:tests/manual/installed-extensions.vitest.config.ts"
+    },
+    {
+      "path": "fixtures/host-committed/revision.txt",
+      "bytes": 41,
+      "sha256": "f2c491728ae636e635ec8c9a46b0e11dd8c602363ec3b18d29ac8a4fa55feac0",
+      "source": "Read-only git rev-parse HEAD: fe71ca87f21ac4ff31505010c228f8abda0f2a89"
+    },
+    {
+      "path": "fixtures/host-committed/src-tauri/Cargo.toml.fixture",
+      "bytes": 2159,
+      "sha256": "285114522ed1c0ceb3c8acd9950662d34ffbf97ce3effc04c9b498e258339fbe",
+      "source": "Tezbar committed object fe71ca87f21ac4ff31505010c228f8abda0f2a89:src-tauri/Cargo.toml"
+    },
+    {
+      "path": "fixtures/host-committed/src-tauri/src/native_core/extensions/registry.rs",
+      "bytes": 35005,
+      "sha256": "160442cf04a65c0547ddea54149ff5a98c26572eb3aa53eb8c92a03f6406ab31",
+      "source": "Tezbar committed object fe71ca87f21ac4ff31505010c228f8abda0f2a89:src-tauri/src/native_core/extensions/registry.rs"
+    },
+    {
+      "path": "fixtures/host-committed/src-tauri/src/native_core/extensions/v2_catalog.json",
+      "bytes": 71655,
+      "sha256": "a9f82ddd782dc56b3ed43b9d4d51651ce10a51a368a7befc942f200b2601e955",
+      "source": "Tezbar committed object fe71ca87f21ac4ff31505010c228f8abda0f2a89:src-tauri/src/native_core/extensions/v2_catalog.json"
+    },
+    {
+      "path": "fixtures/host-committed/src-tauri/src/native_core/extensions/v2_catalog.rs",
+      "bytes": 7008,
+      "sha256": "de6e471f443b2888a5d5faa55e30c130003d182d22286f10e841027cdcd0ae96",
+      "source": "Tezbar committed object fe71ca87f21ac4ff31505010c228f8abda0f2a89:src-tauri/src/native_core/extensions/v2_catalog.rs"
+    },
+    {
+      "path": "fixtures/katex/katex-0.16.25.tgz",
+      "bytes": 1488427,
+      "sha256": "02d90b1189affc2db16cda01dda5c9fbb7a9fc3767dae0ef542560a7f16c642f",
+      "source": "https://registry.npmjs.org/katex/-/katex-0.16.25.tgz"
+    },
+    {
+      "path": "fixtures/katex/package/LICENSE",
+      "bytes": 1107,
+      "sha256": "766ccc1f306c885aa45542a9846bbd0a505b27a0374f146778171c2254ce18e3",
+      "source": "https://registry.npmjs.org/katex/-/katex-0.16.25.tgz#package/LICENSE"
+    },
+    {
+      "path": "fixtures/katex/package/dist/fonts/KaTeX_AMS-Regular.ttf",
+      "bytes": 63632,
+      "sha256": "68534840bcfdd2bffb6f0e8deb48684dd01e7f04ea2813267577afb906de1d13",
+      "source": "https://registry.npmjs.org/katex/-/katex-0.16.25.tgz#package/dist/fonts/KaTeX_AMS-Regular.ttf"
+    },
+    {
+      "path": "fixtures/katex/package/dist/fonts/KaTeX_AMS-Regular.woff",
+      "bytes": 33516,
+      "sha256": "30da91e84c893f875e252689faebdc590b2871145e8adc7f9a9d4dbd8ce0b251",
+      "source": "https://registry.npmjs.org/katex/-/katex-0.16.25.tgz#package/dist/fonts/KaTeX_AMS-Regular.woff"
+    },
+    {
+      "path": "fixtures/katex/package/dist/fonts/KaTeX_AMS-Regular.woff2",
+      "bytes": 28076,
+      "sha256": "0cdd387c9590a1a9f9794560022dbb59654a7d86f187aa0c81495ad42d3a7308",
+      "source": "https://registry.npmjs.org/katex/-/katex-0.16.25.tgz#package/dist/fonts/KaTeX_AMS-Regular.woff2"
+    },
+    {
+      "path": "fixtures/katex/package/dist/fonts/KaTeX_Caligraphic-Bold.ttf",
+      "bytes": 12368,
+      "sha256": "07d8e303ce4fc12b4bb54f1004170dd190a1f3db45d400fe68060df3e0897268",
+      "source": "https://registry.npmjs.org/katex/-/katex-0.16.25.tgz#package/dist/fonts/KaTeX_Caligraphic-Bold.ttf"
+    },
+    {
+      "path": "fixtures/katex/package/dist/fonts/KaTeX_Caligraphic-Bold.woff",
+      "bytes": 7716,
+      "sha256": "1ae6bd7475590e97e7f145a89e09ccde322f7a6bc0b91607b1c8b8ee28290fed",
+      "source": "https://registry.npmjs.org/katex/-/katex-0.16.25.tgz#package/dist/fonts/KaTeX_Caligraphic-Bold.woff"
+    },
+    {
+      "path": "fixtures/katex/package/dist/fonts/KaTeX_Caligraphic-Bold.woff2",
+      "bytes": 6912,
+      "sha256": "de7701e42cf1f4cf0b766c03fb27977207eee2f4fd5d76fa82188406da43ea4c",
+      "source": "https://registry.npmjs.org/katex/-/katex-0.16.25.tgz#package/dist/fonts/KaTeX_Caligraphic-Bold.woff2"
+    },
+    {
+      "path": "fixtures/katex/package/dist/fonts/KaTeX_Caligraphic-Regular.ttf",
+      "bytes": 12344,
+      "sha256": "ed0b74372feefcbb9c0666b2e210da37b7e49fa7fbbf3eeb11db5f693dacfbb7",
+      "source": "https://registry.npmjs.org/katex/-/katex-0.16.25.tgz#package/dist/fonts/KaTeX_Caligraphic-Regular.ttf"
+    },
+    {
+      "path": "fixtures/katex/package/dist/fonts/KaTeX_Caligraphic-Regular.woff",
+      "bytes": 7656,
+      "sha256": "3398dd02302557a793f2863f88e02d96ce10df2abffa07c8e9fa90775116e65c",
+      "source": "https://registry.npmjs.org/katex/-/katex-0.16.25.tgz#package/dist/fonts/KaTeX_Caligraphic-Regular.woff"
+    },
+    {
+      "path": "fixtures/katex/package/dist/fonts/KaTeX_Caligraphic-Regular.woff2",
+      "bytes": 6908,
+      "sha256": "5d53e70ad607c2352162dec9e0923fb54ecdafaccbf604cd8dcf7d00facb989b",
+      "source": "https://registry.npmjs.org/katex/-/katex-0.16.25.tgz#package/dist/fonts/KaTeX_Caligraphic-Regular.woff2"
+    },
+    {
+      "path": "fixtures/katex/package/dist/fonts/KaTeX_Fraktur-Bold.ttf",
+      "bytes": 19584,
+      "sha256": "9163df9c7122432e6495b4229fa9071cf9ae86a758ae5efc4924ec2e1a6dbce1",
+      "source": "https://registry.npmjs.org/katex/-/katex-0.16.25.tgz#package/dist/fonts/KaTeX_Fraktur-Bold.ttf"
+    },
+    {
+      "path": "fixtures/katex/package/dist/fonts/KaTeX_Fraktur-Bold.woff",
+      "bytes": 13296,
+      "sha256": "9be7ceb88004ab8ad124082246fbfcca4091e36385d4ec6ed1df67375dad50fb",
+      "source": "https://registry.npmjs.org/katex/-/katex-0.16.25.tgz#package/dist/fonts/KaTeX_Fraktur-Bold.woff"
+    },
+    {
+      "path": "fixtures/katex/package/dist/fonts/KaTeX_Fraktur-Bold.woff2",
+      "bytes": 11348,
+      "sha256": "74444efd593c005e3f4573b44524704c0af0a937fe911cca9e94068d0d140d3f",
+      "source": "https://registry.npmjs.org/katex/-/katex-0.16.25.tgz#package/dist/fonts/KaTeX_Fraktur-Bold.woff2"
+    },
+    {
+      "path": "fixtures/katex/package/dist/fonts/KaTeX_Fraktur-Regular.ttf",
+      "bytes": 19572,
+      "sha256": "1e6f9579e90e2cac37f8f60a597c436e075c114385652b7cbeb0dec0421291b3",
+      "source": "https://registry.npmjs.org/katex/-/katex-0.16.25.tgz#package/dist/fonts/KaTeX_Fraktur-Regular.ttf"
+    },
+    {
+      "path": "fixtures/katex/package/dist/fonts/KaTeX_Fraktur-Regular.woff",
+      "bytes": 13208,
+      "sha256": "5e28753be717dac97f559f49bc10be9cf3c124ddcabda6659d11cb68febc6463",
+      "source": "https://registry.npmjs.org/katex/-/katex-0.16.25.tgz#package/dist/fonts/KaTeX_Fraktur-Regular.woff"
+    },
+    {
+      "path": "fixtures/katex/package/dist/fonts/KaTeX_Fraktur-Regular.woff2",
+      "bytes": 11316,
+      "sha256": "51814d270d06ff0255dba0799994fa4d8c84d11f09951d47595f4abb1f3602dc",
+      "source": "https://registry.npmjs.org/katex/-/katex-0.16.25.tgz#package/dist/fonts/KaTeX_Fraktur-Regular.woff2"
+    },
+    {
+      "path": "fixtures/katex/package/dist/fonts/KaTeX_Main-Bold.ttf",
+      "bytes": 51336,
+      "sha256": "138ac28d1663b3037e9c5f52371fa5c63d8324f4a38d22cd573e6ea3a3fd0cf8",
+      "source": "https://registry.npmjs.org/katex/-/katex-0.16.25.tgz#package/dist/fonts/KaTeX_Main-Bold.ttf"
+    },
+    {
+      "path": "fixtures/katex/package/dist/fonts/KaTeX_Main-Bold.woff",
+      "bytes": 29912,
+      "sha256": "c76c5d696297d51b9cb1639c7da4334f0e7dec81b42b11213b5e25ef671bb822",
+      "source": "https://registry.npmjs.org/katex/-/katex-0.16.25.tgz#package/dist/fonts/KaTeX_Main-Bold.woff"
+    },
+    {
+      "path": "fixtures/katex/package/dist/fonts/KaTeX_Main-Bold.woff2",
+      "bytes": 25324,
+      "sha256": "0f60d1b897938ec918c8ce073092411baf9438f6739465693ff18b0f9d20b021",
+      "source": "https://registry.npmjs.org/katex/-/katex-0.16.25.tgz#package/dist/fonts/KaTeX_Main-Bold.woff2"
+    },
+    {
+      "path": "fixtures/katex/package/dist/fonts/KaTeX_Main-BoldItalic.ttf",
+      "bytes": 32968,
+      "sha256": "70ee1f64a20f2048c21940ef46d0144fd215baa953ca69afd1e31e98544f708f",
+      "source": "https://registry.npmjs.org/katex/-/katex-0.16.25.tgz#package/dist/fonts/KaTeX_Main-BoldItalic.ttf"
+    },
+    {
+      "path": "fixtures/katex/package/dist/fonts/KaTeX_Main-BoldItalic.woff",
+      "bytes": 19412,
+      "sha256": "a6f7ec0d846ac7ad975adb8959c37ed49b94acbc4ae436db9ce9e20287e4a64c",
+      "source": "https://registry.npmjs.org/katex/-/katex-0.16.25.tgz#package/dist/fonts/KaTeX_Main-BoldItalic.woff"
+    },
+    {
+      "path": "fixtures/katex/package/dist/fonts/KaTeX_Main-BoldItalic.woff2",
+      "bytes": 16780,
+      "sha256": "99cd42a3c072d918f2f44984a807cf7aa16e13545fd0875fc07c6c65f99e715b",
+      "source": "https://registry.npmjs.org/katex/-/katex-0.16.25.tgz#package/dist/fonts/KaTeX_Main-BoldItalic.woff2"
+    },
+    {
+      "path": "fixtures/katex/package/dist/fonts/KaTeX_Main-Italic.ttf",
+      "bytes": 33580,
+      "sha256": "0d85ae7cc30f23790a7f1a58c4a112fdca8aae769b6ba11429af1d98b1b6cb3a",
+      "source": "https://registry.npmjs.org/katex/-/katex-0.16.25.tgz#package/dist/fonts/KaTeX_Main-Italic.ttf"
+    },
+    {
+      "path": "fixtures/katex/package/dist/fonts/KaTeX_Main-Italic.woff",
+      "bytes": 19676,
+      "sha256": "f1d6ef86f3b11a528bd5185199bd2443ecb2b0dead96d88674b5a2c12be24bdf",
+      "source": "https://registry.npmjs.org/katex/-/katex-0.16.25.tgz#package/dist/fonts/KaTeX_Main-Italic.woff"
+    },
+    {
+      "path": "fixtures/katex/package/dist/fonts/KaTeX_Main-Italic.woff2",
+      "bytes": 16988,
+      "sha256": "97479ca6cce906abc961ecac96faa5f9ca2e61b8e7670d475826bcdee9a7c267",
+      "source": "https://registry.npmjs.org/katex/-/katex-0.16.25.tgz#package/dist/fonts/KaTeX_Main-Italic.woff2"
+    },
+    {
+      "path": "fixtures/katex/package/dist/fonts/KaTeX_Main-Regular.ttf",
+      "bytes": 53580,
+      "sha256": "d0332f52868370fd83ae7fa46470f90c8f2eab2fcf12bc4f88080b340c95a830",
+      "source": "https://registry.npmjs.org/katex/-/katex-0.16.25.tgz#package/dist/fonts/KaTeX_Main-Regular.ttf"
+    },
+    {
+      "path": "fixtures/katex/package/dist/fonts/KaTeX_Main-Regular.woff",
+      "bytes": 30772,
+      "sha256": "c6368d87e8a1a3a5d337623d83d8dc4b868f242a9ad476237d6f8d1e0f168cdc",
+      "source": "https://registry.npmjs.org/katex/-/katex-0.16.25.tgz#package/dist/fonts/KaTeX_Main-Regular.woff"
+    },
+    {
+      "path": "fixtures/katex/package/dist/fonts/KaTeX_Main-Regular.woff2",
+      "bytes": 26272,
+      "sha256": "c2342cd8b869e01752a9321dc17213fc40d4d04c79688c1d43f2cf316abd7866",
+      "source": "https://registry.npmjs.org/katex/-/katex-0.16.25.tgz#package/dist/fonts/KaTeX_Main-Regular.woff2"
+    },
+    {
+      "path": "fixtures/katex/package/dist/fonts/KaTeX_Math-BoldItalic.ttf",
+      "bytes": 31196,
+      "sha256": "f9377ab0271cda59af24bcffbd46a4d0c8a3572ffafdbb38de2ad5ea7b0d5ee5",
+      "source": "https://registry.npmjs.org/katex/-/katex-0.16.25.tgz#package/dist/fonts/KaTeX_Math-BoldItalic.ttf"
+    },
+    {
+      "path": "fixtures/katex/package/dist/fonts/KaTeX_Math-BoldItalic.woff",
+      "bytes": 18668,
+      "sha256": "850c0af5c2238497febaf5e461d880bf458c341f42f4f330f1b1ab5698b1998e",
+      "source": "https://registry.npmjs.org/katex/-/katex-0.16.25.tgz#package/dist/fonts/KaTeX_Math-BoldItalic.woff"
+    },
+    {
+      "path": "fixtures/katex/package/dist/fonts/KaTeX_Math-BoldItalic.woff2",
+      "bytes": 16400,
+      "sha256": "dc47344dbb6cb5b655c8460d561f4df5f501b90c804ad3c6cec65fe322351ab1",
+      "source": "https://registry.npmjs.org/katex/-/katex-0.16.25.tgz#package/dist/fonts/KaTeX_Math-BoldItalic.woff2"
+    },
+    {
+      "path": "fixtures/katex/package/dist/fonts/KaTeX_Math-Italic.ttf",
+      "bytes": 31308,
+      "sha256": "08ce98e51b04d58945a301e639e02b6998af29fdfd61a7b8afdd07bbfc479d4a",
+      "source": "https://registry.npmjs.org/katex/-/katex-0.16.25.tgz#package/dist/fonts/KaTeX_Math-Italic.ttf"
+    },
+    {
+      "path": "fixtures/katex/package/dist/fonts/KaTeX_Math-Italic.woff",
+      "bytes": 18748,
+      "sha256": "8a8d244581371912b8f3f5a23e2437cb2a59cd9bcaebb0346e722c05737a2571",
+      "source": "https://registry.npmjs.org/katex/-/katex-0.16.25.tgz#package/dist/fonts/KaTeX_Math-Italic.woff"
+    },
+    {
+      "path": "fixtures/katex/package/dist/fonts/KaTeX_Math-Italic.woff2",
+      "bytes": 16440,
+      "sha256": "7af58c5ec8f132a2ddde9027c6d7814decce4d3b822a11192a42a20e2e973264",
+      "source": "https://registry.npmjs.org/katex/-/katex-0.16.25.tgz#package/dist/fonts/KaTeX_Math-Italic.woff2"
+    },
+    {
+      "path": "fixtures/katex/package/dist/fonts/KaTeX_SansSerif-Bold.ttf",
+      "bytes": 24504,
+      "sha256": "1ece03f79f95277d57dc7f6b435a74e1379b0d46104a8530286b60ff49369ea0",
+      "source": "https://registry.npmjs.org/katex/-/katex-0.16.25.tgz#package/dist/fonts/KaTeX_SansSerif-Bold.ttf"
+    },
+    {
+      "path": "fixtures/katex/package/dist/fonts/KaTeX_SansSerif-Bold.woff",
+      "bytes": 14408,
+      "sha256": "ece03cfd83e22c212cdef66feb8442d25a083beb988db3f1883f3f9738d750ba",
+      "source": "https://registry.npmjs.org/katex/-/katex-0.16.25.tgz#package/dist/fonts/KaTeX_SansSerif-Bold.woff"
+    },
+    {
+      "path": "fixtures/katex/package/dist/fonts/KaTeX_SansSerif-Bold.woff2",
+      "bytes": 12216,
+      "sha256": "e99ae51144bf1232efcc1bfe5add36262c6866b0faab24fa75740e1b98577a62",
+      "source": "https://registry.npmjs.org/katex/-/katex-0.16.25.tgz#package/dist/fonts/KaTeX_SansSerif-Bold.woff2"
+    },
+    {
+      "path": "fixtures/katex/package/dist/fonts/KaTeX_SansSerif-Italic.ttf",
+      "bytes": 22364,
+      "sha256": "3931dd81faed86ba021bb2bbdc36f5bed9a38d6b4f4077aca59b265aa1b02083",
+      "source": "https://registry.npmjs.org/katex/-/katex-0.16.25.tgz#package/dist/fonts/KaTeX_SansSerif-Italic.ttf"
+    },
+    {
+      "path": "fixtures/katex/package/dist/fonts/KaTeX_SansSerif-Italic.woff",
+      "bytes": 14112,
+      "sha256": "91ee67500cc0129aa0ace3ac5c61ff1692102f0f31d02b69347fba35dcb75bf2",
+      "source": "https://registry.npmjs.org/katex/-/katex-0.16.25.tgz#package/dist/fonts/KaTeX_SansSerif-Italic.woff"
+    },
+    {
+      "path": "fixtures/katex/package/dist/fonts/KaTeX_SansSerif-Italic.woff2",
+      "bytes": 12028,
+      "sha256": "00b26ac825e2095056396e0553b8ac26d3f8ad158c3826e28b4c45b385c4714a",
+      "source": "https://registry.npmjs.org/katex/-/katex-0.16.25.tgz#package/dist/fonts/KaTeX_SansSerif-Italic.woff2"
+    },
+    {
+      "path": "fixtures/katex/package/dist/fonts/KaTeX_SansSerif-Regular.ttf",
+      "bytes": 19436,
+      "sha256": "f36ea897e19f4a2e571d1e900e4e3710e438deb05a842486045ba0a3e616a4ad",
+      "source": "https://registry.npmjs.org/katex/-/katex-0.16.25.tgz#package/dist/fonts/KaTeX_SansSerif-Regular.ttf"
+    },
+    {
+      "path": "fixtures/katex/package/dist/fonts/KaTeX_SansSerif-Regular.woff",
+      "bytes": 12316,
+      "sha256": "11e4dc8a6471ff6d6ee561d53d10fde8f7489e798257ff449c5d37c197435605",
+      "source": "https://registry.npmjs.org/katex/-/katex-0.16.25.tgz#package/dist/fonts/KaTeX_SansSerif-Regular.woff"
+    },
+    {
+      "path": "fixtures/katex/package/dist/fonts/KaTeX_SansSerif-Regular.woff2",
+      "bytes": 10344,
+      "sha256": "68e8c73ef42afd3ccec58bf0fba302cce448938e7fc020a5e31f8a952eee1342",
+      "source": "https://registry.npmjs.org/katex/-/katex-0.16.25.tgz#package/dist/fonts/KaTeX_SansSerif-Regular.woff2"
+    },
+    {
+      "path": "fixtures/katex/package/dist/fonts/KaTeX_Script-Regular.ttf",
+      "bytes": 16648,
+      "sha256": "1c67f068fea8bb09bf099c088b1cf64bd27516a6e07f4684344873564bb66a67",
+      "source": "https://registry.npmjs.org/katex/-/katex-0.16.25.tgz#package/dist/fonts/KaTeX_Script-Regular.ttf"
+    },
+    {
+      "path": "fixtures/katex/package/dist/fonts/KaTeX_Script-Regular.woff",
+      "bytes": 10588,
+      "sha256": "d96cdf2b3bdd4d64a8fd5f74a4c467f123a8a73931cd435889f08ffaf9bf947a",
+      "source": "https://registry.npmjs.org/katex/-/katex-0.16.25.tgz#package/dist/fonts/KaTeX_Script-Regular.woff"
+    },
+    {
+      "path": "fixtures/katex/package/dist/fonts/KaTeX_Script-Regular.woff2",
+      "bytes": 9644,
+      "sha256": "036d4e95149b69ff9bcc0cd55771efeb25ffa3947293e69acd78d5ac328c684b",
+      "source": "https://registry.npmjs.org/katex/-/katex-0.16.25.tgz#package/dist/fonts/KaTeX_Script-Regular.woff2"
+    },
+    {
+      "path": "fixtures/katex/package/dist/fonts/KaTeX_Size1-Regular.ttf",
+      "bytes": 12228,
+      "sha256": "95b6d2f1a50173bfedb8c63e1d1c99b10427d0a4df4201cb44513b226951a22b",
+      "source": "https://registry.npmjs.org/katex/-/katex-0.16.25.tgz#package/dist/fonts/KaTeX_Size1-Regular.ttf"
+    },
+    {
+      "path": "fixtures/katex/package/dist/fonts/KaTeX_Size1-Regular.woff",
+      "bytes": 6496,
+      "sha256": "c943cc986384f59e86bea5fd7dc50a9c4dfe567a7c05eb40d6790720dead97c9",
+      "source": "https://registry.npmjs.org/katex/-/katex-0.16.25.tgz#package/dist/fonts/KaTeX_Size1-Regular.woff"
+    },
+    {
+      "path": "fixtures/katex/package/dist/fonts/KaTeX_Size1-Regular.woff2",
+      "bytes": 5468,
+      "sha256": "6b47c40166b6dbe21a5dfca7718413f2147fd2399be1ba605d8ad39cedf25dfe",
+      "source": "https://registry.npmjs.org/katex/-/katex-0.16.25.tgz#package/dist/fonts/KaTeX_Size1-Regular.woff2"
+    },
+    {
+      "path": "fixtures/katex/package/dist/fonts/KaTeX_Size2-Regular.ttf",
+      "bytes": 11508,
+      "sha256": "a6b2099fb555c60e3a0db3a08842ebf1d732c6eb4e4bf44913613bed4fc4e39b",
+      "source": "https://registry.npmjs.org/katex/-/katex-0.16.25.tgz#package/dist/fonts/KaTeX_Size2-Regular.ttf"
+    },
+    {
+      "path": "fixtures/katex/package/dist/fonts/KaTeX_Size2-Regular.woff",
+      "bytes": 6188,
+      "sha256": "2014c523c3210bcc166648c4d4cc57f05b747df07a24277bf71c51e67dc79e3d",
+      "source": "https://registry.npmjs.org/katex/-/katex-0.16.25.tgz#package/dist/fonts/KaTeX_Size2-Regular.woff"
+    },
+    {
+      "path": "fixtures/katex/package/dist/fonts/KaTeX_Size2-Regular.woff2",
+      "bytes": 5208,
+      "sha256": "d04c54219f9eaec6d4d4fd42dfb28785975a4794d6b2fc71e566b9cd6db842dd",
+      "source": "https://registry.npmjs.org/katex/-/katex-0.16.25.tgz#package/dist/fonts/KaTeX_Size2-Regular.woff2"
+    },
+    {
+      "path": "fixtures/katex/package/dist/fonts/KaTeX_Size3-Regular.ttf",
+      "bytes": 7588,
+      "sha256": "500e04d54f0d51666332c9d2089aa803be22aa878eca539e59fa53c6e522b082",
+      "source": "https://registry.npmjs.org/katex/-/katex-0.16.25.tgz#package/dist/fonts/KaTeX_Size3-Regular.ttf"
+    },
+    {
+      "path": "fixtures/katex/package/dist/fonts/KaTeX_Size3-Regular.woff",
+      "bytes": 4420,
+      "sha256": "6ab6b62e9b62dae2c00dd90f791bd10950be0ecc3490d7d6045f51c2e8fe0949",
+      "source": "https://registry.npmjs.org/katex/-/katex-0.16.25.tgz#package/dist/fonts/KaTeX_Size3-Regular.woff"
+    },
+    {
+      "path": "fixtures/katex/package/dist/fonts/KaTeX_Size3-Regular.woff2",
+      "bytes": 3624,
+      "sha256": "73d591271b1604960cb10bb90fee021670af7297017e0e98480b332d11f51995",
+      "source": "https://registry.npmjs.org/katex/-/katex-0.16.25.tgz#package/dist/fonts/KaTeX_Size3-Regular.woff2"
+    },
+    {
+      "path": "fixtures/katex/package/dist/fonts/KaTeX_Size4-Regular.ttf",
+      "bytes": 10364,
+      "sha256": "c647367d1dd4e162468717d020e1fc0f1dc5c26ebfdffbe55261713bf88c5877",
+      "source": "https://registry.npmjs.org/katex/-/katex-0.16.25.tgz#package/dist/fonts/KaTeX_Size4-Regular.ttf"
+    },
+    {
+      "path": "fixtures/katex/package/dist/fonts/KaTeX_Size4-Regular.woff",
+      "bytes": 5980,
+      "sha256": "99f9c6750b489c9462bf04900bd3f939df9b829339daaaaa99ef5495cdddea58",
+      "source": "https://registry.npmjs.org/katex/-/katex-0.16.25.tgz#package/dist/fonts/KaTeX_Size4-Regular.woff"
+    },
+    {
+      "path": "fixtures/katex/package/dist/fonts/KaTeX_Size4-Regular.woff2",
+      "bytes": 4928,
+      "sha256": "a4af7d414440a1c1790825cfb700cf9cf43b0f2c4b04f0ebc523011ad9853ec0",
+      "source": "https://registry.npmjs.org/katex/-/katex-0.16.25.tgz#package/dist/fonts/KaTeX_Size4-Regular.woff2"
+    },
+    {
+      "path": "fixtures/katex/package/dist/fonts/KaTeX_Typewriter-Regular.ttf",
+      "bytes": 27556,
+      "sha256": "f01f3e87d9c6a61c0c081ceb577abd864eb00a612f7ac1620dd6915fad2ef5aa",
+      "source": "https://registry.npmjs.org/katex/-/katex-0.16.25.tgz#package/dist/fonts/KaTeX_Typewriter-Regular.ttf"
+    },
+    {
+      "path": "fixtures/katex/package/dist/fonts/KaTeX_Typewriter-Regular.woff",
+      "bytes": 16028,
+      "sha256": "e14fed02b1aba7ce9f5afd5844b5d0321b22351febc720e0de8b8723527609f7",
+      "source": "https://registry.npmjs.org/katex/-/katex-0.16.25.tgz#package/dist/fonts/KaTeX_Typewriter-Regular.woff"
+    },
+    {
+      "path": "fixtures/katex/package/dist/fonts/KaTeX_Typewriter-Regular.woff2",
+      "bytes": 13568,
+      "sha256": "71d517d67827787cfabdf186914cc3358eda539e37931941f2b2fd4a21f68c0b",
+      "source": "https://registry.npmjs.org/katex/-/katex-0.16.25.tgz#package/dist/fonts/KaTeX_Typewriter-Regular.woff2"
+    },
+    {
+      "path": "fixtures/katex/package/dist/katex.min.css",
+      "bytes": 23732,
+      "sha256": "0c8126645bb983a788b167b1b97abe2505a962ad45e049001463c46012012a9b",
+      "source": "https://registry.npmjs.org/katex/-/katex-0.16.25.tgz#package/dist/katex.min.css"
+    },
+    {
+      "path": "fixtures/katex/package/dist/katex.min.js",
+      "bytes": 276654,
+      "sha256": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+      "source": "https://registry.npmjs.org/katex/-/katex-0.16.25.tgz#package/dist/katex.min.js"
+    },
+    {
+      "path": "fixtures/katex/package/package.json",
+      "bytes": 6256,
+      "sha256": "ee6d36606c609d531c7eedae805d701fe65c6146854c3048c1cc2a97c6f31444",
+      "source": "https://registry.npmjs.org/katex/-/katex-0.16.25.tgz#package/package.json"
+    },
+    {
+      "path": "fixtures/katex/registry.json",
+      "bytes": 6313,
+      "sha256": "e29488f9dc06462a8f994d95d04bc276ec559a713fceadbe386f0fec2fabb27f",
+      "source": "https://registry.npmjs.org/katex/0.16.25"
+    },
+    {
+      "path": "fixtures/library.tgz",
+      "bytes": 24087,
+      "sha256": "6b689a7e09bbc58a66fd54ee4ab5d9bb5b5417637ad58300942793f2796a666c",
+      "source": "https://registry.npmjs.org/asciimath-to-latex/-/asciimath-to-latex-0.5.1.tgz"
+    },
+    {
+      "path": "fixtures/library/package/.eslintignore",
+      "bytes": 7,
+      "sha256": "181314065df2f2fdaf920b1a8b5311daa216a2d6489a06ada5b49cc514d89417",
+      "source": "https://registry.npmjs.org/asciimath-to-latex/-/asciimath-to-latex-0.5.1.tgz#package/.eslintignore"
+    },
+    {
+      "path": "fixtures/library/package/.eslintrc.json",
+      "bytes": 72,
+      "sha256": "e4621623181289c5235d22a59c54e1b1551352022e9584a4fa979891707d8a38",
+      "source": "https://registry.npmjs.org/asciimath-to-latex/-/asciimath-to-latex-0.5.1.tgz#package/.eslintrc.json"
+    },
+    {
+      "path": "fixtures/library/package/.prettierrc.js",
+      "bytes": 58,
+      "sha256": "f196e730e0607c2d89fa336870274890a98cd64153eafd6bfc85751b8d9c8f51",
+      "source": "https://registry.npmjs.org/asciimath-to-latex/-/asciimath-to-latex-0.5.1.tgz#package/.prettierrc.js"
+    },
+    {
+      "path": "fixtures/library/package/.vscode/settings.json",
+      "bytes": 191,
+      "sha256": "ed21cabe7cce86a16bbf0567fdf658084460d183a64d473299d8cd5dc2db9580",
+      "source": "https://registry.npmjs.org/asciimath-to-latex/-/asciimath-to-latex-0.5.1.tgz#package/.vscode/settings.json"
+    },
+    {
+      "path": "fixtures/library/package/README.md",
+      "bytes": 585,
+      "sha256": "1471e4a5d6182bafcb10bd9ac2ca501a0951c6375539dc88abf8b5f464e5e0b8",
+      "source": "https://registry.npmjs.org/asciimath-to-latex/-/asciimath-to-latex-0.5.1.tgz#package/README.md"
+    },
+    {
+      "path": "fixtures/library/package/build/index.d.ts",
+      "bytes": 87,
+      "sha256": "849750b90114fec7f614f840ae17ec480e33c84129974caf2e257217c9e7e833",
+      "source": "https://registry.npmjs.org/asciimath-to-latex/-/asciimath-to-latex-0.5.1.tgz#package/build/index.d.ts"
+    },
+    {
+      "path": "fixtures/library/package/build/index.js",
+      "bytes": 50707,
+      "sha256": "cf89c22374b047eae183147ed746f1fe1ba35ce2f146823fed39e0108ff621cf",
+      "source": "https://registry.npmjs.org/asciimath-to-latex/-/asciimath-to-latex-0.5.1.tgz#package/build/index.js"
+    },
+    {
+      "path": "fixtures/library/package/build/index.js.map",
+      "bytes": 54392,
+      "sha256": "3d7eaee55263f32d8c20203e28da784e749ee7fabf91553e78d8663687e046aa",
+      "source": "https://registry.npmjs.org/asciimath-to-latex/-/asciimath-to-latex-0.5.1.tgz#package/build/index.js.map"
+    },
+    {
+      "path": "fixtures/library/package/jest.config.js",
+      "bytes": 69,
+      "sha256": "cbae1bee457ef2f95d61df062a8c2ab66a62c788e708c3508ae5bb0bdb7ebf9f",
+      "source": "https://registry.npmjs.org/asciimath-to-latex/-/asciimath-to-latex-0.5.1.tgz#package/jest.config.js"
+    },
+    {
+      "path": "fixtures/library/package/package.json",
+      "bytes": 859,
+      "sha256": "af9faebd9f89f13035f38aca1736427b79ddb94181c62ef10e3a84604fd625ac",
+      "source": "https://registry.npmjs.org/asciimath-to-latex/-/asciimath-to-latex-0.5.1.tgz#package/package.json"
+    },
+    {
+      "path": "fixtures/library/package/src/index.ts",
+      "bytes": 44997,
+      "sha256": "142fd9bbbf0756049c1b25134ef5cb6715f9e12d4af9f12f03e4a1256969a20a",
+      "source": "https://registry.npmjs.org/asciimath-to-latex/-/asciimath-to-latex-0.5.1.tgz#package/src/index.ts"
+    },
+    {
+      "path": "fixtures/library/package/test/index.spec.ts",
+      "bytes": 327,
+      "sha256": "39afeb1357fc18f2384734422ffcf5ec702b36762977da2601aa1d71bc320362",
+      "source": "https://registry.npmjs.org/asciimath-to-latex/-/asciimath-to-latex-0.5.1.tgz#package/test/index.spec.ts"
+    },
+    {
+      "path": "fixtures/library/package/tsconfig.json",
+      "bytes": 150,
+      "sha256": "9e5e5eb9a8c548d0b70b86f110e1c9a03c489401eaeaacd49fb9d16df3077401",
+      "source": "https://registry.npmjs.org/asciimath-to-latex/-/asciimath-to-latex-0.5.1.tgz#package/tsconfig.json"
+    },
+    {
+      "path": "fixtures/library/registry.json",
+      "bytes": 2572,
+      "sha256": "cf18a60184fdbdcd9de1f28508c192baf6df0b473933b444da27fc06ef8820e1",
+      "source": "https://registry.npmjs.org/asciimath-to-latex/0.5.1"
+    },
+    {
+      "path": "fixtures/oracle.json",
+      "bytes": 1854285,
+      "sha256": "19d389619ae94f16bc4bfe542111c9df40e0e1c750f1c9bcc15bb3e509f95500",
+      "source": "Executable own locked library outputs; deterministic scripts/oracle.cjs"
+    },
+    {
+      "path": "fixtures/original/LICENSE",
+      "bytes": 1064,
+      "sha256": "7f727f8b20cdd0e65f84e70b9cac2fce337dcecee4dc88955eb012ea27f02755",
+      "source": "https://github.com/raycast/extensions/blob/6734d85992290066fd31a7f5bee3cca3d3545a1a/LICENSE"
+    },
+    {
+      "path": "fixtures/original/REPOSITORY_LICENSE",
+      "bytes": 1064,
+      "sha256": "7f727f8b20cdd0e65f84e70b9cac2fce337dcecee4dc88955eb012ea27f02755",
+      "source": "https://github.com/raycast/extensions/blob/6734d85992290066fd31a7f5bee3cca3d3545a1a/LICENSE"
+    },
+    {
+      "path": "fixtures/original/assets/icon.png",
+      "bytes": 16920,
+      "sha256": "85d2d2a64b001b214cd2b88d01260f81b9c393863013abf3f7422d08612a1b88",
+      "source": "https://github.com/raycast/extensions/blob/6734d85992290066fd31a7f5bee3cca3d3545a1a/extensions/asciimath-to-latex-converter/assets/icon.png"
+    },
+    {
+      "path": "fixtures/original/package.json",
+      "bytes": 1964,
+      "sha256": "5b1f2a0f3f85780fa1caf2afc1f5a0cc0d86aab80f1f02ade49d8e6a021f1d2b",
+      "source": "https://github.com/raycast/extensions/blob/6734d85992290066fd31a7f5bee3cca3d3545a1a/extensions/asciimath-to-latex-converter/package.json"
+    },
+    {
+      "path": "fixtures/own/.gitignore",
+      "bytes": 68,
+      "sha256": "b027adcbb6131ef49be335e9a699657351ca3d5bb2b474379634d1714f5a585b",
+      "source": "https://github.com/almatkai/asciimath-to-latex-converter/blob/9b40a9cff89c7cfc50360d282ee3a80a43d7ef35/.gitignore"
+    },
+    {
+      "path": "fixtures/own/CHANGELOG.md",
+      "bytes": 75,
+      "sha256": "92e78a663ef93f815e5b57f449b679b749be0fbdfd787efda81a83bd5e0cf927",
+      "source": "https://github.com/almatkai/asciimath-to-latex-converter/blob/9b40a9cff89c7cfc50360d282ee3a80a43d7ef35/CHANGELOG.md"
+    },
+    {
+      "path": "fixtures/own/LICENSE",
+      "bytes": 1087,
+      "sha256": "1d7dbdbcd4fe14dfa08334fab20bffad23c1290f195792a3a4420dadf9912f81",
+      "source": "https://github.com/almatkai/asciimath-to-latex-converter/blob/9b40a9cff89c7cfc50360d282ee3a80a43d7ef35/LICENSE"
+    },
+    {
+      "path": "fixtures/own/README.md",
+      "bytes": 506,
+      "sha256": "6c7871bef9d3b1cc958d993ca56eef053d7770a99e4262451c6a497231e0175c",
+      "source": "https://github.com/almatkai/asciimath-to-latex-converter/blob/9b40a9cff89c7cfc50360d282ee3a80a43d7ef35/README.md"
+    },
+    {
+      "path": "fixtures/own/assets/icon.png",
+      "bytes": 16920,
+      "sha256": "85d2d2a64b001b214cd2b88d01260f81b9c393863013abf3f7422d08612a1b88",
+      "source": "https://github.com/almatkai/asciimath-to-latex-converter/blob/9b40a9cff89c7cfc50360d282ee3a80a43d7ef35/assets/icon.png"
+    },
+    {
+      "path": "fixtures/own/eslint.config.js",
+      "bytes": 165,
+      "sha256": "ee5c9d0b4a4ad216ab018ae100e4cdea8bb620d554377a062c989ece90a8683c",
+      "source": "https://github.com/almatkai/asciimath-to-latex-converter/blob/9b40a9cff89c7cfc50360d282ee3a80a43d7ef35/eslint.config.js"
+    },
+    {
+      "path": "fixtures/own/metadata/asciimath-to-latex-converter-1.png",
+      "bytes": 1439405,
+      "sha256": "484626ac74bed8b7fc41ee0ccc00e4280f4c97a38b7d43adc85a11026740c06c",
+      "source": "https://github.com/almatkai/asciimath-to-latex-converter/blob/9b40a9cff89c7cfc50360d282ee3a80a43d7ef35/metadata/asciimath-to-latex-converter-1.png"
+    },
+    {
+      "path": "fixtures/own/metadata/asciimath-to-latex-converter-2.png",
+      "bytes": 1450107,
+      "sha256": "ff2723842e676be50e3c6ae09d99feabe7951d9d466908b0756930ce79a22951",
+      "source": "https://github.com/almatkai/asciimath-to-latex-converter/blob/9b40a9cff89c7cfc50360d282ee3a80a43d7ef35/metadata/asciimath-to-latex-converter-2.png"
+    },
+    {
+      "path": "fixtures/own/metadata/asciimath-to-latex-converter-3.png",
+      "bytes": 1405680,
+      "sha256": "4445c52e21003d40479bb6901df6c3d69d37629135a31a054800358a1f7e123b",
+      "source": "https://github.com/almatkai/asciimath-to-latex-converter/blob/9b40a9cff89c7cfc50360d282ee3a80a43d7ef35/metadata/asciimath-to-latex-converter-3.png"
+    },
+    {
+      "path": "fixtures/own/package-lock.json",
+      "bytes": 71059,
+      "sha256": "2c7382ff93a242db5fcc9cfeaeb3bcd82a05da972ebdf11b5ec103ff85d155e9",
+      "source": "https://github.com/almatkai/asciimath-to-latex-converter/blob/9b40a9cff89c7cfc50360d282ee3a80a43d7ef35/package-lock.json"
+    },
+    {
+      "path": "fixtures/own/package.json",
+      "bytes": 2280,
+      "sha256": "894a155218f5fa2d8aaa23c1e7bdc8ccbee23539bcd23684adf9c45e85775360",
+      "source": "https://github.com/almatkai/asciimath-to-latex-converter/blob/9b40a9cff89c7cfc50360d282ee3a80a43d7ef35/package.json"
+    },
+    {
+      "path": "fixtures/own/raycast-env.d.ts",
+      "bytes": 862,
+      "sha256": "3fa9bd69f0e67fe467d11dee093dc054abd7fbd20f41d44919b343550cc6a004",
+      "source": "https://github.com/almatkai/asciimath-to-latex-converter/blob/9b40a9cff89c7cfc50360d282ee3a80a43d7ef35/raycast-env.d.ts"
+    },
+    {
+      "path": "fixtures/own/src/components/LatexPreviewDetail.tsx",
+      "bytes": 1533,
+      "sha256": "2ec2a8afc9077ce8990b74c9526cfb809b24eb8a1e2d488203038c1e4dc53daf",
+      "source": "https://github.com/almatkai/asciimath-to-latex-converter/blob/9b40a9cff89c7cfc50360d282ee3a80a43d7ef35/src/components/LatexPreviewDetail.tsx"
+    },
+    {
+      "path": "fixtures/own/src/components/MathToLatexLivePanel.tsx",
+      "bytes": 3989,
+      "sha256": "0d4e6fb097b3548686ec13b99d328554bee5276b3e0886676ad1a5c631396b53",
+      "source": "https://github.com/almatkai/asciimath-to-latex-converter/blob/9b40a9cff89c7cfc50360d282ee3a80a43d7ef35/src/components/MathToLatexLivePanel.tsx"
+    },
+    {
+      "path": "fixtures/own/src/convert-asciimath-to-latex.tsx",
+      "bytes": 571,
+      "sha256": "6d4b5037fccea3519c50f2ebfc36986850c32bb79cba5886d3772f1367896e57",
+      "source": "https://github.com/almatkai/asciimath-to-latex-converter/blob/9b40a9cff89c7cfc50360d282ee3a80a43d7ef35/src/convert-asciimath-to-latex.tsx"
+    },
+    {
+      "path": "fixtures/own/src/utils/asciimath.ts",
+      "bytes": 218,
+      "sha256": "6dfde44c4212eaf95d567f18eee2f864a9c62f4ae3b7913994e8648468e667b3",
+      "source": "https://github.com/almatkai/asciimath-to-latex-converter/blob/9b40a9cff89c7cfc50360d282ee3a80a43d7ef35/src/utils/asciimath.ts"
+    },
+    {
+      "path": "fixtures/own/test/smoke.test.ts",
+      "bytes": 470,
+      "sha256": "bfda90f7e635c95c8829ea6364e27cb1fd3baf516f808e23d981c2e5cd4af050",
+      "source": "https://github.com/almatkai/asciimath-to-latex-converter/blob/9b40a9cff89c7cfc50360d282ee3a80a43d7ef35/test/smoke.test.ts"
+    },
+    {
+      "path": "fixtures/own/tsconfig.json",
+      "bytes": 525,
+      "sha256": "bb151e8c2e5442f6f9e42b27c08d88b0f7d2c5c127268ce0aedab2ef964b1eee",
+      "source": "https://github.com/almatkai/asciimath-to-latex-converter/blob/9b40a9cff89c7cfc50360d282ee3a80a43d7ef35/tsconfig.json"
+    },
+    {
+      "path": "fixtures/rust-licenses/itoa-1.0.18/LICENSE-APACHE",
+      "bytes": 9723,
+      "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "fixtures/rust-licenses/itoa-1.0.18/LICENSE-MIT",
+      "bytes": 1023,
+      "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "fixtures/rust-licenses/itoa-1.0.18/metadata.json",
+      "bytes": 147,
+      "sha256": "b4734a65268fa63e193a416ae1f9b4fa4444b518e923f5d7fe1e5162ba2e5679",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "fixtures/rust-licenses/memchr-2.8.3/COPYING",
+      "bytes": 126,
+      "sha256": "01c266bced4a434da0051174d6bee16a4c82cf634e2679b6155d40d75012390f",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "fixtures/rust-licenses/memchr-2.8.3/LICENSE-MIT",
+      "bytes": 1081,
+      "sha256": "0f96a83840e146e43c0ec96a22ec1f392e0680e6c1226e6f3ba87e0740af850f",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "fixtures/rust-licenses/memchr-2.8.3/metadata.json",
+      "bytes": 147,
+      "sha256": "9eb99276610ef7bfc9d076e0f39e41b5ecffb355801338044efec6fe164ce1b4",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "fixtures/rust-licenses/proc-macro2-1.0.107/LICENSE-APACHE",
+      "bytes": 9723,
+      "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "fixtures/rust-licenses/proc-macro2-1.0.107/LICENSE-MIT",
+      "bytes": 1023,
+      "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "fixtures/rust-licenses/proc-macro2-1.0.107/metadata.json",
+      "bytes": 155,
+      "sha256": "db1d7696f0ea39ea9959861e0e085fbe8b6d1bd7efdd09dd975468fc15e46e48",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "fixtures/rust-licenses/quote-1.0.47/LICENSE-APACHE",
+      "bytes": 9723,
+      "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "fixtures/rust-licenses/quote-1.0.47/LICENSE-MIT",
+      "bytes": 1023,
+      "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "fixtures/rust-licenses/quote-1.0.47/metadata.json",
+      "bytes": 148,
+      "sha256": "923d28339b22be4333b70514c54e776c4c881706b97de3ab5608e9bdb7b16b93",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "fixtures/rust-licenses/ryu-1.0.23/LICENSE-APACHE",
+      "bytes": 9723,
+      "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "fixtures/rust-licenses/ryu-1.0.23/LICENSE-BOOST",
+      "bytes": 1338,
+      "sha256": "c9bff75738922193e67fa726fa225535870d2aa1059f91452c411736284ad566",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "fixtures/rust-licenses/ryu-1.0.23/metadata.json",
+      "bytes": 150,
+      "sha256": "f48acf611dda30ddefd5086433923f38f5dd1ecd2f22b0563d8c01682595725e",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "fixtures/rust-licenses/serde-1.0.228/LICENSE-APACHE",
+      "bytes": 9723,
+      "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "fixtures/rust-licenses/serde-1.0.228/LICENSE-MIT",
+      "bytes": 1023,
+      "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "fixtures/rust-licenses/serde-1.0.228/metadata.json",
+      "bytes": 149,
+      "sha256": "0bd749791ae296bbd4627cdc61575e962effbda2c49a6b0b4edc773ef089127f",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "fixtures/rust-licenses/serde_core-1.0.228/LICENSE-APACHE",
+      "bytes": 9723,
+      "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "fixtures/rust-licenses/serde_core-1.0.228/LICENSE-MIT",
+      "bytes": 1023,
+      "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "fixtures/rust-licenses/serde_core-1.0.228/metadata.json",
+      "bytes": 154,
+      "sha256": "5842aa350574e441ba26e3676c38f3e228f6581baa9b801aa20442747fd772ac",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "fixtures/rust-licenses/serde_derive-1.0.228/LICENSE-APACHE",
+      "bytes": 9723,
+      "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "fixtures/rust-licenses/serde_derive-1.0.228/LICENSE-MIT",
+      "bytes": 1023,
+      "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "fixtures/rust-licenses/serde_derive-1.0.228/metadata.json",
+      "bytes": 156,
+      "sha256": "b0b2c43ee349a2223983f947e57ba93367ecf70d00e1d77aa97c3c861271d443",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "fixtures/rust-licenses/serde_json-1.0.145/LICENSE-APACHE",
+      "bytes": 9723,
+      "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "fixtures/rust-licenses/serde_json-1.0.145/LICENSE-MIT",
+      "bytes": 1023,
+      "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "fixtures/rust-licenses/serde_json-1.0.145/metadata.json",
+      "bytes": 154,
+      "sha256": "e31b4000e1b2efd12539e35084179f8e00fa431ca7701bcc9229f4b151543b21",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "fixtures/rust-licenses/syn-2.0.119/LICENSE-APACHE",
+      "bytes": 9723,
+      "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "fixtures/rust-licenses/syn-2.0.119/LICENSE-MIT",
+      "bytes": 1023,
+      "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "fixtures/rust-licenses/syn-2.0.119/metadata.json",
+      "bytes": 147,
+      "sha256": "8e565d81caa3d27c691f9d51397e28766d27855f771268903fb672b3640e5c89",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "fixtures/rust-licenses/unicode-ident-1.0.27/LICENSE-APACHE",
+      "bytes": 9723,
+      "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "fixtures/rust-licenses/unicode-ident-1.0.27/LICENSE-MIT",
+      "bytes": 1023,
+      "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "fixtures/rust-licenses/unicode-ident-1.0.27/LICENSE-UNICODE",
+      "bytes": 1995,
+      "sha256": "f7db81051789b729fea528a63ec4c938fdcb93d9d61d97dc8cc2e9df6d47f2a1",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "fixtures/rust-licenses/unicode-ident-1.0.27/metadata.json",
+      "bytes": 174,
+      "sha256": "f04b650190de4ec565eec04c184f12efa262d0379422b10a071c53cae71662a7",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "integration/current-host-icon-prerequisite.patch",
+      "bytes": 900,
+      "sha256": "53ea32c44b4c1d3c833aeca7ccae7aada37072e13cc6f59271a435486fec5a1e",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "integration/direct/Cargo.lock",
+      "bytes": 9637,
+      "sha256": "10f58093b4956008198095303cf0ce087917aa8468073dc07e304d4d74e7937a",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "integration/direct/Cargo.toml.template",
+      "bytes": 583,
+      "sha256": "79dc8cd96ceba9121406984de7bb71e79d1c326a3bdfc09db0fdc9dd87d98128",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "integration/harness/Cargo.lock",
+      "bytes": 11812,
+      "sha256": "51eb082826713f6994954b3c7c3774d86e48a1494545c3244ca3b9d12e171364",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "integration/harness/Cargo.toml.template",
+      "bytes": 311,
+      "sha256": "39836bae4d555660355a6e1d74f70f2310fc12d54535e64534eea9a3eeb0560f",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "integration/harness/runtime/Cargo.lock",
+      "bytes": 9623,
+      "sha256": "e4ac908ee77eb52707f78a9129695961e63c4c3403ae6126ba76f621d77c0581",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "integration/harness/runtime/Cargo.toml.template",
+      "bytes": 549,
+      "sha256": "1af2f9562ea4a44824dbcecca05440801c6afa0cd8a9ca81d0b121cac39618d2",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "integration/harness/runtime/src/lib.rs",
+      "bytes": 399,
+      "sha256": "bf78ca9765af1495e846dd20b7d2e309cc1dcf87cdbb72fc6aa6e2f41ca6fa0d",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "integration/harness/runtime/src/native_core/extensions/mod.rs",
+      "bytes": 2963,
+      "sha256": "ce6b8d480f29d05c396d50c440bc108dcafe33f47dd04d2240b53ff03aab3210",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "integration/harness/runtime/src/native_core/mod.rs",
+      "bytes": 114,
+      "sha256": "4ef33eb5942cff58a9bb4b416c729eef8e82a94404ccb98a5499371d3c0907ef",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "integration/harness/runtime/tauri-stub/Cargo.toml.template",
+      "bytes": 110,
+      "sha256": "29e8a05b07cd389a26f586bf810ab17a2f81f84e49c7edd74c20c5c1e6191ec7",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "integration/harness/runtime/tauri-stub/src/lib.rs",
+      "bytes": 382,
+      "sha256": "de985153fa6db5847f65695d189cb5c5fd0a11554789b41cdeea02bf987bc0c7",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "integration/harness/src/bin/views.rs",
+      "bytes": 1456,
+      "sha256": "52455f718b567f4b3bb91607a113f75f9110e9c6ee2f6b2212f17b24c98ede4c",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "integration/harness/src/lib.rs",
+      "bytes": 94,
+      "sha256": "9203734c145776b5830d91fc231ceebdcf8d7d316fe7ec9c24cfe09cd18dcca7",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "integration/harness/tests/adapter.rs",
+      "bytes": 16992,
+      "sha256": "07c8fce780317169d919d60d952345f15fe5ef524066bbb9bbbcc344d1711c2a",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "integration/host-committed-delta.patch",
+      "bytes": 31039,
+      "sha256": "40050030d69ca6569136221a0ddd24370d679b58a99cc844aa3dd220b455f096",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "integration/host-files/package.json",
+      "bytes": 2933,
+      "sha256": "df71224f1577dd3655f3570f07eb4226fe8b3492d388b2a959edc8377831d3f2",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "integration/host-files/src-tauri/Cargo.toml.fixture",
+      "bytes": 2239,
+      "sha256": "5b05e876a2b1313e17f54d020ee4abda01f70d7acf8d3045721ee40e31a42cf5",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "integration/host-files/src-tauri/src/native_core/extensions/mod.rs",
+      "bytes": 6359,
+      "sha256": "db3620235adf35bea4e1aa645a7b034c8baea188f4f7c188e7fd53791f963c80",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "integration/host-files/src-tauri/src/native_core/extensions/v2_catalog.json",
+      "bytes": 73781,
+      "sha256": "750f73d5fee773242a29ca303ccc43a13a9ed4c25f2e2b12d74449162a47198c",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "integration/host-files/src-tauri/src/native_core/extensions/v2_catalog.rs",
+      "bytes": 6839,
+      "sha256": "814ea9c6c6504f3ad11f6b292687a274e179427b4a7d92e71ffb3f85cc8a4c77",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "integration/host-files/src-tauri/src/native_core/extensions/v2_runtime.rs",
+      "bytes": 3381,
+      "sha256": "6e4653355882857510fc46ddcb050574d4ea588b96d21c1004ac5ccf8656ee72",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "integration/host-files/src/renderer/ExtensionRuntimeView.tsx",
+      "bytes": 24245,
+      "sha256": "01b1a6d0380d87cf3b472e134b59ebc89281427df91ed7feef04b4aa6d384d11",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "integration/host-files/src/renderer/src/raycast-api/detail-runtime.tsx",
+      "bytes": 23671,
+      "sha256": "f7ebd62ca3258f60c7f7862cfcfd482cd8fd1d41e1818d65a0f8dc6c355cfac0",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "integration/host-files/src/renderer/src/raycast-api/form-runtime.tsx",
+      "bytes": 21255,
+      "sha256": "63e7d34062d62763126b48c7644406169bf356ec06d3e0f044c7f8df560a121a",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "integration/host-files/src/renderer/src/raycast-api/index.tsx",
+      "bytes": 8303,
+      "sha256": "480818afa490e4a3d67efc2982e0c1bfa867b83d78f5890c4af8825cdca560a3",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "integration/host-files/src/renderer/src/raycast-api/native-asciimath-lane.ts",
+      "bytes": 1368,
+      "sha256": "0ba2751def928bc4cfeee703ea2f76b87d793903dfb39301c5720fb9de53facd",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "integration/host-files/src/renderer/ui/NativeAsciiMathPreview.tsx",
+      "bytes": 1428,
+      "sha256": "14824eead333f7ccc76211fd2b4469b73884367d50b8a52b79c53e7fb85a3931",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "integration/registration.patch",
+      "bytes": 4429,
+      "sha256": "a797f3311af2d628c168be7c95dc6cf27d6512911a86ebf629c662e4768de232",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "integration/renderer/.gitignore",
+      "bytes": 27,
+      "sha256": "2c1d52680adf5fb6d40f2c4c3a01478e7f2148ee6d47f1a168ca6cbadd21b150",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "integration/renderer/assets.test.ts",
+      "bytes": 1269,
+      "sha256": "0105b76fd27a25f8abd3190bc1fbe259293fa91d0a8b9768ebded3069b779def",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "integration/renderer/os-stubs.d.ts",
+      "bytes": 340,
+      "sha256": "0a558360bf1482fe242be831adb353a48407db8e881cfc55604dc0ca17e1674c",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "integration/renderer/package-lock.json",
+      "bytes": 79402,
+      "sha256": "fd5cd202fb816e8d25cd47ddb849fa0124eb65260c7ac4843b9269b11eb89a3e",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "integration/renderer/package.json",
+      "bytes": 641,
+      "sha256": "341149036852a05bfa1ffa3be8ae1388bdb804a5b179727f5c0b92b6125b10fb",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "integration/renderer/renderer.test.tsx",
+      "bytes": 9750,
+      "sha256": "647c7fe7301ce062c205d99d4a7fe19f5cd6d0e1550b4a082588ac3ec21debfb",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "integration/renderer/source.test.ts",
+      "bytes": 5010,
+      "sha256": "cac96cbefee35b3d6e78a3fd6048c709f1ad86e1100b87308c34146e35a9111f",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "integration/renderer/tsconfig.json",
+      "bytes": 951,
+      "sha256": "629396e2ef14834334b1f5e0e210c6437befaa07a57bc08b8bdcdcc2622d515f",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "integration/renderer/vitest.config.ts",
+      "bytes": 565,
+      "sha256": "c6bd4c49d65771dafe817a4faf3e2096ce8b3c7a64bfcc76fe8eb029a8b78d3c",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "integration/required-renderer.patch",
+      "bytes": 13250,
+      "sha256": "4a7e5c54968b791b3cc79ecec3dcdb3434ac895833fcf2d27b90f4f960f592a1",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "manifest.json",
+      "bytes": 1786,
+      "sha256": "ecc563b7cf00ab97d65ecdfac0c16b435f0b24475c1b1cf1c2d3cdbb4f04f869",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "scripts/check-index.py",
+      "bytes": 670,
+      "sha256": "47b527c171c889083861da8ce10ece80c3bb754cc92fa8ce9ef8a6124f8640a1",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "scripts/make-index.py",
+      "bytes": 2517,
+      "sha256": "d715b89de6d7e4f92983477f07a87a4380bb25832f95dabc1905b1786b38863c",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "scripts/make-renderer-patch.py",
+      "bytes": 4930,
+      "sha256": "dfa87d5db8f3325365e0af04788b053059dc405edc2879775e900a26e82962fb",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "scripts/materialize.py",
+      "bytes": 911,
+      "sha256": "191b3333105984f650368205a98a128930e1f58c631331c82acefd8c64bbb9b5",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "scripts/oracle.cjs",
+      "bytes": 1885,
+      "sha256": "9c9c9ab82f0e01baf846f975ac824ebf82665edc6d9a1d18acc7ca2841aaffb4",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "scripts/package-check.py",
+      "bytes": 2670,
+      "sha256": "a5e0a08398f9adf2b946ca05bd03ee5b3ba3f6127cc586fc946eeb15ffd36834",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "scripts/prepare-integration.py",
+      "bytes": 1838,
+      "sha256": "6ac92d7c3e6b0af3b31d501f5498601b404a6bca3688271d1483381a47a5837e",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "scripts/prepare-renderer.py",
+      "bytes": 602,
+      "sha256": "3ccefc0189d8298ff6f53acf7e2e8fc08a64569487d72a5ced21b02aa80ed455",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "scripts/registration.py",
+      "bytes": 3092,
+      "sha256": "8b223d4fb5e753ea5ec06b81850c0d1b923639d91e57ee477877279c549030ca",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "scripts/schema.cjs",
+      "bytes": 1360,
+      "sha256": "93c8262ec4938990e2283d94100d11888d12a79273586c62f73f4eda10647e1d",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "scripts/validate-renderer.py",
+      "bytes": 1179,
+      "sha256": "ca88554ea1aa1ecaa97c82d4417a075c37cbef4e408077ff5355522db18e6913",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "scripts/validate-rust.py",
+      "bytes": 1883,
+      "sha256": "803f6916850baa255a713c64051dca536c4a252748f975dcf2982aeaf772df2b",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "scripts/validate-scope.py",
+      "bytes": 2028,
+      "sha256": "62acd4a7b247a464a9a2877f97a883a288567da761da04b9e7fb9bc4ce8216b0",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "scripts/validate-v1.py",
+      "bytes": 1138,
+      "sha256": "f7e7362633188821b38311d9aa8069a1da34416084306e908bd0ec31fbfc37cf",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "src/bin/oracle-check.rs",
+      "bytes": 363,
+      "sha256": "dee04ed77e5422895c03518be2ecb3f66f1bfa5528d0aa2bfa8353a23e027bc9",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "src/lib.rs",
+      "bytes": 21828,
+      "sha256": "9992683bcbe0bcdceb667523a0b2d026443c0f181062bea86eac8e8eb1424859",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "src/symbols.json",
+      "bytes": 38861,
+      "sha256": "14402714eaf6fe342236cad3a4ac39d5bc00b626110b8c61de09ff388b0e180a",
+      "source": "Initialized AMsymbols exported from executable locked asciimath-to-latex 0.5.1; scripts/oracle.cjs verifies exact table"
+    },
+    {
+      "path": "tests/concrete_adapter.rs",
+      "bytes": 225,
+      "sha256": "5e2edd603b9c113086b4f839b2918d79a2f210b89fb4cd0f795e4912e6de7166",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "tests/engine.rs",
+      "bytes": 1687,
+      "sha256": "d4018914ce5ae9883485e70d6fddb437eab8c846a5085f0894827332e3bcfb39",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "tests/support/native_core/extensions/mod.rs",
+      "bytes": 1118,
+      "sha256": "81013cf66ba1c3c153444d869ce2f0fc0cc2c39ec0e18ea944c237eb63fe3057",
+      "source": "local implementation / review artifact (unstaged)"
+    },
+    {
+      "path": "tests/support/native_core/mod.rs",
+      "bytes": 107,
+      "sha256": "e72f57b697764d66d4ac3a6216c56010367223050ae197f7a7264c4c30417ec5",
+      "source": "local implementation / review artifact (unstaged)"
+    }
+  ]
+}

@@ -1,0 +1,2603 @@
+[
+  {
+    "input": "!=",
+    "tag": "mo",
+    "output": "≠",
+    "tex": "ne",
+    "ttype": 0
+  },
+  {
+    "input": "!in",
+    "tag": "mo",
+    "output": "∉",
+    "tex": "notin",
+    "ttype": 0
+  },
+  {
+    "input": "\"",
+    "tag": "mtext",
+    "output": "mbox",
+    "tex": null,
+    "ttype": 10
+  },
+  {
+    "input": "%",
+    "tag": "mo",
+    "output": "%",
+    "tex": "%",
+    "ttype": 0,
+    "notexcopy": true
+  },
+  {
+    "input": "''",
+    "tag": "mo",
+    "output": "''",
+    "tex": null,
+    "val": true
+  },
+  {
+    "input": "'''",
+    "tag": "mo",
+    "output": "'''",
+    "tex": null,
+    "val": true
+  },
+  {
+    "input": "''''",
+    "tag": "mo",
+    "output": "''''",
+    "tex": null,
+    "val": true
+  },
+  {
+    "input": "(",
+    "tag": "mo",
+    "output": "(",
+    "tex": null,
+    "ttype": 4,
+    "val": true
+  },
+  {
+    "input": "(:",
+    "tag": "mo",
+    "output": "〈",
+    "tex": "langle",
+    "ttype": 4
+  },
+  {
+    "input": ")",
+    "tag": "mo",
+    "output": ")",
+    "tex": null,
+    "ttype": 5,
+    "val": true
+  },
+  {
+    "input": "*",
+    "tag": "mo",
+    "output": "⋅",
+    "tex": "cdot",
+    "ttype": 0
+  },
+  {
+    "input": "**",
+    "tag": "mo",
+    "output": "∗",
+    "tex": "ast",
+    "ttype": 0
+  },
+  {
+    "input": "***",
+    "tag": "mo",
+    "output": "⋆",
+    "tex": "star",
+    "ttype": 0
+  },
+  {
+    "input": "+-",
+    "tag": "mo",
+    "output": "±",
+    "tex": "pm",
+    "ttype": 0
+  },
+  {
+    "input": "-:",
+    "tag": "mo",
+    "output": "÷",
+    "tex": "div",
+    "ttype": 0
+  },
+  {
+    "input": "-<",
+    "tag": "mo",
+    "output": "≺",
+    "tex": "prec",
+    "ttype": 0
+  },
+  {
+    "input": "-<=",
+    "tag": "mo",
+    "output": "⪯",
+    "tex": "preceq",
+    "ttype": 0
+  },
+  {
+    "input": "-=",
+    "tag": "mo",
+    "output": "≡",
+    "tex": "equiv",
+    "ttype": 0
+  },
+  {
+    "input": "->",
+    "tag": "mo",
+    "output": "→",
+    "tex": "to",
+    "ttype": 0
+  },
+  {
+    "input": "->>",
+    "tag": "mo",
+    "output": "↠",
+    "tex": "twoheadrightarrow",
+    "ttype": 0
+  },
+  {
+    "input": "-lt",
+    "tag": "mo",
+    "output": "≺",
+    "tex": null,
+    "ttype": 0
+  },
+  {
+    "input": "...",
+    "tag": "mo",
+    "output": "...",
+    "tex": "ldots",
+    "ttype": 0
+  },
+  {
+    "input": "/",
+    "tag": "mfrac",
+    "output": "/",
+    "tex": null,
+    "ttype": 3
+  },
+  {
+    "input": "//",
+    "tag": "mo",
+    "output": "/",
+    "tex": "/",
+    "ttype": 0,
+    "val": true,
+    "notexcopy": true
+  },
+  {
+    "input": "/_",
+    "tag": "mo",
+    "output": "∠",
+    "tex": "angle",
+    "ttype": 0
+  },
+  {
+    "input": "/_\\",
+    "tag": "mo",
+    "output": "△",
+    "tex": "triangle",
+    "ttype": 0
+  },
+  {
+    "input": ":'",
+    "tag": "mo",
+    "output": "∵",
+    "tex": "because",
+    "ttype": 0
+  },
+  {
+    "input": ":)",
+    "tag": "mo",
+    "output": "〉",
+    "tex": "rangle",
+    "ttype": 5
+  },
+  {
+    "input": ":.",
+    "tag": "mo",
+    "output": "∴",
+    "tex": "therefore",
+    "ttype": 0
+  },
+  {
+    "input": ":=",
+    "tag": "mo",
+    "output": ":=",
+    "tex": null,
+    "ttype": 0
+  },
+  {
+    "input": ":}",
+    "tag": "mo",
+    "output": ":}",
+    "tex": null,
+    "ttype": 5,
+    "invisible": true
+  },
+  {
+    "input": "<<",
+    "tag": "mo",
+    "output": "〈",
+    "tex": "langle",
+    "ttype": 4
+  },
+  {
+    "input": "<=",
+    "tag": "mo",
+    "output": "≤",
+    "tex": "le",
+    "ttype": 0
+  },
+  {
+    "input": "<=>",
+    "tag": "mo",
+    "output": "⇔",
+    "tex": "Leftrightarrow",
+    "ttype": 0
+  },
+  {
+    "input": "=>",
+    "tag": "mo",
+    "output": "⇒",
+    "tex": "Rightarrow",
+    "ttype": 0
+  },
+  {
+    "input": ">-",
+    "tag": "mo",
+    "output": "≻",
+    "tex": "succ",
+    "ttype": 0
+  },
+  {
+    "input": ">-=",
+    "tag": "mo",
+    "output": "⪰",
+    "tex": "succeq",
+    "ttype": 0
+  },
+  {
+    "input": ">->",
+    "tag": "mo",
+    "output": "↣",
+    "tex": "rightarrowtail",
+    "ttype": 0
+  },
+  {
+    "input": ">->>",
+    "tag": "mo",
+    "output": "⤖",
+    "tex": "twoheadrightarrowtail",
+    "ttype": 0
+  },
+  {
+    "input": "><|",
+    "tag": "mo",
+    "output": "⋊",
+    "tex": "rtimes",
+    "ttype": 0
+  },
+  {
+    "input": ">=",
+    "tag": "mo",
+    "output": "≥",
+    "tex": "ge",
+    "ttype": 0
+  },
+  {
+    "input": ">>",
+    "tag": "mo",
+    "output": "〉",
+    "tex": "rangle",
+    "ttype": 5
+  },
+  {
+    "input": "@",
+    "tag": "mo",
+    "output": "∘",
+    "tex": "circ",
+    "ttype": 0
+  },
+  {
+    "input": "AA",
+    "tag": "mo",
+    "output": "∀",
+    "tex": "forall",
+    "ttype": 0
+  },
+  {
+    "input": "Abs",
+    "tag": "mo",
+    "output": "abs",
+    "tex": null,
+    "ttype": 1,
+    "notexcopy": true,
+    "rewriteleftright": [
+      "|",
+      "|"
+    ]
+  },
+  {
+    "input": "Arccos",
+    "tag": "mo",
+    "output": "arccos",
+    "tex": null,
+    "ttype": 1,
+    "func": true
+  },
+  {
+    "input": "Arcsin",
+    "tag": "mo",
+    "output": "arcsin",
+    "tex": null,
+    "ttype": 1,
+    "func": true
+  },
+  {
+    "input": "Arctan",
+    "tag": "mo",
+    "output": "arctan",
+    "tex": null,
+    "ttype": 1,
+    "func": true
+  },
+  {
+    "input": "CC",
+    "tag": "mo",
+    "output": "ℂ",
+    "tex": "mathbb{C}",
+    "ttype": 0,
+    "notexcopy": true
+  },
+  {
+    "input": "Cos",
+    "tag": "mo",
+    "output": "cos",
+    "tex": null,
+    "ttype": 1,
+    "func": true
+  },
+  {
+    "input": "Cot",
+    "tag": "mo",
+    "output": "cot",
+    "tex": null,
+    "ttype": 1,
+    "func": true
+  },
+  {
+    "input": "Csc",
+    "tag": "mo",
+    "output": "csc",
+    "tex": null,
+    "ttype": 1,
+    "func": true
+  },
+  {
+    "input": "Delta",
+    "tag": "mo",
+    "output": "Δ",
+    "tex": null,
+    "ttype": 0
+  },
+  {
+    "input": "EE",
+    "tag": "mo",
+    "output": "∃",
+    "tex": "exists",
+    "ttype": 0
+  },
+  {
+    "input": "Gamma",
+    "tag": "mo",
+    "output": "Γ",
+    "tex": null,
+    "ttype": 0
+  },
+  {
+    "input": "Lambda",
+    "tag": "mo",
+    "output": "Λ",
+    "tex": null,
+    "ttype": 0
+  },
+  {
+    "input": "Lamda",
+    "tag": "mi",
+    "output": "Lambda",
+    "tex": null,
+    "ttype": 8
+  },
+  {
+    "input": "Leftarrow",
+    "tag": "mo",
+    "output": "⇐",
+    "ttype": 0,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "Leftrightarrow",
+    "tag": "mo",
+    "output": "⇔",
+    "ttype": 0,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "Leftrightarrow",
+    "tag": "mo",
+    "output": "⇔",
+    "ttype": 0,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "Lim",
+    "tag": "mo",
+    "output": "Lim",
+    "tex": null,
+    "ttype": 7
+  },
+  {
+    "input": "Ln",
+    "tag": "mo",
+    "output": "ln",
+    "tex": null,
+    "ttype": 1,
+    "func": true
+  },
+  {
+    "input": "Log",
+    "tag": "mo",
+    "output": "log",
+    "tex": null,
+    "ttype": 1,
+    "func": true
+  },
+  {
+    "input": "NN",
+    "tag": "mo",
+    "output": "ℕ",
+    "tex": "mathbb{N}",
+    "ttype": 0,
+    "notexcopy": true
+  },
+  {
+    "input": "O/",
+    "tag": "mo",
+    "output": "∅",
+    "tex": "emptyset",
+    "ttype": 0
+  },
+  {
+    "input": "Omega",
+    "tag": "mo",
+    "output": "Ω",
+    "tex": null,
+    "ttype": 0
+  },
+  {
+    "input": "Phi",
+    "tag": "mo",
+    "output": "Φ",
+    "tex": null,
+    "ttype": 0
+  },
+  {
+    "input": "Pi",
+    "tag": "mo",
+    "output": "Π",
+    "tex": null,
+    "ttype": 0
+  },
+  {
+    "input": "Psi",
+    "tag": "mi",
+    "output": "Ψ",
+    "tex": null,
+    "ttype": 0
+  },
+  {
+    "input": "QQ",
+    "tag": "mo",
+    "output": "ℚ",
+    "tex": "mathbb{Q}",
+    "ttype": 0,
+    "notexcopy": true
+  },
+  {
+    "input": "RR",
+    "tag": "mo",
+    "output": "ℝ",
+    "tex": "mathbb{R}",
+    "ttype": 0,
+    "notexcopy": true
+  },
+  {
+    "input": "Rightarrow",
+    "tag": "mo",
+    "output": "⇒",
+    "ttype": 0,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "Rightarrow",
+    "tag": "mo",
+    "output": "⇒",
+    "ttype": 0,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "Sec",
+    "tag": "mo",
+    "output": "sec",
+    "tex": null,
+    "ttype": 1,
+    "func": true
+  },
+  {
+    "input": "Sigma",
+    "tag": "mo",
+    "output": "Σ",
+    "tex": null,
+    "ttype": 0
+  },
+  {
+    "input": "Sin",
+    "tag": "mo",
+    "output": "sin",
+    "tex": null,
+    "ttype": 1,
+    "func": true
+  },
+  {
+    "input": "Sinh",
+    "tag": "mo",
+    "output": "sinh",
+    "tex": null,
+    "ttype": 1,
+    "func": true
+  },
+  {
+    "input": "Sosh",
+    "tag": "mo",
+    "output": "cosh",
+    "tex": null,
+    "ttype": 1,
+    "func": true
+  },
+  {
+    "input": "Sqrt",
+    "tag": "msqrt",
+    "output": "sqrt",
+    "tex": null,
+    "ttype": 1
+  },
+  {
+    "input": "TT",
+    "tag": "mo",
+    "output": "⊤",
+    "tex": "top",
+    "ttype": 0
+  },
+  {
+    "input": "Tan",
+    "tag": "mo",
+    "output": "tan",
+    "tex": null,
+    "ttype": 1,
+    "func": true
+  },
+  {
+    "input": "Tanh",
+    "tag": "mo",
+    "output": "tanh",
+    "tex": null,
+    "ttype": 1,
+    "func": true
+  },
+  {
+    "input": "Theta",
+    "tag": "mo",
+    "output": "Θ",
+    "tex": null,
+    "ttype": 0
+  },
+  {
+    "input": "Xi",
+    "tag": "mo",
+    "output": "Ξ",
+    "tex": null,
+    "ttype": 0
+  },
+  {
+    "input": "ZZ",
+    "tag": "mo",
+    "output": "ℤ",
+    "tex": "mathbb{Z}",
+    "ttype": 0,
+    "notexcopy": true
+  },
+  {
+    "input": "[",
+    "tag": "mo",
+    "output": "[",
+    "tex": null,
+    "ttype": 4,
+    "val": true
+  },
+  {
+    "input": "\\ ",
+    "tag": "mo",
+    "output": " ",
+    "tex": null,
+    "ttype": 0,
+    "val": true
+  },
+  {
+    "input": "\\\\",
+    "tag": "mo",
+    "output": "\\",
+    "tex": "backslash",
+    "ttype": 0
+  },
+  {
+    "input": "]",
+    "tag": "mo",
+    "output": "]",
+    "tex": null,
+    "ttype": 5,
+    "val": true
+  },
+  {
+    "input": "^",
+    "tag": "msup",
+    "output": "^",
+    "tex": null,
+    "ttype": 3
+  },
+  {
+    "input": "^^",
+    "tag": "mo",
+    "output": "∧",
+    "tex": "wedge",
+    "ttype": 0
+  },
+  {
+    "input": "^^^",
+    "tag": "mo",
+    "output": "⋀",
+    "tex": "bigwedge",
+    "ttype": 7
+  },
+  {
+    "input": "_",
+    "tag": "msub",
+    "output": "_",
+    "tex": null,
+    "ttype": 3
+  },
+  {
+    "input": "__|",
+    "tag": "mo",
+    "output": "⌋",
+    "tex": "rfloor",
+    "ttype": 0
+  },
+  {
+    "input": "_|_",
+    "tag": "mo",
+    "output": "⊥",
+    "tex": "bot",
+    "ttype": 0
+  },
+  {
+    "input": "abs",
+    "tag": "mo",
+    "output": "abs",
+    "tex": null,
+    "ttype": 1,
+    "notexcopy": true,
+    "rewriteleftright": [
+      "|",
+      "|"
+    ]
+  },
+  {
+    "input": "aleph",
+    "tag": "mo",
+    "output": "ℵ",
+    "tex": null,
+    "ttype": 0
+  },
+  {
+    "input": "alpha",
+    "tag": "mi",
+    "output": "α",
+    "tex": null,
+    "ttype": 0
+  },
+  {
+    "input": "and",
+    "tag": "mtext",
+    "output": "and",
+    "tex": null,
+    "ttype": 6
+  },
+  {
+    "input": "angle",
+    "tag": "mo",
+    "output": "∠",
+    "ttype": 0,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "approx",
+    "tag": "mo",
+    "output": "≈",
+    "ttype": 0,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "arccos",
+    "tag": "mo",
+    "output": "arccos",
+    "tex": null,
+    "ttype": 1,
+    "func": true
+  },
+  {
+    "input": "arcsin",
+    "tag": "mo",
+    "output": "arcsin",
+    "tex": null,
+    "ttype": 1,
+    "func": true
+  },
+  {
+    "input": "arctan",
+    "tag": "mo",
+    "output": "arctan",
+    "tex": null,
+    "ttype": 1,
+    "func": true
+  },
+  {
+    "input": "ast",
+    "tag": "mo",
+    "output": "∗",
+    "ttype": 0,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "backslash",
+    "tag": "mo",
+    "output": "\\",
+    "ttype": 0,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "bar",
+    "tag": "mover",
+    "output": "¯",
+    "tex": "overline",
+    "ttype": 1,
+    "acc": true
+  },
+  {
+    "input": "bb",
+    "tag": "mstyle",
+    "atname": "mathvariant",
+    "atval": "bold",
+    "output": "bb",
+    "tex": "mathbf",
+    "ttype": 1,
+    "notexcopy": true
+  },
+  {
+    "input": "bbb",
+    "tag": "mstyle",
+    "atname": "mathvariant",
+    "atval": "double-struck",
+    "output": "bbb",
+    "tex": "mathbb",
+    "ttype": 1,
+    "notexcopy": true
+  },
+  {
+    "input": "because",
+    "tag": "mo",
+    "output": "∵",
+    "ttype": 0,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "beta",
+    "tag": "mi",
+    "output": "β",
+    "tex": null,
+    "ttype": 0
+  },
+  {
+    "input": "bigcap",
+    "tag": "mo",
+    "output": "⋂",
+    "ttype": 7,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "bigcup",
+    "tag": "mo",
+    "output": "⋃",
+    "ttype": 7,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "bigvee",
+    "tag": "mo",
+    "output": "⋁",
+    "ttype": 7,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "bigwedge",
+    "tag": "mo",
+    "output": "⋀",
+    "ttype": 7,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "bot",
+    "tag": "mo",
+    "output": "⊥",
+    "ttype": 0,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "bowtie",
+    "tag": "mo",
+    "output": "⋈",
+    "ttype": 0,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "boxempty",
+    "tag": "mo",
+    "output": "□",
+    "ttype": 0,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "cancel",
+    "tag": "menclose",
+    "output": "cancel",
+    "tex": null,
+    "ttype": 1
+  },
+  {
+    "input": "cap",
+    "tag": "mo",
+    "output": "∩",
+    "ttype": 0,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "cc",
+    "tag": "mstyle",
+    "atname": "mathvariant",
+    "atval": "script",
+    "output": "cc",
+    "tex": "mathcal",
+    "ttype": 1,
+    "notexcopy": true
+  },
+  {
+    "input": "cdot",
+    "tag": "mo",
+    "output": "⋅",
+    "ttype": 0,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "cdots",
+    "tag": "mo",
+    "output": "⋯",
+    "tex": null,
+    "ttype": 0
+  },
+  {
+    "input": "ceil",
+    "tag": "mo",
+    "output": "ceil",
+    "tex": null,
+    "ttype": 1,
+    "notexcopy": true,
+    "rewriteleftright": [
+      "\\lceil",
+      "\\rceil"
+    ]
+  },
+  {
+    "input": "chi",
+    "tag": "mi",
+    "output": "χ",
+    "tex": null,
+    "ttype": 0
+  },
+  {
+    "input": "circ",
+    "tag": "mo",
+    "output": "∘",
+    "ttype": 0,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "color",
+    "tag": "mstyle",
+    "ttype": 2,
+    "tex": null
+  },
+  {
+    "input": "cong",
+    "tag": "mo",
+    "output": "~=",
+    "tex": null,
+    "ttype": 8
+  },
+  {
+    "input": "cos",
+    "tag": "mo",
+    "output": "cos",
+    "tex": null,
+    "ttype": 1,
+    "func": true
+  },
+  {
+    "input": "cosh",
+    "tag": "mo",
+    "output": "cosh",
+    "tex": null,
+    "ttype": 1,
+    "func": true
+  },
+  {
+    "input": "cot",
+    "tag": "mo",
+    "output": "cot",
+    "tex": null,
+    "ttype": 1,
+    "func": true
+  },
+  {
+    "input": "coth",
+    "tag": "mo",
+    "output": "coth",
+    "tex": null,
+    "ttype": 1,
+    "func": true
+  },
+  {
+    "input": "csc",
+    "tag": "mo",
+    "output": "csc",
+    "tex": null,
+    "ttype": 1,
+    "func": true
+  },
+  {
+    "input": "csch",
+    "tag": "mo",
+    "output": "csch",
+    "tex": null,
+    "ttype": 1,
+    "func": true
+  },
+  {
+    "input": "cup",
+    "tag": "mo",
+    "output": "∪",
+    "ttype": 0,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "darr",
+    "tag": "mo",
+    "output": "↓",
+    "tex": "downarrow",
+    "ttype": 0
+  },
+  {
+    "input": "ddot",
+    "tag": "mover",
+    "output": "..",
+    "tex": null,
+    "ttype": 1,
+    "acc": true
+  },
+  {
+    "input": "ddots",
+    "tag": "mo",
+    "output": "⋱",
+    "tex": null,
+    "ttype": 0
+  },
+  {
+    "input": "del",
+    "tag": "mo",
+    "output": "∂",
+    "tex": "partial",
+    "ttype": 0
+  },
+  {
+    "input": "delta",
+    "tag": "mi",
+    "output": "δ",
+    "tex": null,
+    "ttype": 0
+  },
+  {
+    "input": "det",
+    "tag": "mo",
+    "output": "det",
+    "tex": null,
+    "ttype": 1,
+    "func": true
+  },
+  {
+    "input": "diamond",
+    "tag": "mo",
+    "output": "⋄",
+    "tex": null,
+    "ttype": 0
+  },
+  {
+    "input": "dim",
+    "tag": "mo",
+    "output": "dim",
+    "tex": null,
+    "ttype": 0
+  },
+  {
+    "input": "div",
+    "tag": "mo",
+    "output": "÷",
+    "ttype": 0,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "divide",
+    "tag": "mo",
+    "output": "-:",
+    "tex": null,
+    "ttype": 8
+  },
+  {
+    "input": "dot",
+    "tag": "mover",
+    "output": ".",
+    "tex": null,
+    "ttype": 1,
+    "acc": true
+  },
+  {
+    "input": "downarrow",
+    "tag": "mo",
+    "output": "↓",
+    "ttype": 0,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "dt",
+    "tag": "mi",
+    "output": "{:d t:}",
+    "tex": null,
+    "ttype": 8
+  },
+  {
+    "input": "dx",
+    "tag": "mi",
+    "output": "{:d x:}",
+    "tex": null,
+    "ttype": 8
+  },
+  {
+    "input": "dy",
+    "tag": "mi",
+    "output": "{:d y:}",
+    "tex": null,
+    "ttype": 8
+  },
+  {
+    "input": "dz",
+    "tag": "mi",
+    "output": "{:d z:}",
+    "tex": null,
+    "ttype": 8
+  },
+  {
+    "input": "emptyset",
+    "tag": "mo",
+    "output": "∅",
+    "ttype": 0,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "epsi",
+    "tag": "mi",
+    "output": "ε",
+    "tex": "epsilon",
+    "ttype": 0
+  },
+  {
+    "input": "epsilon",
+    "tag": "mi",
+    "output": "ε",
+    "ttype": 0,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "equiv",
+    "tag": "mo",
+    "output": "≡",
+    "ttype": 0,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "eta",
+    "tag": "mi",
+    "output": "η",
+    "tex": null,
+    "ttype": 0
+  },
+  {
+    "input": "exists",
+    "tag": "mo",
+    "output": "∃",
+    "ttype": 0,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "exp",
+    "tag": "mo",
+    "output": "exp",
+    "tex": null,
+    "ttype": 1,
+    "func": true
+  },
+  {
+    "input": "f",
+    "tag": "mi",
+    "output": "f",
+    "tex": null,
+    "ttype": 1,
+    "func": true,
+    "val": true
+  },
+  {
+    "input": "floor",
+    "tag": "mo",
+    "output": "floor",
+    "tex": null,
+    "ttype": 1,
+    "notexcopy": true,
+    "rewriteleftright": [
+      "\\lfloor",
+      "\\rfloor"
+    ]
+  },
+  {
+    "input": "forall",
+    "tag": "mo",
+    "output": "∀",
+    "ttype": 0,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "fr",
+    "tag": "mstyle",
+    "atname": "mathvariant",
+    "atval": "fraktur",
+    "output": "fr",
+    "tex": "mathfrak",
+    "ttype": 1,
+    "notexcopy": true
+  },
+  {
+    "input": "frac",
+    "tag": "mfrac",
+    "output": "/",
+    "tex": null,
+    "ttype": 2
+  },
+  {
+    "input": "frown",
+    "tag": "mo",
+    "output": "⌢",
+    "tex": null,
+    "ttype": 0
+  },
+  {
+    "input": "g",
+    "tag": "mi",
+    "output": "g",
+    "tex": null,
+    "ttype": 1,
+    "func": true,
+    "val": true
+  },
+  {
+    "input": "gamma",
+    "tag": "mi",
+    "output": "γ",
+    "tex": null,
+    "ttype": 0
+  },
+  {
+    "input": "gcd",
+    "tag": "mo",
+    "output": "gcd",
+    "tex": null,
+    "ttype": 1,
+    "func": true
+  },
+  {
+    "input": "ge",
+    "tag": "mo",
+    "output": "≥",
+    "ttype": 0,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "geq",
+    "tag": "mo",
+    "output": "≥",
+    "ttype": 0,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "glb",
+    "tag": "mo",
+    "output": "glb",
+    "tex": null,
+    "ttype": 0
+  },
+  {
+    "input": "grad",
+    "tag": "mo",
+    "output": "∇",
+    "tex": "nabla",
+    "ttype": 0
+  },
+  {
+    "input": "gt",
+    "tag": "mo",
+    "output": ">",
+    "tex": null,
+    "ttype": 0
+  },
+  {
+    "input": "gt=",
+    "tag": "mo",
+    "output": "≥",
+    "tex": "geq",
+    "ttype": 0
+  },
+  {
+    "input": "hArr",
+    "tag": "mo",
+    "output": "⇔",
+    "tex": "Leftrightarrow",
+    "ttype": 0
+  },
+  {
+    "input": "harr",
+    "tag": "mo",
+    "output": "↔",
+    "tex": "leftrightarrow",
+    "ttype": 0
+  },
+  {
+    "input": "hat",
+    "tag": "mover",
+    "output": "^",
+    "tex": null,
+    "ttype": 1,
+    "acc": true
+  },
+  {
+    "input": "if",
+    "tag": "mo",
+    "output": "if",
+    "tex": null,
+    "ttype": 6
+  },
+  {
+    "input": "iff",
+    "tag": "mo",
+    "output": "<=>",
+    "tex": null,
+    "ttype": 8
+  },
+  {
+    "input": "implies",
+    "tag": "mo",
+    "output": "=>",
+    "tex": null,
+    "ttype": 8
+  },
+  {
+    "input": "in",
+    "tag": "mo",
+    "output": "∈",
+    "tex": null,
+    "ttype": 0
+  },
+  {
+    "input": "infty",
+    "tag": "mo",
+    "output": "∞",
+    "ttype": 0,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "int",
+    "tag": "mo",
+    "output": "∫",
+    "tex": null,
+    "ttype": 0
+  },
+  {
+    "input": "iota",
+    "tag": "mi",
+    "output": "ι",
+    "tex": null,
+    "ttype": 0
+  },
+  {
+    "input": "kappa",
+    "tag": "mi",
+    "output": "κ",
+    "tex": null,
+    "ttype": 0
+  },
+  {
+    "input": "lArr",
+    "tag": "mo",
+    "output": "⇐",
+    "tex": "Leftarrow",
+    "ttype": 0
+  },
+  {
+    "input": "lambda",
+    "tag": "mi",
+    "output": "λ",
+    "tex": null,
+    "ttype": 0
+  },
+  {
+    "input": "lamda",
+    "tag": "mi",
+    "output": "lambda",
+    "tex": null,
+    "ttype": 8
+  },
+  {
+    "input": "langle",
+    "tag": "mo",
+    "output": "〈",
+    "ttype": 4,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "langle",
+    "tag": "mo",
+    "output": "〈",
+    "ttype": 4,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "larr",
+    "tag": "mo",
+    "output": "←",
+    "tex": "leftarrow",
+    "ttype": 0
+  },
+  {
+    "input": "lbrace",
+    "tag": "mo",
+    "output": "{",
+    "ttype": 4,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "lceil",
+    "tag": "mo",
+    "output": "⌈",
+    "ttype": 0,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "lceiling",
+    "tag": "mo",
+    "output": "|~",
+    "tex": null,
+    "ttype": 8
+  },
+  {
+    "input": "lcm",
+    "tag": "mo",
+    "output": "lcm",
+    "tex": "text{lcm}",
+    "ttype": 1,
+    "func": true,
+    "notexcopy": true
+  },
+  {
+    "input": "ldots",
+    "tag": "mo",
+    "output": "...",
+    "ttype": 0,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "le",
+    "tag": "mo",
+    "output": "≤",
+    "ttype": 0,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "leftarrow",
+    "tag": "mo",
+    "output": "←",
+    "ttype": 0,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "leftrightarrow",
+    "tag": "mo",
+    "output": "↔",
+    "ttype": 0,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "leq",
+    "tag": "mo",
+    "output": "≤",
+    "ttype": 0,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "lfloor",
+    "tag": "mo",
+    "output": "⌊",
+    "ttype": 0,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "lim",
+    "tag": "mo",
+    "output": "lim",
+    "tex": null,
+    "ttype": 7
+  },
+  {
+    "input": "ln",
+    "tag": "mo",
+    "output": "ln",
+    "tex": null,
+    "ttype": 1,
+    "func": true
+  },
+  {
+    "input": "log",
+    "tag": "mo",
+    "output": "log",
+    "tex": null,
+    "ttype": 1,
+    "func": true
+  },
+  {
+    "input": "lt",
+    "tag": "mo",
+    "output": "<",
+    "tex": null,
+    "ttype": 0
+  },
+  {
+    "input": "lt=",
+    "tag": "mo",
+    "output": "≤",
+    "tex": "leq",
+    "ttype": 0
+  },
+  {
+    "input": "ltimes",
+    "tag": "mo",
+    "output": "⋉",
+    "ttype": 0,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "lub",
+    "tag": "mo",
+    "output": "lub",
+    "tex": null,
+    "ttype": 0
+  },
+  {
+    "input": "mapsto",
+    "tag": "mo",
+    "output": "↦",
+    "ttype": 0,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "mathbb",
+    "tag": "mstyle",
+    "atname": "mathvariant",
+    "atval": "double-struck",
+    "output": "mathbb",
+    "tex": null,
+    "ttype": 1
+  },
+  {
+    "input": "mathbf",
+    "tag": "mstyle",
+    "atname": "mathvariant",
+    "atval": "bold",
+    "output": "mathbf",
+    "tex": null,
+    "ttype": 1
+  },
+  {
+    "input": "mathcal",
+    "tag": "mstyle",
+    "atname": "mathvariant",
+    "atval": "script",
+    "output": "mathcal",
+    "tex": null,
+    "ttype": 1
+  },
+  {
+    "input": "mathfrak",
+    "tag": "mstyle",
+    "atname": "mathvariant",
+    "atval": "fraktur",
+    "output": "mathfrak",
+    "tex": null,
+    "ttype": 1
+  },
+  {
+    "input": "mathsf",
+    "tag": "mstyle",
+    "atname": "mathvariant",
+    "atval": "sans-serif",
+    "output": "mathsf",
+    "tex": null,
+    "ttype": 1
+  },
+  {
+    "input": "mathtt",
+    "tag": "mstyle",
+    "atname": "mathvariant",
+    "atval": "monospace",
+    "output": "mathtt",
+    "tex": null,
+    "ttype": 1
+  },
+  {
+    "input": "max",
+    "tag": "mo",
+    "output": "max",
+    "tex": null,
+    "ttype": 7
+  },
+  {
+    "input": "mbox",
+    "tag": "mtext",
+    "output": "mbox",
+    "tex": null,
+    "ttype": 10
+  },
+  {
+    "input": "min",
+    "tag": "mo",
+    "output": "min",
+    "tex": null,
+    "ttype": 7
+  },
+  {
+    "input": "mod",
+    "tag": "mo",
+    "output": "mod",
+    "tex": "text{mod}",
+    "ttype": 0,
+    "notexcopy": true
+  },
+  {
+    "input": "models",
+    "tag": "mo",
+    "output": "⊨",
+    "ttype": 0,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "mu",
+    "tag": "mi",
+    "output": "μ",
+    "tex": null,
+    "ttype": 0
+  },
+  {
+    "input": "nabla",
+    "tag": "mo",
+    "output": "∇",
+    "ttype": 0,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "ne",
+    "tag": "mo",
+    "output": "≠",
+    "ttype": 0,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "neg",
+    "tag": "mo",
+    "output": "¬",
+    "ttype": 0,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "nn",
+    "tag": "mo",
+    "output": "∩",
+    "tex": "cap",
+    "ttype": 0
+  },
+  {
+    "input": "nnn",
+    "tag": "mo",
+    "output": "⋂",
+    "tex": "bigcap",
+    "ttype": 7
+  },
+  {
+    "input": "norm",
+    "tag": "mo",
+    "output": "norm",
+    "tex": null,
+    "ttype": 1,
+    "notexcopy": true,
+    "rewriteleftright": [
+      "\\|",
+      "\\|"
+    ]
+  },
+  {
+    "input": "not",
+    "tag": "mo",
+    "output": "¬",
+    "tex": "neg",
+    "ttype": 0
+  },
+  {
+    "input": "notin",
+    "tag": "mo",
+    "output": "∉",
+    "ttype": 0,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "nu",
+    "tag": "mi",
+    "output": "ν",
+    "tex": null,
+    "ttype": 0
+  },
+  {
+    "input": "o+",
+    "tag": "mo",
+    "output": "⊕",
+    "tex": "oplus",
+    "ttype": 0
+  },
+  {
+    "input": "o.",
+    "tag": "mo",
+    "output": "⊙",
+    "tex": "odot",
+    "ttype": 0
+  },
+  {
+    "input": "obrace",
+    "tag": "mover",
+    "output": "⏞",
+    "tex": "overbrace",
+    "ttype": 1,
+    "acc": true
+  },
+  {
+    "input": "odot",
+    "tag": "mo",
+    "output": "⊙",
+    "ttype": 0,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "oint",
+    "tag": "mo",
+    "output": "∮",
+    "tex": null,
+    "ttype": 0
+  },
+  {
+    "input": "omega",
+    "tag": "mi",
+    "output": "ω",
+    "tex": null,
+    "ttype": 0
+  },
+  {
+    "input": "oo",
+    "tag": "mo",
+    "output": "∞",
+    "tex": "infty",
+    "ttype": 0
+  },
+  {
+    "input": "oplus",
+    "tag": "mo",
+    "output": "⊕",
+    "ttype": 0,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "or",
+    "tag": "mtext",
+    "output": "or",
+    "tex": null,
+    "ttype": 6
+  },
+  {
+    "input": "otimes",
+    "tag": "mo",
+    "output": "⊗",
+    "ttype": 0,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "overbrace",
+    "tag": "mover",
+    "output": "⏞",
+    "ttype": 1,
+    "acc": true,
+    "tex": null
+  },
+  {
+    "input": "overline",
+    "tag": "mover",
+    "output": "¯",
+    "ttype": 1,
+    "acc": true,
+    "tex": null
+  },
+  {
+    "input": "overset",
+    "tag": "mover",
+    "output": "stackrel",
+    "tex": null,
+    "ttype": 2
+  },
+  {
+    "input": "ox",
+    "tag": "mo",
+    "output": "⊗",
+    "tex": "otimes",
+    "ttype": 0
+  },
+  {
+    "input": "partial",
+    "tag": "mo",
+    "output": "∂",
+    "ttype": 0,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "phi",
+    "tag": "mi",
+    "output": "φ",
+    "tex": null,
+    "ttype": 0
+  },
+  {
+    "input": "pi",
+    "tag": "mi",
+    "output": "π",
+    "tex": null,
+    "ttype": 0
+  },
+  {
+    "input": "pm",
+    "tag": "mo",
+    "output": "±",
+    "ttype": 0,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "prec",
+    "tag": "mo",
+    "output": "≺",
+    "ttype": 0,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "preceq",
+    "tag": "mo",
+    "output": "⪯",
+    "ttype": 0,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "prod",
+    "tag": "mo",
+    "output": "∏",
+    "tex": null,
+    "ttype": 7
+  },
+  {
+    "input": "prop",
+    "tag": "mo",
+    "output": "∝",
+    "tex": "propto",
+    "ttype": 0
+  },
+  {
+    "input": "propto",
+    "tag": "mo",
+    "output": "∝",
+    "ttype": 0,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "psi",
+    "tag": "mi",
+    "output": "ψ",
+    "tex": null,
+    "ttype": 0
+  },
+  {
+    "input": "qquad",
+    "tag": "mo",
+    "output": "    ",
+    "tex": null,
+    "ttype": 0
+  },
+  {
+    "input": "quad",
+    "tag": "mo",
+    "output": "  ",
+    "tex": null,
+    "ttype": 0
+  },
+  {
+    "input": "rArr",
+    "tag": "mo",
+    "output": "⇒",
+    "tex": "Rightarrow",
+    "ttype": 0
+  },
+  {
+    "input": "rangle",
+    "tag": "mo",
+    "output": "〉",
+    "ttype": 5,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "rangle",
+    "tag": "mo",
+    "output": "〉",
+    "ttype": 5,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "rarr",
+    "tag": "mo",
+    "output": "→",
+    "tex": "rightarrow",
+    "ttype": 0
+  },
+  {
+    "input": "rbrace",
+    "tag": "mo",
+    "output": "}",
+    "ttype": 5,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "rceil",
+    "tag": "mo",
+    "output": "⌉",
+    "ttype": 0,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "rceiling",
+    "tag": "mo",
+    "output": "~|",
+    "tex": null,
+    "ttype": 8
+  },
+  {
+    "input": "rfloor",
+    "tag": "mo",
+    "output": "⌋",
+    "ttype": 0,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "rho",
+    "tag": "mi",
+    "output": "ρ",
+    "tex": null,
+    "ttype": 0
+  },
+  {
+    "input": "rightarrow",
+    "tag": "mo",
+    "output": "→",
+    "ttype": 0,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "rightarrowtail",
+    "tag": "mo",
+    "output": "↣",
+    "ttype": 0,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "root",
+    "tag": "mroot",
+    "output": "root",
+    "tex": null,
+    "ttype": 2
+  },
+  {
+    "input": "rtimes",
+    "tag": "mo",
+    "output": "⋊",
+    "ttype": 0,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "sec",
+    "tag": "mo",
+    "output": "sec",
+    "tex": null,
+    "ttype": 1,
+    "func": true
+  },
+  {
+    "input": "sech",
+    "tag": "mo",
+    "output": "sech",
+    "tex": null,
+    "ttype": 1,
+    "func": true
+  },
+  {
+    "input": "setminus",
+    "tag": "mo",
+    "output": "\\",
+    "tex": null,
+    "ttype": 0
+  },
+  {
+    "input": "sf",
+    "tag": "mstyle",
+    "atname": "mathvariant",
+    "atval": "sans-serif",
+    "output": "sf",
+    "tex": "mathsf",
+    "ttype": 1,
+    "notexcopy": true
+  },
+  {
+    "input": "sigma",
+    "tag": "mi",
+    "output": "σ",
+    "tex": null,
+    "ttype": 0
+  },
+  {
+    "input": "sin",
+    "tag": "mo",
+    "output": "sin",
+    "tex": null,
+    "ttype": 1,
+    "func": true
+  },
+  {
+    "input": "sinh",
+    "tag": "mo",
+    "output": "sinh",
+    "tex": null,
+    "ttype": 1,
+    "func": true
+  },
+  {
+    "input": "sqrt",
+    "tag": "msqrt",
+    "output": "sqrt",
+    "tex": null,
+    "ttype": 1
+  },
+  {
+    "input": "square",
+    "tag": "mo",
+    "output": "□",
+    "tex": "boxempty",
+    "ttype": 0
+  },
+  {
+    "input": "stackrel",
+    "tag": "mover",
+    "output": "stackrel",
+    "tex": null,
+    "ttype": 2
+  },
+  {
+    "input": "stackrel{\\sim}{=}",
+    "tag": "mo",
+    "output": "≅",
+    "ttype": 0,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "star",
+    "tag": "mo",
+    "output": "⋆",
+    "ttype": 0,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "sub",
+    "tag": "mo",
+    "output": "⊂",
+    "tex": "subset",
+    "ttype": 0
+  },
+  {
+    "input": "sube",
+    "tag": "mo",
+    "output": "⊆",
+    "tex": "subseteq",
+    "ttype": 0
+  },
+  {
+    "input": "subset",
+    "tag": "mo",
+    "output": "⊂",
+    "ttype": 0,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "subseteq",
+    "tag": "mo",
+    "output": "⊆",
+    "ttype": 0,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "succ",
+    "tag": "mo",
+    "output": "≻",
+    "ttype": 0,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "succeq",
+    "tag": "mo",
+    "output": "⪰",
+    "ttype": 0,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "sum",
+    "tag": "mo",
+    "output": "∑",
+    "tex": null,
+    "ttype": 7
+  },
+  {
+    "input": "sup",
+    "tag": "mo",
+    "output": "⊃",
+    "tex": "supset",
+    "ttype": 0
+  },
+  {
+    "input": "supe",
+    "tag": "mo",
+    "output": "⊇",
+    "tex": "supseteq",
+    "ttype": 0
+  },
+  {
+    "input": "supset",
+    "tag": "mo",
+    "output": "⊃",
+    "ttype": 0,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "supseteq",
+    "tag": "mo",
+    "output": "⊇",
+    "ttype": 0,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "tan",
+    "tag": "mo",
+    "output": "tan",
+    "tex": null,
+    "ttype": 1,
+    "func": true
+  },
+  {
+    "input": "tanh",
+    "tag": "mo",
+    "output": "tanh",
+    "tex": null,
+    "ttype": 1,
+    "func": true
+  },
+  {
+    "input": "tau",
+    "tag": "mi",
+    "output": "τ",
+    "tex": null,
+    "ttype": 0
+  },
+  {
+    "input": "text",
+    "tag": "mtext",
+    "output": "text",
+    "tex": null,
+    "ttype": 10
+  },
+  {
+    "input": "therefore",
+    "tag": "mo",
+    "output": "∴",
+    "ttype": 0,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "theta",
+    "tag": "mi",
+    "output": "θ",
+    "tex": null,
+    "ttype": 0
+  },
+  {
+    "input": "tilde",
+    "tag": "mover",
+    "output": "~",
+    "tex": null,
+    "ttype": 1,
+    "acc": true
+  },
+  {
+    "input": "times",
+    "tag": "mo",
+    "output": "×",
+    "ttype": 0,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "to",
+    "tag": "mo",
+    "output": "→",
+    "ttype": 0,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "top",
+    "tag": "mo",
+    "output": "⊤",
+    "ttype": 0,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "triangle",
+    "tag": "mo",
+    "output": "△",
+    "ttype": 0,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "tt",
+    "tag": "mstyle",
+    "atname": "mathvariant",
+    "atval": "monospace",
+    "output": "tt",
+    "tex": "mathtt",
+    "ttype": 1,
+    "notexcopy": true
+  },
+  {
+    "input": "twoheadrightarrow",
+    "tag": "mo",
+    "output": "↠",
+    "ttype": 0,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "twoheadrightarrowtail",
+    "tag": "mo",
+    "output": "⤖",
+    "ttype": 0,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "uarr",
+    "tag": "mo",
+    "output": "↑",
+    "tex": "uparrow",
+    "ttype": 0
+  },
+  {
+    "input": "ubrace",
+    "tag": "munder",
+    "output": "⏟",
+    "tex": "underbrace",
+    "ttype": 1,
+    "acc": true
+  },
+  {
+    "input": "ul",
+    "tag": "munder",
+    "output": "̲",
+    "tex": "underline",
+    "ttype": 1,
+    "acc": true
+  },
+  {
+    "input": "underbrace",
+    "tag": "munder",
+    "output": "⏟",
+    "ttype": 1,
+    "acc": true,
+    "tex": null
+  },
+  {
+    "input": "underline",
+    "tag": "munder",
+    "output": "̲",
+    "ttype": 1,
+    "acc": true,
+    "tex": null
+  },
+  {
+    "input": "underset",
+    "tag": "munder",
+    "output": "stackrel",
+    "tex": null,
+    "ttype": 2
+  },
+  {
+    "input": "uparrow",
+    "tag": "mo",
+    "output": "↑",
+    "ttype": 0,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "upsilon",
+    "tag": "mi",
+    "output": "υ",
+    "tex": null,
+    "ttype": 0
+  },
+  {
+    "input": "uu",
+    "tag": "mo",
+    "output": "∪",
+    "tex": "cup",
+    "ttype": 0
+  },
+  {
+    "input": "uuu",
+    "tag": "mo",
+    "output": "⋃",
+    "tex": "bigcup",
+    "ttype": 7
+  },
+  {
+    "input": "varepsilon",
+    "tag": "mi",
+    "output": "ɛ",
+    "tex": null,
+    "ttype": 0
+  },
+  {
+    "input": "varphi",
+    "tag": "mi",
+    "output": "ϕ",
+    "tex": null,
+    "ttype": 0
+  },
+  {
+    "input": "vartheta",
+    "tag": "mi",
+    "output": "ϑ",
+    "tex": null,
+    "ttype": 0
+  },
+  {
+    "input": "vdash",
+    "tag": "mo",
+    "output": "⊢",
+    "ttype": 0,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "vdots",
+    "tag": "mo",
+    "output": "⋮",
+    "tex": null,
+    "ttype": 0
+  },
+  {
+    "input": "vec",
+    "tag": "mover",
+    "output": "→",
+    "tex": null,
+    "ttype": 1,
+    "acc": true
+  },
+  {
+    "input": "vee",
+    "tag": "mo",
+    "output": "∨",
+    "ttype": 0,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "vv",
+    "tag": "mo",
+    "output": "∨",
+    "tex": "vee",
+    "ttype": 0
+  },
+  {
+    "input": "vvv",
+    "tag": "mo",
+    "output": "⋁",
+    "tex": "bigvee",
+    "ttype": 7
+  },
+  {
+    "input": "wedge",
+    "tag": "mo",
+    "output": "∧",
+    "ttype": 0,
+    "acc": false,
+    "tex": null
+  },
+  {
+    "input": "xi",
+    "tag": "mi",
+    "output": "ξ",
+    "tex": null,
+    "ttype": 0
+  },
+  {
+    "input": "xx",
+    "tag": "mo",
+    "output": "×",
+    "tex": "times",
+    "ttype": 0
+  },
+  {
+    "input": "zeta",
+    "tag": "mi",
+    "output": "ζ",
+    "tex": null,
+    "ttype": 0
+  },
+  {
+    "input": "{",
+    "tag": "mo",
+    "output": "{",
+    "tex": "lbrace",
+    "ttype": 4
+  },
+  {
+    "input": "{:",
+    "tag": "mo",
+    "output": "{:",
+    "tex": null,
+    "ttype": 4,
+    "invisible": true
+  },
+  {
+    "input": "|",
+    "tag": "mo",
+    "output": "|",
+    "tex": null,
+    "ttype": 9,
+    "val": true
+  },
+  {
+    "input": "|--",
+    "tag": "mo",
+    "output": "⊢",
+    "tex": "vdash",
+    "ttype": 0
+  },
+  {
+    "input": "|->",
+    "tag": "mo",
+    "output": "↦",
+    "tex": "mapsto",
+    "ttype": 0
+  },
+  {
+    "input": "|==",
+    "tag": "mo",
+    "output": "⊨",
+    "tex": "models",
+    "ttype": 0
+  },
+  {
+    "input": "|><",
+    "tag": "mo",
+    "output": "⋉",
+    "tex": "ltimes",
+    "ttype": 0
+  },
+  {
+    "input": "|><|",
+    "tag": "mo",
+    "output": "⋈",
+    "tex": "bowtie",
+    "ttype": 0
+  },
+  {
+    "input": "|__",
+    "tag": "mo",
+    "output": "⌊",
+    "tex": "lfloor",
+    "ttype": 0
+  },
+  {
+    "input": "|~",
+    "tag": "mo",
+    "output": "⌈",
+    "tex": "lceil",
+    "ttype": 0
+  },
+  {
+    "input": "}",
+    "tag": "mo",
+    "output": "}",
+    "tex": "rbrace",
+    "ttype": 5
+  },
+  {
+    "input": "~=",
+    "tag": "mo",
+    "output": "≅",
+    "tex": "stackrel{\\sim}{=}",
+    "ttype": 0
+  },
+  {
+    "input": "~|",
+    "tag": "mo",
+    "output": "⌉",
+    "tex": "rceil",
+    "ttype": 0
+  },
+  {
+    "input": "~~",
+    "tag": "mo",
+    "output": "≈",
+    "tex": "approx",
+    "ttype": 0
+  }
+]

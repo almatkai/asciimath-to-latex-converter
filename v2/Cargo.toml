@@ -1,0 +1,22 @@
+[package]
+name = "tezbar-asciimath-to-latex-converter"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.85"
+autotests = false
+license = "MIT"
+repository = "https://github.com/almatkai/asciimath-to-latex-converter"
+description = "Bounded native port of asciimath-to-latex 0.5.1 for Tezbar Native V2"
+include = ["/src/**", "/adapter/**", "/tests/**", "/fixtures/**", "/assets/**", "/integration/*.patch", "/integration/*.json", "/integration/host-files/**", "/integration/direct/Cargo.toml.template", "/integration/direct/Cargo.lock", "/integration/harness/Cargo.toml.template", "/integration/harness/Cargo.lock", "/integration/harness/src/**", "/integration/harness/tests/**", "/integration/harness/runtime/Cargo.toml.template", "/integration/harness/runtime/Cargo.lock", "/integration/harness/runtime/src/**", "/integration/harness/runtime/tauri-stub/Cargo.toml.template", "/integration/harness/runtime/tauri-stub/src/**", "/integration/renderer/package.json", "/integration/renderer/package-lock.json", "/integration/renderer/vitest.config.ts", "/integration/renderer/tsconfig.json", "/integration/renderer/os-stubs.d.ts", "/integration/renderer/*.test.ts", "/integration/renderer/*.test.tsx", "/scripts/**", "/Cargo.toml", "/Cargo.lock", "/manifest.json", "/PROVENANCE.json", "/EVIDENCE.json", "/integration/renderer/.gitignore", "/README.md", "/NOTICE", "/LICENSE*", "/INDEX.json", "/.gitignore"]
+
+[dependencies]
+serde = { version = "=1.0.228", features = ["derive"] }
+serde_json = "=1.0.145"
+
+[[bin]]
+name = "oracle-check"
+path = "src/bin/oracle-check.rs"
+
+[[test]]
+name = "engine"
+path = "tests/engine.rs"

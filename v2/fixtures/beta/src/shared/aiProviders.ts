@@ -1,0 +1,269 @@
+import type { AiModelCapability, AiProviderModel, BuiltInProviderId, LlmConfigRecord, ProviderId } from './llmConfig'
+
+export const AI_PROVIDER_ROWS: Array<{ id: BuiltInProviderId; title: string; subtitle: string }> = [
+  { id: 'openai', title: 'OpenAI', subtitle: 'Official OpenAI API' },
+  { id: 'deepseek', title: 'DeepSeek', subtitle: 'DeepSeek V4 Flash and Pro' },
+  { id: 'antigravity', title: 'Antigravity', subtitle: 'Google Antigravity via Pi Agent' },
+  { id: 'openai-compatible', title: 'OpenAI Compatible', subtitle: 'Custom OpenAI-style endpoint' },
+  { id: 'tokenrouter', title: 'TokenRouter', subtitle: 'TokenRouter OpenAI-compatible gateway' },
+  { id: 'gemini', title: 'Gemini', subtitle: 'Google Gemini via OpenAI-compatible API' },
+  { id: 'anthropic', title: 'Anthropic', subtitle: 'Claude via the official API' },
+  { id: 'ollama', title: 'Ollama', subtitle: 'Local models on this machine' },
+  { id: 'copilot', title: 'GitHub Copilot', subtitle: 'Copilot Chat access token' },
+  { id: 'opencode', title: 'OpenCode', subtitle: 'OpenCode Zen through the CLI/API' },
+]
+
+export const AI_CAPABILITIES: Array<{ id: AiModelCapability; label: string }> = [
+  { id: 'vision', label: 'Vision' },
+  { id: 'thinking', label: 'Thinking' },
+  { id: 'tools', label: 'Tools' },
+]
+
+export const RECOMMENDED_AI_MODEL: Record<BuiltInProviderId, string> = {
+  openai: 'gpt-5.4-mini',
+  deepseek: 'deepseek-v4-flash',
+  antigravity: 'gemini-3.8-flash',
+  'openai-compatible': 'gpt-5.4-mini',
+  tokenrouter: 'moonshotai/kimi-k3-free',
+  gemini: 'gemini-3.5-flash',
+  anthropic: 'claude-haiku-4-5-20251001',
+  ollama: 'llama3.2',
+  copilot: 'gpt-5-mini',
+  opencode: 'opencode/big-pickle',
+}
+
+export const DEFAULT_BASE_URL: Partial<Record<BuiltInProviderId, string>> = {
+  openai: 'https://api.openai.com/v1',
+  deepseek: 'https://api.deepseek.com',
+  antigravity: 'https://cloudcode-pa.googleapis.com',
+  'openai-compatible': 'https://api.openai.com/v1',
+  tokenrouter: 'https://api.tokenrouter.com/v1',
+  gemini: 'https://generativelanguage.googleapis.com/v1beta/openai',
+  anthropic: 'https://api.anthropic.com',
+  ollama: 'http://localhost:11434',
+}
+
+export const DEFAULT_PROVIDER_MODELS: Record<BuiltInProviderId, AiProviderModel[]> = {
+  antigravity: [
+    { id: 'gemini-3.8-flash', capabilities: ['vision', 'thinking', 'tools'], contextWindow: 1048576 },
+    { id: 'gemini-3.7-flash', capabilities: ['vision', 'thinking', 'tools'], contextWindow: 1048576 },
+    { id: 'gemini-3.5-flash', capabilities: ['vision', 'thinking', 'tools'], contextWindow: 1048576 },
+    { id: 'gemini-3.1-pro', capabilities: ['vision', 'thinking', 'tools'], contextWindow: 1048576 },
+    { id: 'gemini-2.5-pro', capabilities: ['vision', 'thinking', 'tools'], contextWindow: 1048576 },
+    { id: 'claude-sonnet-4-6', capabilities: ['vision', 'thinking', 'tools'], contextWindow: 200000 },
+    { id: 'claude-opus-4-6', capabilities: ['vision', 'thinking', 'tools'], contextWindow: 250000 },
+    { id: 'gpt-oss-120b', capabilities: ['thinking', 'tools'], contextWindow: 131072 },
+  ],
+  openai: [
+    { id: 'gpt-5.5', capabilities: ['vision', 'thinking', 'tools'], contextWindow: 1050000 },
+    { id: 'gpt-5.4', capabilities: ['vision', 'thinking', 'tools'], contextWindow: 1050000 },
+    { id: 'gpt-5.4-mini', capabilities: ['vision', 'thinking', 'tools'], contextWindow: 400000 },
+    { id: 'gpt-5.4-nano', capabilities: ['vision', 'thinking', 'tools'], contextWindow: 400000 },
+    { id: 'gpt-5-mini', capabilities: ['vision', 'thinking', 'tools'], contextWindow: 400000 },
+  ],
+
+  deepseek: [
+    { id: 'deepseek-v4-flash', capabilities: ['thinking', 'tools'], contextWindow: 1048576 },
+    { id: 'deepseek-v4-pro', capabilities: ['thinking', 'tools'], contextWindow: 1048576 },
+  ],
+
+  'openai-compatible': [
+    { id: 'gpt-5.4-mini', capabilities: ['vision', 'thinking', 'tools'], contextWindow: 400000 },
+  ],
+
+  tokenrouter: [
+    { id: 'moonshotai/kimi-k3-free', capabilities: ['tools'], contextWindow: 128000 },
+  ],
+
+  gemini: [
+    { id: 'gemini-3.5-flash', capabilities: ['vision', 'thinking', 'tools'], contextWindow: 1048576 },
+    { id: 'gemini-3.1-flash-lite', capabilities: ['vision', 'thinking', 'tools'], contextWindow: 1048576 },
+    { id: 'gemini-3.1-pro-preview', capabilities: ['vision', 'thinking', 'tools'], contextWindow: 1048576 },
+    { id: 'gemini-3-flash', capabilities: ['vision', 'thinking', 'tools'], contextWindow: 1048576 },
+  ],
+
+  anthropic: [
+    { id: 'claude-haiku-4-5-20251001', capabilities: ['vision', 'thinking', 'tools'], contextWindow: 200000 },
+    { id: 'claude-sonnet-5', capabilities: ['vision', 'thinking', 'tools'], contextWindow: 1000000 },
+    { id: 'claude-opus-4-8', capabilities: ['vision', 'thinking', 'tools'], contextWindow: 1000000 },
+    { id: 'claude-fable-5', capabilities: ['vision', 'thinking', 'tools'], contextWindow: 1000000 },
+  ],
+
+  ollama: [
+    { id: 'llama3.2', capabilities: ['tools'], contextWindow: 128000 },
+    { id: 'llava', capabilities: ['vision'], contextWindow: 32000 },
+  ],
+
+  copilot: [
+    { id: 'gpt-5-mini', capabilities: ['vision', 'thinking', 'tools'], contextWindow: 400000 },
+    { id: 'gpt-5.3-codex', capabilities: ['thinking', 'tools'], contextWindow: 1000000 },
+    { id: 'gpt-5.4', capabilities: ['vision', 'thinking', 'tools'], contextWindow: 1000000 },
+    { id: 'gpt-5.4-mini', capabilities: ['vision', 'thinking', 'tools'], contextWindow: 400000 },
+    { id: 'gpt-5.5', capabilities: ['vision', 'thinking', 'tools'], contextWindow: 1000000 },
+    { id: 'claude-haiku-4.5', capabilities: ['vision', 'thinking', 'tools'], contextWindow: 200000 },
+    { id: 'claude-sonnet-4.6', capabilities: ['vision', 'thinking', 'tools'], contextWindow: 1000000 },
+    { id: 'claude-sonnet-5', capabilities: ['vision', 'thinking', 'tools'], contextWindow: 1000000 },
+    { id: 'gemini-3.5-flash', capabilities: ['vision', 'thinking', 'tools'], contextWindow: 1048576 },
+    { id: 'gemini-3.1-pro', capabilities: ['vision', 'thinking', 'tools'], contextWindow: 1048576 },
+    { id: 'mai-code-1-flash', capabilities: ['thinking', 'tools'], contextWindow: 400000 },
+    { id: 'kimi-k2.7-code', capabilities: ['thinking', 'tools'], contextWindow: 128000 },
+  ],
+
+  opencode: [
+    { id: 'opencode/big-pickle', capabilities: ['thinking', 'tools'], contextWindow: 128000 },
+    { id: 'opencode/gpt-5.5', capabilities: ['vision', 'thinking', 'tools'], contextWindow: 1050000 },
+    { id: 'opencode/gpt-5.4-mini', capabilities: ['vision', 'thinking', 'tools'], contextWindow: 400000 },
+    { id: 'opencode/deepseek-v4-pro', capabilities: ['thinking', 'tools'], contextWindow: 1048576 },
+    { id: 'opencode/deepseek-v4-flash', capabilities: ['thinking', 'tools'], contextWindow: 1048576 },
+    { id: 'opencode/deepseek-v4-flash-free', capabilities: ['thinking', 'tools'], contextWindow: 1048576 },
+    { id: 'opencode/mimo-v2.5-free', capabilities: ['thinking', 'tools'], contextWindow: 128000 },
+    { id: 'opencode/nemotron-3-ultra-free', capabilities: ['tools'], contextWindow: 128000 },
+    { id: 'opencode/north-mini-code-free', capabilities: ['tools'], contextWindow: 128000 },
+    { id: 'opencode/kimi-k2.7-code', capabilities: ['thinking', 'tools'], contextWindow: 128000 },
+  ],
+}
+
+export function isCustomProvider(id: ProviderId): id is `custom:${string}` {
+  return id.startsWith('custom:')
+}
+
+export function providerRows(config: Pick<LlmConfigRecord, 'customProviders'>): Array<{ id: ProviderId; title: string; subtitle: string }> {
+  return [
+    ...AI_PROVIDER_ROWS,
+    ...(config.customProviders ?? []).map((provider) => ({
+      id: provider.id,
+      title: provider.title,
+      subtitle: provider.subtitle ?? 'Custom OpenAI-compatible endpoint',
+    })),
+  ]
+}
+
+export function providerTitle(id: ProviderId, config?: Pick<LlmConfigRecord, 'customProviders'>): string {
+  return providerRows(config ?? {}).find((provider) => provider.id === id)?.title ?? id
+}
+
+export function recommendedModel(provider: ProviderId): string {
+  return isCustomProvider(provider) ? '' : RECOMMENDED_AI_MODEL[provider]
+}
+
+export function defaultModels(provider: ProviderId): AiProviderModel[] {
+  return isCustomProvider(provider) ? [] : DEFAULT_PROVIDER_MODELS[provider]
+}
+
+export function defaultBaseUrl(provider: ProviderId): string {
+  return isCustomProvider(provider) ? '' : (DEFAULT_BASE_URL[provider] ?? '')
+}
+
+export function isAiProviderConfigured(config: LlmConfigRecord, provider: ProviderId): boolean {
+  const models = config.providerModels?.[provider] ?? defaultModels(provider)
+  if (provider === 'ollama' || provider === 'opencode') return models.length > 0
+
+  const providerConfig = config.providerConfigs?.[provider]
+  const isActiveLegacyProvider = config.provider === provider
+  if (provider === 'gemini') {
+    const apiKey =
+      providerConfig?.geminiApiKey ??
+      (isActiveLegacyProvider ? config.geminiApiKey ?? config.apiKey ?? '' : '')
+    return Boolean(apiKey.trim())
+  }
+  if (provider === 'copilot') {
+    const token =
+      providerConfig?.copilotGithubToken ??
+      (isActiveLegacyProvider ? config.copilotGithubToken ?? '' : '')
+    return Boolean(token.trim())
+  }
+  if (provider === 'antigravity') {
+    return models.length > 0
+  }
+
+  if (isCustomProvider(provider) || provider === 'openai-compatible') {
+    const baseUrl =
+      providerConfig?.openaiCompatibleBaseURL ??
+      providerConfig?.baseURL ??
+      (isActiveLegacyProvider ? config.openaiCompatibleBaseURL ?? config.baseURL ?? '' : '')
+    const apiKey = providerConfig?.apiKey ?? (isActiveLegacyProvider ? config.apiKey ?? '' : '')
+    return Boolean(baseUrl.trim()) || Boolean(apiKey.trim()) || models.length > 0
+  }
+
+  const apiKey = providerConfig?.apiKey ?? (isActiveLegacyProvider ? config.apiKey ?? '' : '')
+  return Boolean(apiKey.trim())
+}
+
+export function inferCapabilities(modelId: string): AiModelCapability[] {
+  const lower = modelId.toLowerCase()
+  const caps: AiModelCapability[] = []
+
+  if (
+    /vision|vl|llava|gpt-4o|gpt-5|gemini|claude|fable|opus|sonnet|haiku/.test(lower)
+  ) {
+    caps.unshift('vision')
+  }
+
+  if (
+    /reason|think|r1|o\d|gpt-5|codex|sonnet|opus|fable|haiku|pro|v4|claude|deepseek/.test(lower)
+  ) {
+    caps.push('thinking')
+  }
+
+  if (!/embed|embedding|whisper|tts|audio|speech/.test(lower)) {
+    caps.push('tools')
+  }
+
+  return Array.from(new Set(caps))
+}
+
+export function normalizeModelList(models: AiProviderModel[], fallbackId: string): AiProviderModel[] {
+  const seen = new Set<string>()
+  const normalized: AiProviderModel[] = models
+    .map((model) => {
+      const next: AiProviderModel = {
+        id: String(model.id || '').trim(),
+        capabilities: Array.isArray(model.capabilities)
+          ? model.capabilities.filter(
+              (capability): capability is AiModelCapability =>
+                capability === 'vision' || capability === 'thinking' || capability === 'tools'
+            )
+          : inferCapabilities(model.id),
+      }
+      if (typeof model.contextWindow === 'number' && Number.isFinite(model.contextWindow)) {
+        next.contextWindow = Math.max(0, Math.round(model.contextWindow))
+      }
+      if (model.hiddenFromPicker === true) {
+        next.hiddenFromPicker = true
+      }
+      if (model.discovered === false) {
+        next.discovered = false
+      }
+      return next
+    })
+    .filter((model) => {
+      if (!model.id || seen.has(model.id)) return false
+      seen.add(model.id)
+      return true
+    })
+
+  if (fallbackId && !seen.has(fallbackId)) {
+    normalized.unshift({ id: fallbackId, capabilities: inferCapabilities(fallbackId) })
+  }
+
+  return normalized
+}
+
+export function normalizeProviderModelList(
+  provider: ProviderId,
+  models: AiProviderModel[]
+): AiProviderModel[] {
+  // Custom providers have no shipped defaults — the user's list is authoritative.
+  if (isCustomProvider(provider)) {
+    return normalizeModelList(models, models[0]?.id ?? '')
+  }
+
+  // Built-in providers: trust the user's list. We deliberately do NOT filter ids
+  // against sibling providers' shipped defaults — that filter silently deleted
+  // any hand-added model that happened to share an id with another provider's
+  // default (e.g. a user's `auto` entry under Copilot matched a default
+  // elsewhere and was stripped before the picker ever saw it). We also do NOT
+  // re-inject the recommended model when the user has deliberately removed it;
+  // an empty list is how the user says "I want to choose from zero models here".
+  return normalizeModelList(models, '')
+}

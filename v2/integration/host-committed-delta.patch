@@ -1,0 +1,804 @@
+diff --git a/src-tauri/Cargo.toml b/src-tauri/Cargo.toml
+index 407cde8..377e00e 100644
+--- a/src-tauri/Cargo.toml
++++ b/src-tauri/Cargo.toml
+@@ -1,6 +1,6 @@
+ [package]
+ name = "tezbar"
+-version = "0.2.9-beta.11"
++version = "0.2.9-beta.14"
+ description = "A Tauri App"
+ authors = ["you"]
+ license = "Apache-2.0"
+@@ -25,7 +25,7 @@ serde_json = "1.0"
+ serde = { version = "1.0", features = ["derive"] }
+ semver = "1.0"
+ base64 = "0.22"
+-reqwest = { version = "0.13.4", default-features = false, features = ["json", "native-tls", "stream", "multipart", "query", "form"] }
++reqwest = { version = "0.13.4", default-features = false, features = ["json", "native-tls", "stream", "multipart", "query", "form", "gzip", "brotli"] }
+ log = "0.4"
+ open = "5"
+ tauri = { version = "2.11.2", features = ["macos-private-api", "tray-icon"] }
+diff --git a/src-tauri/src/native_core/extensions/catalog.rs b/src-tauri/src/native_core/extensions/catalog.rs
+index 5ae1962..424ff4f 100644
+--- a/src-tauri/src/native_core/extensions/catalog.rs
++++ b/src-tauri/src/native_core/extensions/catalog.rs
+@@ -1,11 +1,15 @@
+ use crate::native_core::common::{now_ms, read_json, write_json_atomic, CoreContext, CoreResult};
+ use serde_json::{json, Value};
+-use std::{sync::Arc, time::Duration};
++use std::{
++    sync::{Arc, OnceLock},
++    time::Duration,
++};
+ 
+ #[derive(Clone)]
+ pub struct Catalog {
+     ctx: CoreContext,
+-    cache: Arc<tokio::sync::Mutex<Option<(u64, Vec<Value>)>>>,
++    cache: Arc<tokio::sync::Mutex<Option<(u64, Arc<Vec<Entry>>)>>>,
++    fetching: Arc<tokio::sync::Mutex<bool>>,
+ }
+ 
+ impl Catalog {
+@@ -13,73 +17,116 @@ impl Catalog {
+         Self {
+             ctx,
+             cache: Arc::new(tokio::sync::Mutex::new(None)),
++            fetching: Arc::new(tokio::sync::Mutex::new(false)),
+         }
+     }
+ 
+-    async fn entries(&self) -> Result<Vec<Value>, String> {
++    async fn entries(&self) -> Result<Arc<Vec<Entry>>, String> {
+         let mut cache = self.cache.lock().await;
+-        if let Some((time, entries)) = cache
+-            .as_ref()
+-            .filter(|(time, _)| now_ms().saturating_sub(*time) < 3_600_000)
+-        {
+-            let _ = time;
++        if let Some((_, entries)) = cache.as_ref() {
+             return Ok(entries.clone());
+         }
++
+         let path = self.ctx.paths.data_dir.join("extension-catalog.json");
+         let read_path = path.clone();
+         let disk = tokio::task::spawn_blocking(move || read_json(&read_path).ok())
+             .await
+             .map_err(|e| e.to_string())?;
+-        if let Some(value) = disk.as_ref().filter(|v| {
+-            v["version"].as_u64().unwrap_or(0) >= 6
+-                && now_ms().saturating_sub(v["fetchedAt"].as_u64().unwrap_or(0)) < 3_600_000
+-        }) {
+-            let entries = normalize(&value["entries"]);
++
++        if let Some(value) = disk.as_ref().filter(|v| v["version"].as_u64().unwrap_or(0) >= 6) {
++            let fetched_at = value["fetchedAt"].as_u64().unwrap_or(0);
++            let entries = prepare(normalize(&value["entries"]));
+             if !entries.is_empty() {
+-                *cache = Some((now_ms(), entries.clone()));
++                *cache = Some((fetched_at, entries.clone()));
++
++                // Non-blocking background refresh if catalog is older than 24 hours
++                if now_ms().saturating_sub(fetched_at) >= 86_400_000 {
++                    let this = self.clone();
++                    tokio::spawn(async move {
++                        let _ = this.refresh().await;
++                    });
++                }
++
+                 return Ok(entries);
+             }
+         }
++
++        // Fresh start without disk cache: trigger background download without blocking UI
++        let this = self.clone();
++        tokio::spawn(async move {
++            let _ = this.refresh().await;
++        });
++
++        // Return empty entries immediately so curated loved + native extensions render in 0ms
++        let fallback = prepare(vec![]);
++        Ok(fallback)
++    }
++
++    pub async fn refresh(&self) -> Result<Arc<Vec<Entry>>, String> {
++        {
++            let mut fetching = self.fetching.lock().await;
++            if *fetching {
++                if let Some((_, entries)) = self.cache.lock().await.as_ref() {
++                    return Ok(entries.clone());
++                }
++                return Ok(prepare(vec![]));
++            }
++            *fetching = true;
++        }
++
++        let result = self.do_refresh().await;
++        *self.fetching.lock().await = false;
++        if result.is_ok() {
++            self.ctx.emit("extensions-catalog-updated", json!({}));
++        }
++        result
++    }
++
++    async fn do_refresh(&self) -> Result<Arc<Vec<Entry>>, String> {
+         let base = std::env::var("RAYMES_EXTENSION_API_URL")
+             .unwrap_or_else(|_| "https://api.supercmd.sh".into());
+-        let response = async {
++        let raw = Self::fetch_catalog(&base).await?;
++        let normalized = normalize(&raw);
++        if normalized.is_empty() {
++            return Err("Empty catalog received".into());
++        }
++
++        let path = self.ctx.paths.data_dir.join("extension-catalog.json");
++        let saved = json!({
++            "version": 6,
++            "fetchedAt": now_ms(),
++            "entries": normalized,
++        });
++
++        tokio::task::spawn_blocking(move || write_json_atomic(&path, &saved))
++            .await
++            .map_err(|e| e.to_string())??;
++
++        let prepared = prepare(normalized);
++        let mut cache = self.cache.lock().await;
++        *cache = Some((now_ms(), prepared.clone()));
++        Ok(prepared)
++    }
++
++    async fn fetch_catalog(base: &str) -> Result<Value, String> {
++        static CLIENT: OnceLock<reqwest::Client> = OnceLock::new();
++        let client = CLIENT.get_or_init(|| {
+             reqwest::Client::builder()
+                 .timeout(Duration::from_secs(15))
+                 .build()
+-                .map_err(|e| e.to_string())?
+-                .get(format!("{}/extensions/catalog", base.trim_end_matches('/')))
+-                .send()
+-                .await
+-                .map_err(|e| e.to_string())?
+-                .error_for_status()
+-                .map_err(|e| e.to_string())?
+-                .json::<Value>()
+-                .await
+-                .map_err(|e| e.to_string())
+-        }
+-        .await;
+-        let entries = match response {
+-            Ok(value) => {
+-                let entries = normalize(&value);
+-                let saved = json!({"version":6,"fetchedAt":now_ms(),"entries":entries});
+-                tokio::task::spawn_blocking(move || write_json_atomic(&path, &saved))
+-                    .await
+-                    .map_err(|e| e.to_string())??;
+-                entries
+-            }
+-            Err(error) => {
+-                let entries = disk
+-                    .as_ref()
+-                    .map(|v| normalize(&v["entries"]))
+-                    .unwrap_or_default();
+-                if entries.is_empty() {
+-                    return Err(format!("Extension catalog is unavailable: {error}"));
+-                }
+-                entries
+-            }
+-        };
+-        *cache = Some((now_ms(), entries.clone()));
+-        Ok(entries)
++                .unwrap_or_default()
++        });
++        let url = format!("{}/extensions/catalog", base.trim_end_matches('/'));
++        client
++            .get(&url)
++            .send()
++            .await
++            .map_err(|e| e.to_string())?
++            .error_for_status()
++            .map_err(|e| e.to_string())?
++            .json::<Value>()
++            .await
++            .map_err(|e| e.to_string())
+     }
+ 
+     pub async fn search(&self, channel: &str, args: &[Value]) -> CoreResult {
+@@ -97,37 +144,59 @@ impl Catalog {
+             .to_lowercase();
+         let offset = options["offset"].as_u64().unwrap_or(0).min(1_000_000) as usize;
+         let limit = options["limit"].as_u64().unwrap_or(25).clamp(1, 1000) as usize;
+-        let loved: Vec<Value> = serde_json::from_str(include_str!("loved_extensions.json"))
+-            .map_err(|e| e.to_string())?;
+-        let mut entries = if cfg!(target_os = "windows") {
+-            loved
+-                .clone()
+-                .into_iter()
+-                .filter(|v| query.is_empty() || v.to_string().to_lowercase().contains(&query))
+-                .collect::<Vec<_>>()
+-        } else {
+-            let mut scored: Vec<_> = self
+-                .entries()
+-                .await
+-                .unwrap_or_default()
+-                .into_iter()
+-                .map(|v| {
+-                    let score = score(&v, &query);
+-                    (v, score)
+-                })
+-                .filter(|(_, score)| *score > 0.)
+-                .collect();
+-            scored.sort_by(|(a, sa), (b, sb)| {
+-                sb.total_cmp(sa)
+-                    .then_with(|| b["installCount"].as_u64().cmp(&a["installCount"].as_u64()))
+-                    .then_with(|| a["title"].as_str().cmp(&b["title"].as_str()))
++
++        if options["refresh"].as_bool().unwrap_or(false) {
++            let this = self.clone();
++            tokio::spawn(async move {
++                let _ = this.refresh().await;
+             });
+-            scored.into_iter().map(|(v, _)| manifest(&v)).collect()
+-        };
+-        if !cfg!(target_os = "windows") {
+-            entries = merge_own(loved, entries, &query);
+         }
+-        let entries = merge_native(entries, &query);
++
++        let catalog = if cfg!(target_os = "windows") {
++            Arc::default()
++        } else {
++            self.entries().await.unwrap_or_default()
++        };
++        let entries = tokio::task::spawn_blocking(move || {
++            static LOVED: OnceLock<Vec<Value>> = OnceLock::new();
++            let loved = LOVED.get_or_init(|| {
++                serde_json::from_str(include_str!("loved_extensions.json"))
++                    .expect("bundled extension catalog")
++            });
++            let entries = if cfg!(target_os = "windows") {
++                loved
++                    .iter()
++                    .filter(|v| query.is_empty() || v.to_string().to_lowercase().contains(&query))
++                    .cloned()
++                    .collect()
++            } else {
++                let mut scored: Vec<_> = catalog
++                    .iter()
++                    .map(|entry| (entry, entry.keys.score(&entry.value, &query)))
++                    .filter(|(_, score)| *score > 0.)
++                    .collect();
++                scored.sort_by(|(a, sa), (b, sb)| {
++                    sb.total_cmp(sa)
++                        .then_with(|| {
++                            b.value["installCount"]
++                                .as_u64()
++                                .cmp(&a.value["installCount"].as_u64())
++                        })
++                        .then_with(|| a.value["title"].as_str().cmp(&b.value["title"].as_str()))
++                });
++                merge_own(
++                    loved.clone(),
++                    scored
++                        .into_iter()
++                        .map(|(entry, _)| manifest(&entry.value))
++                        .collect(),
++                    &query,
++                )
++            };
++            merge_native(entries, &query)
++        })
++        .await
++        .map_err(|e| e.to_string())?;
+         if channel == "extensions:searchStore" {
+             return Ok(json!(entries));
+         }
+@@ -234,17 +303,47 @@ fn normalize(value: &Value) -> Vec<Value> {
+         .flatten()
+         .filter(|v| v["name"].as_str().is_some_and(|s| !s.is_empty()))
+         .map(|v| {
+-            let mut entry = v.clone();
+-            for (camel, snake) in [
+-                ("iconUrl", "icon_url"),
+-                ("screenshotUrls", "screenshot_urls"),
+-                ("installCount", "install_count"),
+-            ] {
+-                if entry[camel].is_null() {
+-                    entry[camel] = v[snake].clone();
+-                }
+-            }
+-            entry
++            let name = v["name"].as_str().unwrap_or("");
++            let title = v["title"].as_str().filter(|s| !s.is_empty()).unwrap_or(name);
++            let description = v["description"].as_str().unwrap_or("");
++            let author = v["author"]
++                .as_str()
++                .filter(|s| !s.is_empty())
++                .or_else(|| v["contributors"][0].as_str())
++                .unwrap_or("Raycast Community");
++            let icon_url = v["iconUrl"].as_str().or_else(|| v["icon_url"].as_str());
++            let icon = v["icon"].as_str();
++            let screenshots = v["screenshotUrls"].as_array().or_else(|| v["screenshot_urls"].as_array());
++            let install_count = v["installCount"].as_u64().or_else(|| v["install_count"].as_u64()).unwrap_or(0);
++            let categories = v["categories"].clone();
++            let commands = v["commands"]
++                .as_array()
++                .into_iter()
++                .flatten()
++                .filter_map(|c| {
++                    let cmd_name = c["name"].as_str()?;
++                    let cmd_title = c["title"].as_str().filter(|s| !s.is_empty()).unwrap_or(cmd_name);
++                    let cmd_desc = c["description"].as_str().unwrap_or("");
++                    Some(json!({
++                        "name": cmd_name,
++                        "title": cmd_title,
++                        "description": cmd_desc
++                    }))
++                })
++                .collect::<Vec<_>>();
++
++            let mut obj = serde_json::Map::new();
++            obj.insert("name".into(), json!(name));
++            obj.insert("title".into(), json!(title));
++            obj.insert("description".into(), json!(description));
++            obj.insert("author".into(), json!(author));
++            obj.insert("installCount".into(), json!(install_count));
++            obj.insert("categories".into(), categories);
++            obj.insert("commands".into(), json!(commands));
++            if let Some(u) = icon_url { obj.insert("iconUrl".into(), json!(u)); }
++            if let Some(i) = icon { obj.insert("icon".into(), json!(i)); }
++            if let Some(s) = screenshots { obj.insert("screenshotUrls".into(), json!(s)); }
++            Value::Object(obj)
+         })
+         .collect()
+ }
+@@ -278,69 +377,145 @@ fn token_score(value: &str, query: &str, exact: f64, prefix: f64) -> f64 {
+     }
+ }
+ 
+-fn score(v: &Value, query: &str) -> f64 {
+-    if query.is_empty() {
+-        return 1.;
+-    }
+-    let name = v["name"].as_str().unwrap_or("").to_lowercase();
+-    let title = v["title"].as_str().unwrap_or("").to_lowercase();
+-    let description = v["description"].as_str().unwrap_or("").to_lowercase();
+-    let mut score = 0.;
+-    if name == query || title == query {
+-        score += 10000.;
+-    }
+-    if name.starts_with(query) || title.starts_with(query) {
+-        score += 9000.;
+-    }
+-    for (text, exact, prefix) in [
+-        (name.clone(), 8200., 7200.),
+-        (title.clone(), 8000., 7000.),
+-        (v["categories"].to_string().to_lowercase(), 3000., 2200.),
+-        (
+-            v["author"].as_str().unwrap_or("").to_lowercase(),
+-            2200.,
+-            1600.,
+-        ),
+-        (
+-            v["commands"]
+-                .as_array()
+-                .into_iter()
+-                .flatten()
+-                .map(|c| {
+-                    format!(
+-                        "{} {}",
+-                        c["name"].as_str().unwrap_or(""),
+-                        c["title"].as_str().unwrap_or("")
+-                    )
+-                })
+-                .collect::<Vec<_>>()
+-                .join(" ")
+-                .to_lowercase(),
+-            1800.,
+-            1200.,
+-        ),
+-        (description.clone(), 900., 550.),
+-    ] {
+-        score += token_score(&text, query, exact, prefix);
++pub struct Entry {
++    pub value: Value,
++    pub keys: SearchKeys,
++}
++
++fn prepare(values: Vec<Value>) -> Arc<Vec<Entry>> {
++    Arc::new(
++        values
++            .into_iter()
++            .map(|value| Entry {
++                keys: SearchKeys::new(&value),
++                value,
++            })
++            .collect(),
++    )
++}
++
++pub struct SearchKeys {
++    name: String,
++    title: String,
++    fields: [String; 6],
++}
++
++impl SearchKeys {
++    pub fn new(v: &Value) -> Self {
++        let name = v["name"].as_str().unwrap_or("").to_lowercase();
++        let title = v["title"].as_str().unwrap_or("").to_lowercase();
++        Self {
++            fields: [
++                name.clone(),
++                title.clone(),
++                v["categories"].to_string().to_lowercase(),
++                v["author"].as_str().unwrap_or("").to_lowercase(),
++                v["commands"]
++                    .as_array()
++                    .into_iter()
++                    .flatten()
++                    .map(|c| {
++                        format!(
++                            "{} {}",
++                            c["name"].as_str().unwrap_or(""),
++                            c["title"].as_str().unwrap_or("")
++                        )
++                    })
++                    .collect::<Vec<_>>()
++                    .join(" ")
++                    .to_lowercase(),
++                v["description"].as_str().unwrap_or("").to_lowercase(),
++            ],
++            name,
++            title,
++        }
+     }
+-    if query.len() >= 4 {
+-        if name.contains(query) || title.contains(query) {
+-            score += 1400.;
++
++    pub fn score(&self, v: &Value, query: &str) -> f64 {
++        if query.is_empty() {
++            return 1.;
+         }
+-        if description.contains(query) {
+-            score += 350.;
++        let mut score = 0.;
++        if self.name == query || self.title == query {
++            score += 10000.;
+         }
++        if self.name.starts_with(query) || self.title.starts_with(query) {
++            score += 9000.;
++        }
++        for (text, (exact, prefix)) in self.fields.iter().zip([
++            (8200., 7200.),
++            (8000., 7000.),
++            (3000., 2200.),
++            (2200., 1600.),
++            (1800., 1200.),
++            (900., 550.),
++        ]) {
++            score += token_score(text, query, exact, prefix);
++        }
++        if query.len() >= 4 {
++            if self.name.contains(query) || self.title.contains(query) {
++                score += 1400.;
++            }
++            if self.fields[5].contains(query) {
++                score += 350.;
++            }
++        }
++        let installs = v["installCount"].as_f64().unwrap_or(0.);
++        if score > 0. && installs > 0. {
++            score += (installs.log10() * 80.).min(500.);
++        }
++        score
+     }
+-    let installs = v["installCount"].as_f64().unwrap_or(0.);
+-    if score > 0. && installs > 0. {
+-        score += (installs.log10() * 80.).min(500.);
+-    }
+-    score
++}
++
++fn score(v: &Value, query: &str) -> f64 {
++    SearchKeys::new(v).score(v, query)
+ }
+ 
+ #[cfg(test)]
+ mod tests {
+     use super::*;
++    #[tokio::test]
++    async fn cached_catalog_shares_entries_and_preserves_channel_pagination() {
++        let dir = tempfile::tempdir().unwrap();
++        let ctx = CoreContext::headless(crate::native_core::common::CorePaths {
++            data_dir: dir.path().into(),
++            config_dir: dir.path().join("config"),
++            resource_dir: dir.path().join("resources"),
++            temp_dir: dir.path().join("tmp"),
++            home_dir: dir.path().into(),
++        });
++        let catalog = Catalog::new(ctx);
++        let entries = prepare(vec![
++            json!({"name":"zzfixture-one","title":"ZZFixture One","installCount":10}),
++            json!({"name":"zzfixture-two","title":"ZZFixture Two","installCount":20}),
++        ]);
++        *catalog.cache.lock().await = Some((now_ms(), entries.clone()));
++        assert!(Arc::ptr_eq(&entries, &catalog.entries().await.unwrap()));
++        assert!(Arc::ptr_eq(&entries, &catalog.entries().await.unwrap()));
++        if !cfg!(target_os = "windows") {
++            let all = catalog
++                .search("extensions:searchStore", &[json!("zzfixture")])
++                .await
++                .unwrap();
++            let page = catalog
++                .search(
++                    "extension:search-store",
++                    &[json!({"query":"zzfixture","offset":1,"limit":1})],
++                )
++                .await
++                .unwrap();
++            assert_eq!(all.as_array().unwrap().len(), 2);
++            assert_eq!(all[0]["id"], "raycast.zzfixture-two");
++            assert_eq!(page["items"], json!([all[1].clone()]));
++            assert_eq!(page["total"], 2);
++            assert_eq!(page["hasMore"], false);
++        }
++        assert_eq!(
++            SearchKeys::new(&json!({"name":"arc","title":"Arc"})).score(&Value::Null, "arc"),
++            35200.
++        );
++    }
+     #[test]
+     fn curated_replacements_keep_live_counts_and_artwork() {
+         let items = merge_own(
+diff --git a/src-tauri/src/native_core/extensions/registry.rs b/src-tauri/src/native_core/extensions/registry.rs
+index 26da281..bfc4740 100644
+--- a/src-tauri/src/native_core/extensions/registry.rs
++++ b/src-tauri/src/native_core/extensions/registry.rs
+@@ -217,7 +217,7 @@ fn fallback<'a>(value: &'a Value, key: &str, default: &'a str) -> &'a str {
+ 
+ fn icon_path(extension: &Installed) -> Option<String> {
+     let name = fallback(&extension.manifest, "icon", "icon.png");
+-    if name.starts_with("https://") || name.starts_with("http://") || name.starts_with("/extensions/") {
++    if name.starts_with("https://") || name.starts_with("http://") {
+         return Some(name.into());
+     }
+     let relative = Path::new(name.strip_prefix("./").unwrap_or(name));
+@@ -253,7 +253,7 @@ fn icon_data(extension: &Installed) -> Value {
+     let Some(path) = icon_path(extension) else {
+         return Value::Null;
+     };
+-    if path.starts_with("http") || path.starts_with("/extensions/") {
++    if path.starts_with("http") {
+         return json!(path);
+     }
+     let Ok(bytes) = std::fs::read(&path) else {
+@@ -279,23 +279,87 @@ fn icon_data(extension: &Installed) -> Value {
+     ))
+ }
+ 
++fn command_icon_path(extension: &Installed, cmd: &Value) -> Option<String> {
++    let name = cmd["icon"]
++        .as_str()
++        .or_else(|| cmd["iconPath"].as_str())?;
++    if name.starts_with("https://") || name.starts_with("http://") {
++        return Some(name.into());
++    }
++    let relative = Path::new(name.strip_prefix("./").unwrap_or(name));
++    if relative
++        .components()
++        .any(|c| !matches!(c, Component::Normal(_)))
++    {
++        return None;
++    }
++    let mut candidates = vec![
++        extension.path.join(relative),
++        extension.path.join("assets").join(relative),
++    ];
++    if extension.id.starts_with("com.tezbar.native.") {
++        if let Some(packages) = extension.path.parent() {
++            if let Some(extensions) = packages.parent() {
++                let legacy = extensions.join(&extension.slug);
++                candidates.push(legacy.join(relative));
++                candidates.push(legacy.join("assets").join(relative));
++            }
++            let legacy = packages.join(format!("raycast.{}", extension.slug));
++            candidates.push(legacy.join(relative));
++            candidates.push(legacy.join("assets").join(relative));
++        }
++    }
++    candidates
++        .into_iter()
++        .find(|p| p.is_file())
++        .map(|p| p.to_string_lossy().into())
++}
++
++fn command_icon_data(path_str: &str) -> Value {
++    let Ok(bytes) = std::fs::read(path_str) else {
++        return Value::Null;
++    };
++    if bytes.len() > 2_000_000 {
++        return Value::Null;
++    }
++    let mime = match Path::new(path_str)
++        .extension()
++        .and_then(|v| v.to_str())
++        .unwrap_or("")
++    {
++        "svg" => "image/svg+xml",
++        "jpg" | "jpeg" => "image/jpeg",
++        "webp" => "image/webp",
++        "gif" => "image/gif",
++        _ => "image/png",
++    };
++    json!(format!(
++        "data:{mime};base64,{}",
++        base64::engine::general_purpose::STANDARD.encode(bytes)
++    ))
++}
++
+ fn command_values(extension: &Installed) -> Vec<Value> {
+     if !compatible(&extension.manifest, false) {
+         return vec![];
+     }
+     let pkg = &extension.manifest;
+     let icon = icon_data(extension);
++    let ext_icon_path = icon_path(extension);
+     let owner = person(pkg.get("owner").unwrap_or(&pkg["author"]));
+     pkg["commands"].as_array().into_iter().flatten().filter(|c| c["name"].is_string()&&compatible(c,true) && (extension.id.starts_with("raycast.") || c["runtime"] == "rust")).map(|cmd| {
+         let name=cmd["name"].as_str().unwrap_or("");
+         let title=fallback(cmd,"title",name);
+         let extension_title=fallback(pkg,"title",&extension.slug);
+         let description=fallback(cmd,"description","");
++        let cmd_icon_path = command_icon_path(extension, cmd).or_else(|| ext_icon_path.clone());
++        let cmd_icon_data = cmd_icon_path.as_deref().map(command_icon_data).unwrap_or(Value::Null);
++        let icon_val = if !cmd_icon_data.is_null() { cmd_icon_data } else { icon.clone() };
+         json!({"id":format!("ext-{}-{name}",extension.slug),"title":title,"extensionTitle":extension_title,
+             "extName":extension.slug,"extensionId":extension.id,"cmdName":name,"owner":owner,"description":description,"mode":fallback(cmd,"mode","view"),
+             "interval":cmd["interval"],"disabledByDefault":cmd["disabledByDefault"].as_bool().unwrap_or(false),
+             "keywords":[extension.slug.to_lowercase(),extension_title.to_lowercase(),name.to_lowercase(),title.to_lowercase(),description.to_lowercase()],
+-            "iconDataUrl":icon,"commandArgumentDefinitions":cmd["arguments"].as_array().cloned().unwrap_or_default()})
++            "iconPath":cmd_icon_path,"iconDataUrl":icon_val,"commandArgumentDefinitions":cmd["arguments"].as_array().cloned().unwrap_or_default()})
+     }).collect()
+ }
+ 
+diff --git a/src-tauri/src/native_core/extensions/v2_catalog.json b/src-tauri/src/native_core/extensions/v2_catalog.json
+index 54796a6..41eea61 100644
+--- a/src-tauri/src/native_core/extensions/v2_catalog.json
++++ b/src-tauri/src/native_core/extensions/v2_catalog.json
+@@ -7,7 +7,7 @@
+     "version": "1.1.1",
+     "description": "Keep your computer awake with native Tezbar sessions",
+     "author": "gstvds",
+-    "icon": "/extensions/icons/amphetamine.png",
++    "icon": "icon.png",
+     "runtime": "rust",
+     "replaces": [
+       "raycast.amphetamine"
+@@ -169,7 +169,7 @@
+     "version": "1.0.0",
+     "description": "Switch the active audio device of your mac.",
+     "author": "benvp",
+-    "icon": "/extensions/icons/audio-device.png",
++    "icon": "command-icon.png",
+     "runtime": "rust",
+     "replaces": [
+       "raycast.audio-device"
+@@ -456,7 +456,7 @@
+     "version": "1.0.0",
+     "description": "Capture and record your screen!",
+     "author": "Aayush9029",
+-    "icon": "/extensions/icons/cleanshotx.png",
++    "icon": "command-icon.png",
+     "runtime": "rust",
+     "replaces": [
+       "raycast.cleanshotx"
+@@ -982,7 +982,7 @@
+     "version": "1.0.0",
+     "description": "Pick and organize colors, everywhere on your Mac",
+     "author": "thomas",
+-    "icon": "/extensions/icons/color-picker.png",
++    "icon": "icon.png",
+     "runtime": "rust",
+     "replaces": [
+       "raycast.color-picker"
+@@ -1254,7 +1254,7 @@
+     "version": "1.0.0",
+     "description": "Search the Internet for animated GIFs",
+     "author": "josephschmitt",
+-    "icon": "/extensions/icons/gif-search.png",
++    "icon": "command-icon.png",
+     "runtime": "rust",
+     "replaces": [
+       "raycast.gif-search"
+@@ -1587,7 +1587,7 @@
+       {
+         "name": "search",
+         "title": "Search for GIFs",
+-        "description": "Search for GIFs across multiple services…",
++        "description": "Search for GIFs across multiple services\u2026",
+         "mode": "view",
+         "platforms": [
+           "macOS",
+@@ -1640,7 +1640,7 @@
+     "version": "1.4.4",
+     "description": "Manage your Google calendar easily. Create events, search contacts, and check out your upcoming schedule.",
+     "author": "thomas",
+-    "icon": "/extensions/icons/google-calendar.png",
++    "icon": "icon.png",
+     "runtime": "rust",
+     "replaces": [
+       "raycast.google-calendar"
+@@ -1826,7 +1826,7 @@
+     "version": "1.0.0",
+     "description": "Google search with autosuggestions",
+     "author": "mblode",
+-    "icon": "/extensions/icons/google-search.png",
++    "icon": "command-icon.png",
+     "runtime": "rust",
+     "replaces": [
+       "raycast.google-search"
+@@ -1898,7 +1898,7 @@
+     "version": "1.0.0",
+     "description": "Query Perplexity from Tezbar",
+     "author": "third774",
+-    "icon": "/extensions/icons/perplexity.png",
++    "icon": "perplexity-logo.png",
+     "runtime": "rust",
+     "replaces": [
+       "raycast.perplexity"
+@@ -1959,7 +1959,7 @@
+     "version": "1.0.0",
+     "description": "Find open ports and close them",
+     "author": "lucaschultz",
+-    "icon": "/extensions/icons/port-manager.png",
++    "icon": "command-icon.png",
+     "runtime": "rust",
+     "replaces": [
+       "raycast.port-manager"
+@@ -2114,7 +2114,7 @@
+     "version": "1.0.0",
+     "description": "Test the performance and quality of your internet connection via speedtest.net",
+     "author": "tonka3000",
+-    "icon": "/extensions/icons/speedtest.png",
++    "icon": "speedtest.png",
+     "runtime": "rust",
+     "replaces": [
+       "raycast.speedtest"
+@@ -2157,7 +2157,7 @@
+     "version": "1.0.0",
+     "description": "Start, stop, and save countdown timers, directly in Tezbar, with no external dependencies.",
+     "author": "ThatNerd",
+-    "icon": "/extensions/icons/timers.png",
++    "icon": "command-icon.png",
+     "runtime": "rust",
+     "replaces": [
+       "raycast.timers"
+diff --git a/src-tauri/src/native_core/extensions/v2_catalog.rs b/src-tauri/src/native_core/extensions/v2_catalog.rs
+index 927622c..83e277b 100644
+--- a/src-tauri/src/native_core/extensions/v2_catalog.rs
++++ b/src-tauri/src/native_core/extensions/v2_catalog.rs
+@@ -67,6 +67,12 @@ pub(super) fn manifests() -> Vec<Value> {
+ }
+ 
+ pub(super) fn store_item(native: Value) -> Value {
++    let icon_val = native["icon"].as_str().unwrap_or("");
++    let icon_url = if icon_val.starts_with("http") {
++        json!(icon_val)
++    } else {
++        Value::Null
++    };
+     json!({
+         "id": native["id"],
+         "name": native["name"],
+@@ -76,7 +82,7 @@ pub(super) fn store_item(native: Value) -> Value {
+         "owner": "Tezbar",
+         "runtime": "rust",
+         "icon": native["icon"],
+-        "iconUrl": native["icon"],
++        "iconUrl": icon_url,
+         "platforms": native["platforms"],
+         "commands": native["commands"],
+         "nativeV2": native

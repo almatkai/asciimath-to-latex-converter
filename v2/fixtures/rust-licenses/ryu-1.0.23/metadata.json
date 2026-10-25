@@ -1,0 +1,6 @@
+{
+  "name": "ryu",
+  "version": "1.0.23",
+  "source": "registry+https://github.com/rust-lang/crates.io-index",
+  "license": "Apache-2.0 OR BSL-1.0"
+}

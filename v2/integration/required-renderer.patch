@@ -1,0 +1,330 @@
+--- a/src/renderer/src/raycast-api/form-runtime.tsx
++++ b/src/renderer/src/raycast-api/form-runtime.tsx
+@@ -22,6 +22,7 @@
+   info?: string
+   error?: string
+   value?: unknown
++  defaultValue?: unknown
+   options?: Array<{ title: string; value: string }>
+   allowMultipleSelection?: boolean
+   actionId?: string
+@@ -99,6 +100,7 @@
+           info: typeof node.props?.info === 'string' ? node.props.info : undefined,
+           error: typeof node.props?.error === 'string' ? node.props.error : undefined,
+           value: node.props?.value,
++          defaultValue: node.props?.defaultValue,
+           options: options.length > 0 ? options : undefined,
+           allowMultipleSelection: node.props?.allowMultipleSelection === true,
+           actionId: typeof node.props?.actionId === 'string' ? node.props.actionId : undefined,
+@@ -157,6 +159,8 @@
+       next[field.id] = previous[field.id]
+     } else if (field.value !== undefined) {
+       next[field.id] = field.value
++    } else if (field.defaultValue !== undefined) {
++      next[field.id] = field.defaultValue
+     } else if (field.type === 'Form.Checkbox') {
+       next[field.id] = false
+     } else if (field.type === 'Form.FilePicker' || field.type === 'Form.TagPicker') {
+--- a/src/renderer/src/raycast-api/index.tsx
++++ b/src/renderer/src/raycast-api/index.tsx
+@@ -1,3 +1,4 @@
++import { NativeAsciiMathLane } from './native-asciimath-lane'
+ import { type ReactNode, useCallback, useEffect, useMemo, useRef, useState } from 'react'
+ import type { ExtensionRuntimeAction, ExtensionRuntimeNode } from '../../../shared/extensionRuntime'
+ import { Action, ActionPanel, ActionPanelOverlay } from './action-runtime'
+@@ -64,6 +65,18 @@
+   const [showActions, setShowActions] = useState(false)
+   const [actionFilterIds, setActionFilterIds] = useState<string[] | null>(null)
+   const formRuntimeRef = useRef<FormRuntimeHandle>(null)
++  const asciiMath = !!root.props?.nativeAsciiMath
++  const [localNotice, setLocalNotice] = useState<string | null>(null)
++  const lane = useMemo(() => new NativeAsciiMathLane(), [props.sessionId])
++  useEffect(() => { lane.activate(); return () => lane.dispose() }, [lane])
++  const invoke = useCallback((id: string, values?: Record<string, unknown>, change = false): Promise<void> => {
++    const send = () => onInvokeAction(id, values)
++    if (!asciiMath) return Promise.resolve(send())
++    setLocalNotice(null)
++    return lane.send(send, change, () => setLocalNotice('Expression changed; choose the action again.'))
++      .catch(() => { setLocalNotice('Action failed or acknowledgement is uncertain. Retry deliberately.') })
++  }, [asciiMath, lane, onInvokeAction])
++
+ 
+   useEffect(() => {
+     setRuntimeContext(extensionId, commandName)
+@@ -72,9 +85,9 @@
+   const primaryAction = actions[0]
+   const onSurfaceBack = useCallback(() => {
+     const actionId = backActionId(root)
+-    if (actionId) void onInvokeAction(actionId)
++    if (actionId) void invoke(actionId)
+     else onBack()
+-  }, [onBack, onInvokeAction, root])
++  }, [onBack, invoke, root])
+   const kind = rootKind(root)
+   const submitAction = useMemo(
+     () =>
+@@ -97,10 +110,10 @@
+         // Navigation state is maintained in the main-process runtime session.
+       },
+       pop: () => {
+-        void onInvokeAction('__nav_pop__')
++        void invoke('__nav_pop__')
+       },
+     }),
+-    [onInvokeAction]
++    [invoke]
+   )
+ 
+   useEffect(() => {
+@@ -120,18 +133,18 @@
+ 
+       if (event.key === 'Enter' && primaryAction && kind === 'detail') {
+         event.preventDefault()
+-        void onInvokeAction(primaryAction.id)
++        void invoke(primaryAction.id)
+       }
+     }
+ 
+     window.addEventListener('keydown', onKey, true)
+     return () => window.removeEventListener('keydown', onKey, true)
+-  }, [kind, onInvokeAction, primaryAction])
++  }, [kind, invoke, primaryAction])
+ 
+   const onRunPrimaryAction = (actionId?: string, formValues?: Record<string, unknown>): void => {
+     const id = actionId || primaryAction?.id
+     if (!id) return
+-    void onInvokeAction(id, formValues)
++    void invoke(id, formValues)
+   }
+ 
+   const openActions = (ids?: string[]): void => {
+@@ -142,9 +155,9 @@
+   const onSubmitForm = useCallback(
+     (values: Record<string, unknown>): void => {
+       if (!submitAction) return
+-      void onInvokeAction(submitAction.id, values)
++      void invoke(submitAction.id, values)
+     },
+-    [onInvokeAction, submitAction]
++    [invoke, submitAction]
+   )
+ 
+   return (
+@@ -158,8 +171,8 @@
+               title={title}
+               onBack={onSurfaceBack}
+               onSubmitForm={onSubmitForm}
+-              onChangeField={(actionId, value) => onInvokeAction(actionId, { value })}
+-              onInvokeAction={onInvokeAction}
++              onChangeField={(actionId, value) => invoke(actionId, { value }, true)}
++              onInvokeAction={invoke}
+               onOpenActions={openActions}
+               actionNotice={actionNotice}
+             />
+@@ -196,6 +209,7 @@
+             />
+           )}
+ 
++          {localNotice ? <p role="status">{localNotice}</p> : null}
+           {showActions && actions.length > 0 ? (
+             <ActionPanelOverlay
+               actions={overlayActions}
+@@ -210,7 +224,7 @@
+                   onSubmitForm(formRuntimeRef.current?.getValues() ?? {})
+                   return
+                 }
+-                void onInvokeAction(action.id)
++                void invoke(action.id, asciiMath && kind === 'form' ? formRuntimeRef.current?.getValues() : undefined)
+               }}
+             />
+           ) : null}
+--- a/src/renderer/src/raycast-api/detail-runtime.tsx
++++ b/src/renderer/src/raycast-api/detail-runtime.tsx
+@@ -1,3 +1,4 @@
++import { NativeAsciiMathPreview } from '../../ui/NativeAsciiMathPreview'
+ import { useEffect, useMemo, useRef, useState, type PointerEvent as ReactPointerEvent } from 'react'
+ import type { ExtensionRuntimeNode } from '../../../shared/extensionRuntime'
+ import { buildColorFormatRows, type Rgba } from '../../colorConverter'
+@@ -565,7 +566,9 @@
+ 
+       <div className="flex min-h-0 flex-1 overflow-hidden">
+         <div className="glass-card min-h-0 flex-1 overflow-y-auto px-4 py-4">
+-          {imageOnly && imageOnly.alt.toLowerCase().includes('color wheel') ? (
++          {root.props?.nativeAsciiMath ? (
++            <NativeAsciiMathPreview value={root.props.nativeAsciiMath} />
++          ) : imageOnly && imageOnly.alt.toLowerCase().includes('color wheel') ? (
+             <ColorWheelDetail image={imageOnly} initialColor={root.props?.initialColor} />
+           ) : imageOnly ? (
+             <div className="flex h-full min-h-[420px] items-center justify-center">
+--- a/src/renderer/ExtensionRuntimeView.tsx
++++ b/src/renderer/ExtensionRuntimeView.tsx
+@@ -1,3 +1,4 @@
++import { olderAsciiMathView } from './src/raycast-api/native-asciimath-lane'
+ import { useCallback, useEffect, useRef, useState } from 'react'
+ import type {
+   ExtensionRunCommandResult,
+@@ -423,6 +424,8 @@
+   onBack: () => void
+ }): JSX.Element {
+   const [state, setState] = useState<RuntimeViewState>(() => fromRunResult(initial))
++  const currentSessionRef = useRef(state.sessionId)
++  currentSessionRef.current = state.sessionId
+   const [error, setError] = useState<string | null>(null)
+   const [actionNotice, setActionNotice] = useState<ActionNotice | null>(null)
+   const searchRequestSeq = useRef(0)
+@@ -494,7 +497,7 @@
+           setState((prev) => ({ ...prev, message: result.message }))
+           return
+         }
+-        setState({
++        setState((previous) => olderAsciiMathView(previous.root, result.root) ? previous : ({
+           sessionId: result.sessionId,
+           extensionId: result.extensionId,
+           commandName: result.commandName,
+@@ -502,7 +505,7 @@
+           root: result.root,
+           actions: result.actions,
+           message: result.message,
+-        })
++        }))
+       } catch (error) {
+         console.error(
+           `[RuntimeView] Refresh failed session=${state.sessionId} after ${Math.round(performance.now() - startedAt)}ms`,
+@@ -553,7 +556,7 @@
+       console.log(
+         `[RuntimeView] Search returned view with root type="${result.root.type}", ${result.root.children?.length ?? 0} children`
+       )
+-      setState({
++      setState((previous) => olderAsciiMathView(previous.root, result.root) ? previous : ({
+         sessionId: result.sessionId,
+         extensionId: result.extensionId,
+         commandName: result.commandName,
+@@ -561,7 +564,7 @@
+         root: result.root,
+         actions: result.actions,
+         message: result.message,
+-      })
++      }))
+     },
+     [state.sessionId]
+   )
+@@ -577,7 +580,7 @@
+       setState((prev) => ({ ...prev, message: result.message }))
+       return
+     }
+-    setState({
++    setState((previous) => olderAsciiMathView(previous.root, result.root) ? previous : ({
+       sessionId: result.sessionId,
+       extensionId: result.extensionId,
+       commandName: result.commandName,
+@@ -585,7 +588,7 @@
+       root: result.root,
+       actions: result.actions,
+       message: result.message,
+-    })
++    }))
+   }, [state.sessionId])
+ 
+   return (
+@@ -627,6 +630,7 @@
+                 actionId,
+                 formValues,
+               })
++              if (currentSessionRef.current !== state.sessionId) return
+ 
+               if (!result.ok) {
+                 setError(result.message)
+@@ -655,7 +659,7 @@
+                 return
+               }
+ 
+-              setState({
++              setState((previous) => olderAsciiMathView(previous.root, result.root) ? previous : ({
+                 sessionId: result.sessionId,
+                 extensionId: result.extensionId,
+                 commandName: result.commandName,
+@@ -663,7 +667,7 @@
+                 root: result.root,
+                 actions: result.actions,
+                 message: undefined,
+-              })
++              }))
+             }}
+           />
+         )}
+--- a/package.json
++++ b/package.json
+@@ -78,7 +78,8 @@
+     "typescript": "^5.8.3",
+     "typescript-eslint": "^8.30.1",
+     "vite": "^6.3.3",
+-    "vitest": "^3.1.2"
++    "vitest": "^3.1.2",
++    "katex": "0.16.25"
+   },
+   "packageManager": "pnpm@11.17.0"
+ }
+--- /dev/null
++++ b/src/renderer/ui/NativeAsciiMathPreview.tsx
+@@ -0,0 +1,29 @@
++import { useMemo } from 'react'
++import katex from 'katex'
++import DOMPurify from 'dompurify'
++import 'katex/dist/katex.min.css'
++
++// This typed Detail surface is deliberately separate from Markdown. Formula text
++// never becomes markdown, HTML, a URL, a code block or a clipboard button.
++export function NativeAsciiMathPreview({ value }: { value: unknown }): JSX.Element {
++  const rendered = useMemo(() => {
++    if (!value || typeof value !== 'object') return { error: 'Invalid formula preview.' }
++    const data = value as Record<string, unknown>
++    if (typeof data.latex !== 'string' || data.latex.length > 16_384 ||
++        data.displayMode !== true || data.size !== 'huge') {
++      return { error: 'Formula preview exceeds the supported format or size.' }
++    }
++    try {
++      const html = katex.renderToString(`\\huge ${data.latex}`, {
++        displayMode: true, output: 'htmlAndMathml', trust: false,
++        throwOnError: true, strict: 'ignore', maxExpand: 1000, maxSize: 20,
++      })
++      return { html: DOMPurify.sanitize(html, { USE_PROFILES: { html: true, mathMl: true, svg: true } }) }
++    } catch {
++      return { error: 'This LaTeX cannot be rendered. Edit the expression or copy its code.' }
++    }
++  }, [value])
++  return rendered.error
++    ? <p role="status">{rendered.error}</p>
++    : <div className="overflow-auto py-4" aria-label="Rendered LaTeX" dangerouslySetInnerHTML={{ __html: rendered.html ?? '' }} />
++}
+--- /dev/null
++++ b/src/renderer/src/raycast-api/native-asciimath-lane.ts
+@@ -0,0 +1,29 @@
++// Session-only invocation lane for the compiled AsciiMath surface. No storage.
++export class NativeAsciiMathLane {
++  private tail: Promise<void> = Promise.resolve()
++  private version = 0
++  private disposed = false
++  private epoch = 0
++  activate(): void { this.disposed = false }
++  dispose(): void { this.disposed = true; this.version += 1; this.epoch += 1 }
++  send(callback: () => Promise<void> | void, change: boolean, skipped: () => void): Promise<void> {
++    if (change) this.version += 1
++    const version = this.version
++    const epoch = this.epoch
++    const task = this.tail.then(async () => {
++      if (this.disposed || epoch !== this.epoch) return
++      if (!change && version !== this.version) { skipped(); return }
++      await callback()
++    })
++    // A failed/cancelled effect never retries automatically; the lane stays usable.
++    this.tail = task.catch(() => undefined)
++    return task
++  }
++}
++export function olderAsciiMathView(previous: { props?: Record<string, unknown> }, next: { props?: Record<string, unknown> }): boolean {
++  const parse = (value: unknown): RegExpExecArray | null => typeof value === 'string'
++    ? /^am:([a-f0-9-]+):([0-9]+)$/.exec(value) : null
++  const a = parse(previous.props?.nativeAsciiMathRevision)
++  const b = parse(next.props?.nativeAsciiMathRevision)
++  return !!(a && b && a[1] === b[1] && BigInt(b[2]!) < BigInt(a[2]!))
++}

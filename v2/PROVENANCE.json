@@ -1,0 +1,58 @@
+{
+  "own": {
+    "repository": "https://github.com/almatkai/asciimath-to-latex-converter",
+    "sha": "9b40a9cff89c7cfc50360d282ee3a80a43d7ef35",
+    "branchBase": "origin/main",
+    "files": "fixtures/own (all 18 tracked source files)"
+  },
+  "original": {
+    "repository": "https://github.com/raycast/extensions",
+    "sha": "6734d85992290066fd31a7f5bee3cca3d3545a1a",
+    "path": "extensions/asciimath-to-latex-converter",
+    "credit": "SimpleOptional",
+    "extensionLicenseFetch": {
+      "path": "extensions/asciimath-to-latex-converter/LICENSE",
+      "http": 404
+    },
+    "license": "Repository root LICENSE fetched at same pin; exact text retained"
+  },
+  "beta": {
+    "sha": "fd300e276356587726566026f072563eb9c34cb1",
+    "files": "fixtures/beta",
+    "access": "git show only; working tree and profiles untouched"
+  },
+  "hostCommitted": {
+    "sha": "fe71ca87f21ac4ff31505010c228f8abda0f2a89",
+    "delta": "integration/host-committed-delta.patch",
+    "note": "Entire relevant committed delta inspected. No preceding vendored ports in this committed snapshot. Future integration must preserve all additions in target checkout."
+  },
+  "library": {
+    "name": "asciimath-to-latex",
+    "version": "0.5.1",
+    "declared": "^0.5.1",
+    "gitHead": "20825ee522faa386400e290b6d84034491a2e299",
+    "url": "https://registry.npmjs.org/asciimath-to-latex/-/asciimath-to-latex-0.5.1.tgz",
+    "integrity": "sha512-ZSBMq31UioOrFT1+uBOu9QFLqYI6htT4Tty4Vc/Y4mek3vOL9EKJMUvrvH9U4DJDAwN8p21BYUwCBQDYayegYA==",
+    "licenseMetadata": "MIT",
+    "licenseTextGap": "No LICENSE in npm tarball or gitHead repository root tree; raw LICENSE returned 404. No copyright/grant invented."
+  },
+  "math": {
+    "name": "katex",
+    "version": "0.16.25",
+    "gitHead": "d2f1084c5ecca7c47295de52728e0c5f565b12ec",
+    "url": "https://registry.npmjs.org/katex/-/katex-0.16.25.tgz",
+    "integrity": "sha512-woHRUZ/iF23GBP1dkDQMh1QBad9dmr8/PAwNA54VrSOVYgI12MAcE14TqnDdQOdzyEonGzMepYnqBMYdsoAr8Q==",
+    "license": "fixtures/katex/package/LICENSE; KaTeX MIT, bundled font notices retained in exact package"
+  },
+  "icon": {
+    "bytes": 16920,
+    "sha256": "85d2d2a64b001b214cd2b88d01260f81b9c393863013abf3f7422d08612a1b88",
+    "url": "https://raw.githubusercontent.com/raycast/extensions/6734d85992290066fd31a7f5bee3cca3d3545a1a/extensions/asciimath-to-latex-converter/assets/icon.png"
+  },
+  "search": {
+    "skill": "/Users/almat/.agents/skills/xerj-search/SKILL.md",
+    "canonicalPrefix": "ax-ebd3516cc229",
+    "status": "incomplete",
+    "reason": "HTTP 429 RSS1822-1860MB >= watermark768MB; own indexing PID19476 terminated; no global restart/schema/prefix workaround. XERJ first search no matches does not prove absence. Full files and rg used."
+  }
+}

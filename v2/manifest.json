@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 2,
+  "id": "com.tezbar.native.asciimath-to-latex-converter",
+  "slug": "asciimath-to-latex-converter",
+  "name": "AsciiMath to LaTeX Converter",
+  "version": "0.1.0",
+  "description": "Convert AsciiMath expressions to LaTeX with live preview. Original Raycast extension by SimpleOptional.",
+  "icon": "/extensions/icons/asciimath-to-latex-converter.png",
+  "runtime": "rust",
+  "replaces": [
+    "raycast.asciimath-to-latex-converter"
+  ],
+  "platforms": [
+    "macOS",
+    "Windows"
+  ],
+  "commands": [
+    {
+      "name": "convert-asciimath-to-latex",
+      "title": "Convert AsciiMath to LaTeX",
+      "description": "Convert AsciiMath input to LaTeX and preview the result.",
+      "mode": "view",
+      "preferences": [
+        {
+          "name": "defaultWrapLatex",
+          "title": "Default LaTeX Wrapping",
+          "description": "Select the default wrapping style for LaTeX output",
+          "type": "dropdown",
+          "required": false,
+          "default": "single",
+          "data": [
+            {
+              "title": "None",
+              "value": "none"
+            },
+            {
+              "title": "Single ($...$)",
+              "value": "single"
+            },
+            {
+              "title": "Double ($$...$$)",
+              "value": "double"
+            }
+          ]
+        }
+      ],
+      "platforms": [
+        "macOS",
+        "Windows"
+      ],
+      "runtime": "rust"
+    }
+  ],
+  "verification": [
+    {
+      "platform": "macOS",
+      "state": "not-run",
+      "note": "Host registration/rebuild/install and real desktop QA remain not-run."
+    },
+    {
+      "platform": "Windows",
+      "state": "not-run",
+      "note": "Host registration/rebuild/install and real desktop QA remain not-run."
+    }
+  ]
+}

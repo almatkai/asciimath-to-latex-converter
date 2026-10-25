@@ -1,0 +1,9 @@
+/target/
+/harness-work/
+/node_modules/
+/test-results/
+*.log
+**/target/
+**/node_modules/
+!/fixtures/katex/package/dist/
+!/fixtures/katex/package/dist/**

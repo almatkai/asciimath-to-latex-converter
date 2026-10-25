@@ -1,0 +1,6 @@
+{
+  "name": "unicode-ident",
+  "version": "1.0.27",
+  "source": "registry+https://github.com/rust-lang/crates.io-index",
+  "license": "(MIT OR Apache-2.0) AND Unicode-3.0"
+}
