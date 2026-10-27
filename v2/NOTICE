@@ -1,0 +1,21 @@
+AsciiMath to LaTeX Converter for Tezbar Native V2.
+Original Raycast extension: SimpleOptional, raycast/extensions at
+6734d85992290066fd31a7f5bee3cca3d3545a1a, extensions/asciimath-to-latex-converter.
+Original artwork is unchanged; see LICENSE-MIT-ORIGINAL and PROVENANCE.json.
+Own V1 fork: almatkai, 9b40a9cff89c7cfc50360d282ee3a80a43d7ef35.
+The exact own license (with its original literal escape bytes) is retained as
+LICENSE-MIT-OWN; no V1 license or other tracked source bytes were repaired.
+
+Native grammar/parser and initialized symbol table derive from Tyler Long's
+asciimath-to-latex 0.5.1, gitHead 20825ee522faa386400e290b6d84034491a2e299.
+Npm and repository package metadata declare MIT. No separate license text was
+found in the tarball or pinned repository root; raw LICENSE returned 404.
+The metadata and source are retained. A missing legal text has not been filled
+with a guessed copyright or fabricated grant. This evidence gap remains open.
+
+Pinned Tezbar beta fixtures: Apache-2.0; LICENSE-APACHE-2.0-BETA retained.
+KaTeX 0.16.25 preview prerequisite: its exact MIT LICENSE including font notices
+is in fixtures/katex/package/LICENSE. Distribution fonts and CSS remain exact.
+Rust dependency licenses/checksums are described in Cargo.lock and the retained
+registry license texts under fixtures/rust-licenses. No registry source archive
+is bundled; offline reproduction needs the indicated cached crates.

@@ -1,0 +1,20 @@
+--- a/src-tauri/src/native_core/extensions/registry.rs
++++ b/src-tauri/src/native_core/extensions/registry.rs
+@@ -217,7 +217,7 @@
+ 
+ fn icon_path(extension: &Installed) -> Option<String> {
+     let name = fallback(&extension.manifest, "icon", "icon.png");
+-    if name.starts_with("https://") || name.starts_with("http://") {
++    if name.starts_with("https://") || name.starts_with("http://") || name == "/extensions/icons/asciimath-to-latex-converter.png" {
+         return Some(name.into());
+     }
+     let relative = Path::new(name.strip_prefix("./").unwrap_or(name));
+@@ -253,7 +253,7 @@
+     let Some(path) = icon_path(extension) else {
+         return Value::Null;
+     };
+-    if path.starts_with("http") {
++    if path.starts_with("http") || path == "/extensions/icons/asciimath-to-latex-converter.png" {
+         return json!(path);
+     }
+     let Ok(bytes) = std::fs::read(&path) else {

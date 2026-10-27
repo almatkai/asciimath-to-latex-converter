@@ -1,0 +1,6 @@
+{
+  "name": "serde_json",
+  "version": "1.0.145",
+  "source": "registry+https://github.com/rust-lang/crates.io-index",
+  "license": "MIT OR Apache-2.0"
+}

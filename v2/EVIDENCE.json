@@ -1,0 +1,67 @@
+{
+  "sourceSha": "9b40a9cff89c7cfc50360d282ee3a80a43d7ef35",
+  "status": "implementation complete, integration/desktop QA not-run; unstaged/uncommitted",
+  "lockedLibrary": "asciimath-to-latex 0.5.1",
+  "toolchains": {
+    "stable": "rustc 1.98.0 (88d9e12ae 2026-08-18)",
+    "1.85.0": "rustc 1.85.0 (4d91de4e4 2025-02-17)"
+  },
+  "oracle": {
+    "expressions": 3951,
+    "validUnicodeExactMatches": 3672,
+    "unpairedSurrogateExplicitAdaptations": 279,
+    "initializedSymbolEntries": 342,
+    "universalParityClaimed": false,
+    "actualOwnTsxHelperAndLibraryExecuted": true
+  },
+  "tests": {
+    "core": 3,
+    "directAdapterAndPinnedSdkCommon": 6,
+    "nativeSessionsRegistryCatalog": 9,
+    "sourceAndRendererAndAssets": 13,
+    "schemaDraft": "2020-12",
+    "schemaNegativeCases": 12,
+    "v1Smoke": 1,
+    "v1Typecheck": "pass",
+    "rendererSliceTypecheck": "pass, explicit OS bridge typings",
+    "rustMatrixOperations": 26,
+    "windows": "GNU check/strict Clippy stable+1.85.0; not executed"
+  },
+  "archive": {
+    "actualCargoArchiveInspected": true,
+    "everyIndexRecordRetained": true,
+    "nestedCargoManifestsAreTemplates": true,
+    "extractedOfflineTests": "core, direct adapter, NativeSessions/registry on stable and 1.85.0 pass",
+    "receipt": "ignored test-results/package-summary.json; regenerate via scripts/package-check.py"
+  },
+  "scope": {
+    "trackedV1Changes": [
+      "README.md discovery link only"
+    ],
+    "hostWorkingTreeEdits": false,
+    "profileEdits": false,
+    "osEffectsExecuted": false,
+    "stageCommitPushPrDeleteLedger": false
+  },
+  "rendering": {
+    "realKaTeXHtmlMathmlDom": true,
+    "fractionRootAndHugeSizingVerified": true,
+    "localCssAndAllFontsBundled": true,
+    "sanitizationAndUnsupportedLatexTested": true,
+    "rendererPatchAppliedToHost": false,
+    "realDesktopQa": "not-run",
+    "radicalSvgPathVerified": true
+  },
+  "gaps": [
+    "Unpaired UTF-16 output is explicitly rejected (279 frozen cases), not lossily substituted.",
+    "Finite corpus cannot establish universal grammar parity.",
+    "Library metadata declares MIT but no standalone license text exists in fetched tarball/pinned root; no fabricated grant.",
+    "XERJ index incomplete: 429/RSS watermark; full current sources/rg used.",
+    "Host registration/rebuild/install, real macOS/Windows UI/dropdown/math/font/clipboard/paste/focus/keyboard QA not-run."
+  ],
+  "parentReview": {
+    "finding": "HTML/MathML-only sanitizer removed radical SVG paths",
+    "fix": "Enable DOMPurify SVG profile in the typed preview; retain trust:false and unsafe-input checks",
+    "regression": "Actual patched Detail DOM must contain .sqrt svg path"
+  }
+}

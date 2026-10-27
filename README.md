@@ -15,3 +15,5 @@ Convert AsciiMath expressions to LaTeX with a live preview in Raycast.
 2. Enter your AsciiMath expression.
 3. The LaTeX code and rendered preview update in real time.
 4. Use the copy or paste actions as needed.
+
+Native Rust V2 implementation and integration notes: [v2/README.md](v2/README.md).
